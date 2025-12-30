@@ -45,6 +45,162 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 
 
+
+
+
+
+
+
+
+
+## [0.1.117] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- 
+
+### 🐛 Correções
+- Correções em validação de formulário
+
+### 📦 Build
+- Build automático versão 0.1.117
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.116] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- 
+
+### 🐛 Correções
+- Correções em validação de formulário
+
+### 📦 Build
+- Build automático versão 0.1.116
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.115] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+
+### 🐛 Correções
+- Correções em validação de formulário
+
+### 📦 Build
+- Build automático versão 0.1.115
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.114] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+
+### 🐛 Correções
+- Correções em validação de formulário
+
+### 📦 Build
+- Build automático versão 0.1.114
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.113] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+- Otimizado carregamento do axe-core com CSP bypass seguro
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.113
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.112] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+- Otimizado carregamento do axe-core com CSP bypass seguro
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.112
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.111] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+- Otimizado carregamento do axe-core com CSP bypass seguro
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.111
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.110] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+- Otimizado carregamento do axe-core com CSP bypass seguro
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.110
+- Data: 2025-12-30
+
+---
+
+
 ## [0.1.109] - 2025-12-30
 
 ### 🚀 Novidades

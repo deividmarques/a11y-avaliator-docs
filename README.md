@@ -368,6 +368,7 @@ npm run build
 - [x] Versionamento automático de builds
 
 ### 🎯 Próximas Funcionalidades (v0.2.x)
+- [ ] **Botao de doação** com achave aleatoria
 - [ ] **Histórico de análises** com armazenamento local e comparações
 - [ ] **Análise em lote** de múltiplas páginas do mesmo site
 - [ ] **Sugestões com IA** integração com LLMs para correções automáticas
