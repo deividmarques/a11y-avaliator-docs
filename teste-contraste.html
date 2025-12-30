@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Contraste - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html" class="active">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>🎨 Teste de Contraste</h1>
+            <p class="subtitle">Verifica se texto tem contraste suficiente com fundo</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>Por que Contraste Importa?</h2>
+                <p>Texto com bom contraste é diferença entre "consigo ler seu site" e "desisto". Não é complicado, mas é essencial.</p>
+                
+                <div class="audience-box">
+                    <h3>👁️ Quem isso afeta?</h3>
+                    <ul>
+                        <li>253 milhões com <strong>baixa visão</strong> - texto pequeno + contraste ruim é a combinação perfeita para exclusão</li>
+                        <li>☀️ <strong>Qualquer um sob luz solar</strong> - seu contraste fraco fica invisível no celular na rua</li>
+                        <li>📱 <strong>Telas pequenas</strong> - pixels já são minúsculos; contraste fraco faz piorar</li>
+                        <li>👴 <strong>Envelhecer</strong> - com 60+ anos, sua visão muda; contraste fraco vai incomodar muito</li>
+                        <li>🌈 <strong>Daltônicos</strong> (8% dos homens) - não é só cor que importa; o contraste salva</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>O que é Razão de Contraste?</h2>
+                <p>A <strong>razão de contraste</strong> é um número que compara a luminosidade do texto com a do fundo.</p>
+                
+                <div class="math-box">
+                    <p><strong>Fórmula (WCAG):</strong></p>
+                    <p><code>(L1 + 0.05) / (L2 + 0.05)</code></p>
+                    <p>Onde L1 = luminância do mais claro, L2 = luminância do mais escuro</p>
+                    <p><strong>Resultado:</strong> 1:1 (mínimo) até 21:1 (máximo)</p>
+                </div>
+
+                <h3>📊 Padrões WCAG</h3>
+                <div class="ratio-grid">
+                    <div class="ratio-card">
+                        <h4>Texto Normal</h4>
+                        <p><strong>Nível A:</strong> 3:1</p>
+                        <p><strong>Nível AA:</strong> 4.5:1 ✅ (recomendado)</p>
+                        <p><strong>Nível AAA:</strong> 7:1</p>
+                    </div>
+
+                    <div class="ratio-card">
+                        <h4>Texto Grande</h4>
+                        <p><strong>Nível A:</strong> 3:1</p>
+                        <p><strong>Nível AA:</strong> 3:1 ✅</p>
+                        <p><strong>Nível AAA:</strong> 4.5:1</p>
+                    </div>
+
+                    <div class="ratio-card">
+                        <h4>Componentes UI</h4>
+                        <p><strong>Nível A:</strong> 3:1</p>
+                        <p><strong>Nível AA:</strong> 3:1 ✅</p>
+                        <p><strong>Nível AAA:</strong> 3:1</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>O que o Plugin Verifica</h2>
+                
+                <div class="checks-list">
+                    <div class="check">
+                        <h3>✅ Contraste de Texto</h3>
+                        <p>Verifica cada elemento de texto contra seu fundo</p>
+                        <p><strong>Calcula:</strong> Razão de contraste em tempo real</p>
+                        <p><strong>Compara com:</strong> WCAG AA (4.5:1) padrão</p>
+                    </div>
+
+                    <div class="check">
+                        <h3>✅ Fundos Complexos</h3>
+                        <p>Detecta imagens ou gradientes de fundo</p>
+                        <p><strong>Problema:</strong> Contraste varia em diferentes partes</p>
+                        <p><strong>Solução:</strong> Use fundo sólido ou sombra/outline</p>
+                    </div>
+
+                    <div class="check">
+                        <h3>✅ Bordas e Ícones</h3>
+                        <p>Verifica contraste de elementos gráficos</p>
+                        <p><strong>Requer:</strong> 3:1 para ícones/bordas significativas</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Exemplos Visuais</h2>
+
+                <h3>Texto Normal - Comparação</h3>
+                <div class="contrast-demo">
+                    <div class="contrast-sample poor">
+                        <p>Texto cinza claro em branco</p>
+                        <div class="ratio-label">1.2:1 ❌ Muito ruim</div>
+                    </div>
+
+                    <div class="contrast-sample bad">
+                        <p>Texto cinza em branco</p>
+                        <div class="ratio-label">2.3:1 ❌ Ruim</div>
+                    </div>
+
+                    <div class="contrast-sample acceptable">
+                        <p>Texto cinza escuro em branco</p>
+                        <div class="ratio-label">4.5:1 ✅ AA (OK)</div>
+                    </div>
+
+                    <div class="contrast-sample good">
+                        <p>Texto cinza muito escuro em branco</p>
+                        <div class="ratio-label">9.4:1 ✅ AAA (Ótimo)</div>
+                    </div>
+
+                    <div class="contrast-sample excellent">
+                        <p>Texto preto em branco</p>
+                        <div class="ratio-label">21:1 ✅ Máximo</div>
+                    </div>
+                </div>
+
+                <h3>Ícones - Exemplo</h3>
+                <div class="icon-demo">
+                    <div class="icon-bad">
+                        <span>🔗</span>
+                        <p>Ícone cinza fraco em branco</p>
+                        <div class="ratio-label">2:1 ❌</div>
+                    </div>
+
+                    <div class="icon-good">
+                        <span>🔗</span>
+                        <p>Ícone preto em branco</p>
+                        <div class="ratio-label">15:1 ✅</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Problemas Comuns</h2>
+
+                <div class="problem">
+                    <h3>❌ Texto Cinza em Branco</h3>
+                    <p><strong>Achado:</strong> "#999999" em branco = 4.3:1</p>
+                    <p><strong>Problema:</strong> Falha WCAG AA (precisa 4.5:1)</p>
+                    <p><strong>Solução:</strong> Escurecer para "#777777" (4.5:1+)</p>
+                </div>
+
+                <div class="problem">
+                    <h3>❌ Links Azuis Fracos</h3>
+                    <p><strong>Achado:</strong> Azul claro em branco = 3.2:1</p>
+                    <p><strong>Problema:</strong> Só funciona para texto grande, não normal</p>
+                    <p><strong>Solução:</strong> Usar azul mais escuro ou adicionar sublinhado</p>
+                </div>
+
+                <div class="problem">
+                    <h3>❌ Placeholder Cinzento</h3>
+                    <p><strong>Achado:</strong> Placeholder "#aaaaaa" em branco = 3.1:1</p>
+                    <p><strong>Problema:</strong> Difícil de ler para pessoas com baixa visão</p>
+                    <p><strong>Solução:</strong> Escurecer ou usar label acima do campo</p>
+                </div>
+
+                <div class="solution">
+                    <h3>✅ Soluções Rápidas</h3>
+                    <ul>
+                        <li>Use <strong>cores mais escuras</strong> para texto</li>
+                        <li><strong>Mude o fundo</strong> se necessário (mais claro/mais escuro)</li>
+                        <li>Use <strong>bordas ou outlines</strong> para melhorar definição</li>
+                        <li><strong>Aumente o tamanho</strong> (texto grande pode ter contraste menor)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Entendendo o Relatório</h2>
+                
+                <div class="report">
+                    <h3>📊 Exemplo do Plugin</h3>
+                    <div class="report-sample">
+                        <p><strong>Elementos com contraste inadequado:</strong> 4</p>
+                        <ul>
+                            <li>Parágrafo (linha 45): "#888" em branco = 3.2:1, precisa 4.5:1</li>
+                            <li>Link "Ver mais" (linha 102): "#0066cc" em branco = 3.8:1, precisa 4.5:1</li>
+                            <li>Placeholder (linha 156): "#999" em branco = 3.9:1, precisa 4.5:1</li>
+                            <li>Ícone de rede social (linha 203): "#555" em branco = 2.6:1, precisa 3:1</li>
+                        </ul>
+                        <p><strong>Elementos WCAG AA:</strong> 34</p>
+                        <p><strong>Elementos WCAG AAA:</strong> 28</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li>Execute o teste de contraste no plugin</li>
+                    <li>Para cada violação, <strong>identifique a cor do texto e fundo</strong></li>
+                    <li>Use um <a href="ferramentas.html">verificador de contraste online</a> para testar novas cores</li>
+                    <li>Atualize o CSS com cores que atendem 4.5:1 (AA)</li>
+                    <li>Rode o teste novamente para validar</li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="glossario.html">Glossário</a> | <a href="faq.html">FAQ</a> | <a href="ferramentas.html">Ferramentas</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .audience-box {
+            background: #e0e7ff;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .math-box {
+            background: var(--code-bg);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            margin: 1.5rem 0;
+        }
+
+        .math-box code {
+            background: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+        }
+
+        .ratio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .ratio-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .ratio-card h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .checks-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .check {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .check h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .contrast-demo {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .contrast-sample {
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .contrast-sample p {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1em;
+        }
+
+        .contrast-sample.poor {
+            background: white;
+            color: #cccccc;
+        }
+
+        .contrast-sample.bad {
+            background: white;
+            color: #aaaaaa;
+        }
+
+        .contrast-sample.acceptable {
+            background: white;
+            color: #666666;
+        }
+
+        .contrast-sample.good {
+            background: white;
+            color: #333333;
+        }
+
+        .contrast-sample.excellent {
+            background: white;
+            color: #000000;
+        }
+
+        .ratio-label {
+            font-size: 0.9em;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .icon-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .icon-bad, .icon-good {
+            background: white;
+            padding: 2rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .icon-bad {
+            color: #aaaaaa;
+        }
+
+        .icon-good {
+            color: #000000;
+        }
+
+        .icon-bad span, .icon-good span {
+            font-size: 3em;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .problem, .solution {
+            background: white;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid;
+        }
+
+        .problem {
+            border-color: var(--danger);
+            background: #fef2f2;
+        }
+
+        .solution {
+            border-color: var(--secondary);
+            background: #f0fdf4;
+        }
+
+        .report {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .report-sample {
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .report-sample p {
+            margin: 0.5rem 0;
+        }
+
+        .report-sample ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+    </style>
+</body>
+</html>

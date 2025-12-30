@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Teclado - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html" class="active">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>⌨️ Teste de Navegação por Teclado</h1>
+            <p class="subtitle">Verifica se sua página é completamente navegável apenas com teclado</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>Por que Testar com Teclado?</h2>
+                <p>Se seu site só funciona com mouse, você está excluindo muita gente:</p>
+                <ul>
+                    <li>👥 <strong>Deficiência motora:</strong> Não conseguem usar mouse com precisão</li>
+                    <li>⌨️ <strong>Poder e produtividade:</strong> Muitos preferem teclado (desenvolvedores inclusos)</li>
+                    <li>📱 <strong>Mobile:</strong> Teclado em celular é lento; automação com teclado é melhor</li>
+                    <li>🌐 <strong>Assistência tecnológica:</strong> Switches, joysticks, reconhecimento de voz - tudo se reduz para teclado</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Teste simples:</strong> Coloque o mouse de lado e tente usar seu site usando APENAS teclado. Se não conseguir, seus usuários também não conseguem.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>O que o Plugin Verifica</h2>
+                
+                <div class="checks-grid">
+                    <div class="check-item">
+                        <h3>✅ Indicador de Foco</h3>
+                        <p><strong>Procura por:</strong> Elementos sem indicador visual de focus (outline, border, mudança de cor)</p>
+                        <p><strong>Problema:</strong> Usuários de teclado não sabem onde estão</p>
+                        <p><strong>Solução:</strong> Sempre adicionar outline ou style customizado visível</p>
+                    </div>
+
+                    <div class="check-item">
+                        <h3>⚠️ Tabindex Positivo</h3>
+                        <p><strong>Procura por:</strong> Atributos tabindex com valores > 0</p>
+                        <p><strong>Problema:</strong> Pode quebrar a ordem natural de navegação</p>
+                        <p><strong>Solução:</strong> Use tabindex="-1" ou "0", nunca positivo</p>
+                    </div>
+
+                    <div class="check-item">
+                        <h3>🔒 Keyboard Traps</h3>
+                        <p><strong>Procura por:</strong> Modais/dropdowns sem botão de fechar visível</p>
+                        <p><strong>Problema:</strong> Focus fica preso, impossível avançar</p>
+                        <p><strong>Solução:</strong> Sempre fornecer forma de sair (ESC, fechar botão)</p>
+                    </div>
+
+                    <div class="check-item">
+                        <h3>🎯 Elementos Focáveis</h3>
+                        <p><strong>Procura por:</strong> Contagem de elementos interativos</p>
+                        <p><strong>Relatório mostra:</strong> Quantos elementos podem receber focus</p>
+                        <p><strong>Interpretação:</strong> Muito poucos? Pode haver interatividade quebrada</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Exemplo: Problemas Comuns</h2>
+
+                <div class="problem-box">
+                    <h3>❌ Botão Customizado sem Focus</h3>
+                    <code>&lt;div onclick="submitForm()"&gt;Enviar&lt;/div&gt;</code>
+                    <p><strong>Problema:</strong> Div não é focável, teclado não consegue ativar</p>
+                </div>
+
+                <div class="solution-box">
+                    <h3>✅ Solução: Usar Button ou Adicionar Acessibilidade</h3>
+                    <code>&lt;button onclick="submitForm()"&gt;Enviar&lt;/button&gt;</code>
+                    <p>Ou se deve ser div:</p>
+                    <code>&lt;div role="button" tabindex="0" onclick="submitForm()" onkeydown="if(event.key==='Enter') submitForm()"&gt;Enviar&lt;/div&gt;</code>
+                </div>
+
+                <div class="problem-box">
+                    <h3>❌ Problema: Tab sem Sair (Keyboard Trap)</h3>
+                    <code>Modal aberto → Tab dentro do modal → Fica preso → Não consegue sair</code>
+                    <p><strong>Problema:</strong> Sem forma de fechar com teclado (ESC ou botão)</p>
+                </div>
+
+                <div class="solution-box">
+                    <h3>✅ Solução: Fornecer Forma de Fechar</h3>
+                    <code>Modal com botão X [✕] ou Botão "Cancelar" + Suporte para ESC</code>
+                    <code>onkeydown="if(event.key==='Escape') closeModal()"</code>
+                </div>
+            </section>
+
+            <section>
+                <h2>Entendendo o Relatório</h2>
+                
+                <div class="report-example">
+                    <h3>📊 Exemplo de Relatório do Plugin</h3>
+                    <div class="report-content">
+                        <p><strong>Elementos focáveis encontrados:</strong> 12</p>
+                        <p><strong>Elementos sem indicador de foco:</strong> 3</p>
+                        <ul>
+                            <li>Botão "Enviar" (linha 45)</li>
+                            <li>Link "Ver mais" (linha 102)</li>
+                            <li>Campo de busca (linha 156)</li>
+                        </ul>
+                        <p><strong>Problemas com tabindex:</strong> 0</p>
+                        <p><strong>Possíveis keyboard traps:</strong> 1 (modal #contact-form)</p>
+                    </div>
+                </div>
+
+                <h3>Como Interpretar</h3>
+                <ul>
+                    <li><strong>Elementos sem indicador:</strong> Adicione CSS com :focus ou outline</li>
+                    <li><strong>Tabindex positivo:</strong> Remova ou mude para 0/-1</li>
+                    <li><strong>Keyboard traps:</strong> Teste manualmente apertando Tab repetidamente</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li>Leia o <a href="manual-teclado.html">guia completo de testes manuais com teclado</a></li>
+                    <li>Pratique usando Tab, Enter, Escape em seu site</li>
+                    <li>Veja <a href="correcoes.html">exemplos de código correto</a></li>
+                    <li>Use o plugin para validar suas correções</li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="glossario.html">Glossário</a> | <a href="faq.html">FAQ</a> | <a href="manual-teclado.html">Guia Manual</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .checks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .check-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .check-item h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .check-item p {
+            font-size: 0.95em;
+            margin: 0.5rem 0;
+        }
+
+        .problem-box, .solution-box {
+            background: white;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid;
+        }
+
+        .problem-box {
+            border-color: var(--danger);
+            background: #fef2f2;
+        }
+
+        .solution-box {
+            border-color: var(--secondary);
+            background: #f0fdf4;
+        }
+
+        .problem-box h3, .solution-box h3 {
+            margin-top: 0;
+        }
+
+        .report-example {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .report-content {
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .report-content p {
+            margin: 0.5rem 0;
+        }
+
+        .report-content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casos de Uso - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html" class="active">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>🎯 Casos de Uso</h1>
+            <p class="subtitle">Como diferentes perfis usam o A11y Avaliator</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>Cenário 1: Desenvolvedor Frontend</h2>
+                
+                <div class="case-scenario">
+                    <h3>👨‍💻 João é um desenvolvedor frontend</h3>
+                    
+                    <div class="case-details">
+                        <p><strong>Situação:</strong> Trabalha em e-commerce, precisa melhorar acessibilidade</p>
+                        
+                        <p><strong>Processo:</strong></p>
+                        <ol>
+                            <li>Instala o plugin no Chrome</li>
+                            <li>Abre site em desenvolvimento</li>
+                            <li>Clica no plugin, executa análise WCAG + Contraste</li>
+                            <li>Vê score inicial: 52% 🔴 Crítico</li>
+                            <li>Vê lista de problemas: 15 Critical, 8 Serious</li>
+                            <li>Abre <a href="correcoes.html">guia de correções</a>, começa a corrigir</li>
+                            <li>Implementa alt text, escurece cores, adiciona labels</li>
+                            <li>Roda plugin novamente: 78% ✅ Bom!</li>
+                            <li>Combina com teste manual de teclado, valida</li>
+                            <li>Entra em produção com confiança</li>
+                        </ol>
+
+                        <p><strong>Benefício:</strong> Feedback rápido durante desenvolvimento. Economiza tempo de correção posterior</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Cenário 2: Auditor de Acessibilidade</h2>
+                
+                <div class="case-scenario">
+                    <h3>📊 Maria é consultora de acessibilidade</h3>
+                    
+                    <div class="case-details">
+                        <p><strong>Situação:</strong> Audita 20+ sites por mês para clientes</p>
+                        
+                        <p><strong>Processo:</strong></p>
+                        <ol>
+                            <li>Recebe lista de URLs do cliente</li>
+                            <li>Para cada URL, abre o plugin e executa análise completa</li>
+                            <li>Anota score e problemas principais</li>
+                            <li>Usa leitor de tela (NVDA) para testes manuais profundos</li>
+                            <li>Cria relatório combinando dados do plugin + manual</li>
+                            <li>Apresenta ao cliente com recomendações priorizadas</li>
+                            <li>6 meses depois, roda plugin novamente para validar progresso</li>
+                        </ol>
+
+                        <p><strong>Benefício:</strong> Plugin acelera análise inicial. Deixa Maria focar em testes mais complexos que ferramentas não cobrem</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Cenário 3: QA Testing</h2>
+                
+                <div class="case-scenario">
+                    <h3>🧪 Pedro é QA de um banco</h3>
+                    
+                    <div class="case-details">
+                        <p><strong>Situação:</strong> Precisa garantir acessibilidade antes de release</p>
+                        
+                        <p><strong>Processo:</strong></p>
+                        <ol>
+                            <li>Adiciona teste de acessibilidade à checklist QA</li>
+                            <li>Antes de aprovar build, roda plugin</li>
+                            <li>Se score < 80%, rejeita e marca como blocker</li>
+                            <li>Desenvolvedores recebem feedback imediato</li>
+                            <li>Iteração rápida: fix → teste → release</li>
+                            <li>Cada release tem acessibilidade garantida</li>
+                        </ol>
+
+                        <p><strong>Benefício:</strong> Acessibilidade não fica para depois. Integrado ao workflow de qualidade</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Cenário 4: Designer Aprendendo Acessibilidade</h2>
+                
+                <div class="case-scenario">
+                    <h3>🎨 Ana é designer mas quer aprender a11y</h3>
+                    
+                    <div class="case-details">
+                        <p><strong>Situação:</strong> Nunca trabalhou com acessibilidade, precisa aprender</p>
+                        
+                        <p><strong>Processo:</strong></p>
+                        <ol>
+                            <li>Lê <a href="introducao-a11y.html">introdução ao acessibilidade</a></li>
+                            <li>Lê seção de <a href="teste-contraste.html">contraste</a></li>
+                            <li>Instala verificador de contraste online</li>
+                            <li>Testa designs antigos, aprende o que está errado</li>
+                            <li>Começa a verificar contraste antes de entregar designs</li>
+                            <li>Simula daltonismo no Figma com plugin</li>
+                            <li>Sobe bar de qualidade de acessibilidade nos designs</li>
+                        </ol>
+
+                        <p><strong>Benefício:</strong> Docs educacionais + ferramenta prática = learning by doing</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Cenário 5: Product Manager Rastreando Progresso</h2>
+                
+                <div class="case-scenario">
+                    <h3>📈 Carlos é PM de SaaS</h3>
+                    
+                    <div class="case-details">
+                        <p><strong>Situação:</strong> Quer rastrear progresso de acessibilidade como métrica</p>
+                        
+                        <p><strong>Processo:</strong></p>
+                        <ol>
+                            <li>Todo mês, roda plugin no app principal</li>
+                            <li>Anota score em spreadsheet</li>
+                            <li>Junho: 45%. Julho: 58%. Agosto: 72%</li>
+                            <li>Mostra gráfico para CEO/board: "Acessibilidade melhorando"</li>
+                            <li>Prioriza sprint de acessibilidade baseado em score</li>
+                            <li>Anuncia para usuários: "Agora 80% acessível!"</li>
+                        </ol>
+
+                        <p><strong>Benefício:</strong> Métrica tangível de progresso. Justifica investimento em acessibilidade</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Cenário 6: Startup Bootstrapped</h2>
+                
+                <div class="case-scenario">
+                    <h3>🚀 Uma dupla de founders</h3>
+                    
+                    <div class="case-details">
+                        <p><strong>Situação:</strong> Startup com orçamento zero para consultores caros</p>
+                        
+                        <p><strong>Processo:</strong></p>
+                        <ol>
+                            <li>Quer ser inclusivos mas não podem pagar auditoria</li>
+                            <li>Descobrem A11y Avaliator (gratuito!)</li>
+                            <li>Usam plugin + documentação para aprender</li>
+                            <li>Conseguem score de 75% com trabalho próprio</li>
+                            <li>Economizam $5k em consulta profissional</li>
+                            <li>Ainda ganham no marketing: "Acessível desde dia 1"</li>
+                        </ol>
+
+                        <p><strong>Benefício:</strong> Democratiza acessibilidade. Não precisa ser rico para incluir</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Cenário 7: Empresa Grande Com Process</h2>
+                
+                <div class="case-scenario">
+                    <h3>🏢 Time de 50+ devs em grande corp</h3>
+                    
+                    <div class="case-details">
+                        <p><strong>Situação:</strong> Precisa padronizar acessibilidade em 200+ páginas</p>
+                        
+                        <p><strong>Processo:</strong></p>
+                        <ol>
+                            <li>Define WCAG AA como padrão corporativo</li>
+                            <li>Treina todos devs no plugin + guia</li>
+                            <li>Adiciona CI/CD check: score deve ser >= 80%</li>
+                            <li>Cada PR roda plugin automaticamente</li>
+                            <li>Se falhar, developer recebe feedback</li>
+                            <li>Força qualidade consistente em toda base</li>
+                            <li>Score cai se alguém quebra acessibilidade</li>
+                        </ol>
+
+                        <p><strong>Benefício:</strong> Acessibilidade como parte da cultura de qualidade, não afterthought</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Seu Caso de Uso</h2>
+                
+                <p>Qual é sua situação?</p>
+                
+                <div class="use-case-options">
+                    <div class="option">
+                        <p>👨‍💻 <strong>Desenvolvedor</strong></p>
+                        <p>→ <a href="como-usar.html">Como Usar</a> + <a href="correcoes.html">Correções</a></p>
+                    </div>
+
+                    <div class="option">
+                        <p>🎨 <strong>Designer</strong></p>
+                        <p>→ <a href="teste-contraste.html">Contraste</a> + <a href="ferramentas.html">Ferramentas</a></p>
+                    </div>
+
+                    <div class="option">
+                        <p>🧪 <strong>QA/Tester</strong></p>
+                        <p>→ <a href="teste-teclado.html">Teclado</a> + <a href="manual-teclado.html">Manual</a></p>
+                    </div>
+
+                    <div class="option">
+                        <p>📊 <strong>PM/Manager</strong></p>
+                        <p>→ <a href="sistema-score.html">Score</a> + <a href="faq.html">FAQ</a></p>
+                    </div>
+
+                    <div class="option">
+                        <p>📚 <strong>Aprender</strong></p>
+                        <p>→ <a href="introducao-a11y.html">Introdução</a> + <a href="glossario.html">Glossário</a></p>
+                    </div>
+
+                    <div class="option">
+                        <p>🚀 <strong>Startup/Novo</strong></p>
+                        <p>→ <a href="index.html">Comece aqui</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li>Identifique seu caso de uso acima</li>
+                    <li>Clique na recomendação</li>
+                    <li>Comece imediatamente</li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="index.html">Início</a> | <a href="como-usar.html">Como Usar</a> | <a href="faq.html">FAQ</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .case-scenario {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .case-scenario h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .case-details p {
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+
+        .case-details ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .case-details li {
+            margin: 0.5rem 0;
+        }
+
+        .case-details a {
+            color: var(--primary);
+        }
+
+        .use-case-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .option {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .option p:first-child {
+            margin-top: 0;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        .option p:last-child {
+            margin-bottom: 0;
+        }
+
+        .option a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .option a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>

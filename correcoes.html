@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correções Práticas - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html" class="active">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>✅ Correções Práticas</h1>
+            <p class="subtitle">Exemplos de código para corrigir os problemas mais comuns</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2 id="imagens">1. Adicionar Alt Text em Imagens</h2>
+                
+                <div class="fix-example">
+                    <h3>❌ Errado</h3>
+                    <pre>&lt;img src="logo.png"&gt;
+&lt;img src="chart.jpg" alt=""&gt;</pre>
+                    <p><strong>Problema:</strong> Sem descrição ou alt vazio</p>
+                </div>
+
+                <div class="fix-example good">
+                    <h3>✅ Correto</h3>
+                    <pre>&lt;img src="logo.png" alt="Logo da Empresa XYZ"&gt;
+&lt;img src="chart.jpg" alt="Gráfico de vendas 2024: aumento de 25% em janeiro"&gt;</pre>
+                    <p><strong>Bom:</strong> Alt descritivo e relevante</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 Dica:</strong> Alt text deve descrever o que vê, não dizer "imagem de". Se imagem é puramente decorativa, use alt=""</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="contraste">2. Melhorar Contraste de Cores</h2>
+                
+                <div class="fix-example">
+                    <h3>❌ Errado (1.2:1 - muito fraco)</h3>
+                    <pre>.text { color: #cccccc; }</pre>
+                    <p>Texto cinza claro é ilegível</p>
+                </div>
+
+                <div class="fix-example good">
+                    <h3>✅ Correto (4.5:1+ - WCAG AA)</h3>
+                    <pre>.text { color: #333333; }</pre>
+                    <p>Texto escuro tem contraste adequado</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 Dica:</strong> Use <a href="ferramentas.html">verificador de contraste online</a> para testar. Mire em 4.5:1 para texto normal, 3:1 para texto grande</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="links">3. Links Descritivos</h2>
+                
+                <div class="fix-example">
+                    <h3>❌ Errado</h3>
+                    <pre>&lt;a href="/privacy"&gt;Clique aqui&lt;/a&gt;
+&lt;a href="/docs"&gt;Leia mais&lt;/a&gt;</pre>
+                    <p><strong>Problema:</strong> Texto genérico sem contexto</p>
+                </div>
+
+                <div class="fix-example good">
+                    <h3>✅ Correto</h3>
+                    <pre>&lt;a href="/privacy"&gt;Leia nossa política de privacidade&lt;/a&gt;
+&lt;a href="/docs"&gt;Documentação técnica completa&lt;/a&gt;</pre>
+                    <p><strong>Bom:</strong> Texto descreve destino</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 Dica:</strong> Leitor de tela muitas vezes lê só os links. Seu texto deve fazer sentido isolado</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="formularios">4. Labels em Formulários</h2>
+                
+                <div class="fix-example">
+                    <h3>❌ Errado</h3>
+                    <pre>&lt;input type="email" placeholder="Seu email"&gt;
+&lt;input type="password"&gt;</pre>
+                    <p><strong>Problema:</strong> Sem label, leitor não sabe o que preencher</p>
+                </div>
+
+                <div class="fix-example good">
+                    <h3>✅ Correto</h3>
+                    <pre>&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;
+
+&lt;label for="password"&gt;Senha:&lt;/label&gt;
+&lt;input type="password" id="password" name="password"&gt;</pre>
+                    <p><strong>Bom:</strong> Label clara associada com input</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 Dica:</strong> Sempre use &lt;label for="id"&gt; com &lt;input id="id"&gt;. Isso associa visualmente e no código</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="focus">5. Indicador de Focus Visível</h2>
+                
+                <div class="fix-example">
+                    <h3>❌ Errado</h3>
+                    <pre>button:focus { outline: none; }</pre>
+                    <p><strong>Problema:</strong> Remove indicador padrão, deixa vazio</p>
+                </div>
+
+                <div class="fix-example good">
+                    <h3>✅ Correto</h3>
+                    <pre>button:focus {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Ou customizar */
+button:focus {
+  border: 2px solid #0066cc;
+  background: #e6f2ff;
+}</pre>
+                    <p><strong>Bom:</strong> Focus é claro e visível</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 Dica:</strong> Nunca remova outline sem substituir por algo visível. Usuários de teclado precisam saber onde estão</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="headings">6. Estrutura de Headings</h2>
+                
+                <div class="fix-example">
+                    <h3>❌ Errado</h3>
+                    <pre>&lt;h1&gt;Bem-vindo&lt;/h1&gt;
+&lt;h3&gt;Seção Principal&lt;/h3&gt; &lt;!-- Pula H2 --&gt;
+&lt;h3&gt;Outra Seção&lt;/h3&gt;
+&lt;h1&gt;Rodapé&lt;/h1&gt; &lt;!-- Múltiplos H1 --&gt;</pre>
+                    <p><strong>Problema:</strong> Ordem confusa, estrutura quebrada</p>
+                </div>
+
+                <div class="fix-example good">
+                    <h3>✅ Correto</h3>
+                    <pre>&lt;h1&gt;Bem-vindo&lt;/h1&gt;
+
+&lt;h2&gt;Seção Principal&lt;/h2&gt;
+&lt;h3&gt;Subsecção&lt;/h3&gt;
+
+&lt;h2&gt;Outra Seção&lt;/h2&gt;
+
+&lt;footer&gt;
+  &lt;h2&gt;Recursos&lt;/h2&gt; &lt;!-- Footer tem seu próprio H2 --&gt;
+&lt;/footer&gt;</pre>
+                    <p><strong>Bom:</strong> Hierarquia clara e lógica</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 Dica:</strong> Uma página = um H1. Headings devem descer na ordem (H1 → H2 → H3). Nunca pule níveis</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="botoes">7. Botões Semanticamente Corretos</h2>
+                
+                <div class="fix-example">
+                    <h3>❌ Errado</h3>
+                    <pre>&lt;div onclick="submit()"&gt;Enviar&lt;/div&gt;
+&lt;span onclick="openMenu()"&gt;Menu&lt;/span&gt;</pre>
+                    <p><strong>Problema:</strong> Não é semântico, não funciona com teclado</p>
+                </div>
+
+                <div class="fix-example good">
+                    <h3>✅ Correto</h3>
+                    <pre>&lt;button onclick="submit()"&gt;Enviar&lt;/button&gt;
+&lt;button onclick="openMenu()" aria-expanded="false"&gt;Menu&lt;/button&gt;
+
+/* Ou com role se must usar DIV */
+&lt;div role="button" tabindex="0" onclick="submit()" onkeydown="if(event.key==='Enter') submit()"&gt;Enviar&lt;/div&gt;</pre>
+                    <p><strong>Bom:</strong> Usa &lt;button&gt; ou role="button" com handlers</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 Dica:</strong> Use &lt;button&gt; sempre que possível. Se deve ser DIV, adicione role="button", tabindex="0" e trata Enter/Space</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="validacao">8. Validação de Formulários Acessível</h2>
+                
+                <div class="fix-example">
+                    <h3>❌ Errado</h3>
+                    <pre>&lt;input type="email"&gt;
+&lt;span class="error" style="display:none;"&gt;Email inválido&lt;/span&gt;</pre>
+                    <p><strong>Problema:</strong> Erro não é anunciado, só visível</p>
+                </div>
+
+                <div class="fix-example good">
+                    <h3>✅ Correto</h3>
+                    <pre>&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" aria-describedby="email-error"&gt;
+&lt;span id="email-error" role="alert" style="color:red;"&gt;Email inválido&lt;/span&gt;</pre>
+                    <p><strong>Bom:</strong> role="alert" anuncia erro, aria-describedby conecta</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 Dica:</strong> Use role="alert" para mensagens de erro, e aria-describedby para conectar campo com mensagem</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="iframes">9. Iframes com Título</h2>
+                
+                <div class="fix-example">
+                    <h3>❌ Errado</h3>
+                    <pre>&lt;iframe src="video.html"&gt;&lt;/iframe&gt;
+&lt;iframe src="map.html" title=""&gt;&lt;/iframe&gt;</pre>
+                    <p><strong>Problema:</strong> Sem descrição, leitor não sabe o que é</p>
+                </div>
+
+                <div class="fix-example good">
+                    <h3>✅ Correto</h3>
+                    <pre>&lt;iframe src="video.html" title="Vídeo: Como Usar o Plugin"&gt;&lt;/iframe&gt;
+&lt;iframe src="map.html" title="Mapa de localização da empresa"&gt;&lt;/iframe&gt;</pre>
+                    <p><strong>Bom:</strong> Title descreve conteúdo do iframe</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 Dica:</strong> Todo iframe DEVE ter title. Use aria-label como alternativa</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="videos">10. Vídeos com Legendas</h2>
+                
+                <div class="fix-example">
+                    <h3>❌ Errado</h3>
+                    <pre>&lt;video src="tutorial.mp4"&gt;&lt;/video&gt;</pre>
+                    <p><strong>Problema:</strong> Usuários surdos não podem seguir</p>
+                </div>
+
+                <div class="fix-example good">
+                    <h3>✅ Correto</h3>
+                    <pre>&lt;video controls&gt;
+  &lt;source src="tutorial.mp4" type="video/mp4"&gt;
+  &lt;track kind="captions" src="tutorial.vtt" srclang="pt" label="Português"&gt;
+  Seu navegador não suporta vídeo
+&lt;/video&gt;</pre>
+                    <p><strong>Bom:</strong> Legendas em arquivo VTT</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 Dica:</strong> Use formato WebVTT para legendas. Ferramenta como Amara.org pode ajudar criar legendas</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li>Abra seu site e execute plugin</li>
+                    <li>Identifique o erro (ex: "Image without alt")</li>
+                    <li>Encontre a seção correspondente aqui (ex: #imagens)</li>
+                    <li>Copie o código correto</li>
+                    <li>Aplique no seu projeto</li>
+                    <li>Teste novamente com plugin</li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="erros-comuns.html">Erros Comuns</a> | <a href="ferramentas.html">Ferramentas</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .fix-example {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--danger);
+        }
+
+        .fix-example.good {
+            border-left-color: var(--secondary);
+            background: #f0fdf4;
+        }
+
+        .fix-example h3 {
+            margin-top: 0;
+        }
+
+        .fix-example pre {
+            background: var(--code-bg);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.85em;
+            margin: 0.5rem 0;
+        }
+
+        .fix-example p {
+            margin: 0.5rem 0;
+        }
+
+        .tip-box {
+            background: #eff6ff;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+
+        .tip-box p {
+            margin: 0;
+        }
+
+        .tip-box a {
+            color: var(--primary);
+        }
+    </style>
+</body>
+</html>

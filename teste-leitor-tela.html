@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Leitor de Tela - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html" class="active">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>🔊 Teste de Leitor de Tela</h1>
+            <p class="subtitle">Verifica se seu conteúdo é acessível para usuários cegos e com baixa visão</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>O que é um Leitor de Tela?</h2>
+                <p>Um <strong>leitor de tela</strong> é um programa que <strong>lê em voz alta</strong> tudo que está na tela. Para pessoas cegas ou com baixa visão, é como você usa os olhos para web. Sem um bom leitor de tela funcionando em seu site, essas pessoas simplesmente não conseguem usar.</p>
+                
+                <div class="stats-box">
+                    <h3>👥 Quem Depende Disso?</h3>
+                    <ul>
+                        <li>1.3 bilhões com deficiência visual que poderiam usar seu site</li>
+                        <li>43 milhões completamente cegas</li>
+                        <li>Pessoas com baixa visão (não cegueira total) que ampliam + usam leitor</li>
+                        <li>Pessoas que envelhecem (visão piora naturalmente)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Leitores de Tela Populares</h2>
+                
+                <div class="readers-grid">
+                    <div class="reader-card">
+                        <h3>🖥️ NVDA (Windows)</h3>
+                        <p><strong>Gratuito, código aberto - comece por aqui</strong></p>
+                        <ul>
+                            <li>Mais usado por devs testando acessibilidade</li>
+                            <li>Fácil de instalar e usar</li>
+                            <li>Comunidade grande que ajuda</li>
+                            <li><a href="https://www.nvaccess.org/" target="_blank">Baixar e testar →</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="reader-card">
+                        <h3>🍎 VoiceOver (Mac/iOS)</h3>
+                        <p><strong>Integrado no sistema</strong></p>
+                        <ul>
+                            <li>CMD + F5 para ativar</li>
+                            <li>Padrão em produtos Apple</li>
+                            <li>Avançado e poderoso</li>
+                            <li>Usado por muitos usuários blind</li>
+                        </ul>
+                    </div>
+
+                    <div class="reader-card">
+                        <h3>🔵 JAWS (Windows)</h3>
+                        <p><strong>Pago, profissional</strong></p>
+                        <ul>
+                            <li>Mais caro mas muito robusto</li>
+                            <li>Padrão na indústria</li>
+                            <li>Usado em ambientes corporativos</li>
+                            <li>Teste de site crítico</li>
+                        </ul>
+                    </div>
+
+                    <div class="reader-card">
+                        <h3>🐧 Orca (Linux)</h3>
+                        <p><strong>Gratuito, código aberto</strong></p>
+                        <ul>
+                            <li>Compatível com GNOME</li>
+                            <li>Menos usado na web</li>
+                            <li>Bom para testes em Linux</li>
+                            <li>Suporta Braille</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>O que o Plugin Verifica</h2>
+                
+                <div class="checks-container">
+                    <div class="check-box">
+                        <h3>📝 Semântica HTML</h3>
+                        <p><strong>Verifica:</strong> Elementos HTML corretos (h1, button, nav, etc)</p>
+                        <p><strong>Problema:</strong> Se tudo é DIV, leitor não sabe o tipo de conteúdo</p>
+                        <p><strong>Exemplo:</strong></p>
+                        <code class="bad">&lt;div onclick="..."&gt;Clique aqui&lt;/div&gt;</code>
+                        <p>Leitor dirá: "Clique aqui" (genérico)</p>
+                        <code class="good">&lt;button&gt;Clique aqui&lt;/button&gt;</code>
+                        <p>Leitor dirá: "Clique aqui, botão" (identifica como acionável)</p>
+                    </div>
+
+                    <div class="check-box">
+                        <h3>🖼️ Alternativas de Imagem</h3>
+                        <p><strong>Verifica:</strong> Atributo alt em todas as imagens</p>
+                        <p><strong>Problema:</strong> Sem alt, leitor diz nada ou "imagem"</p>
+                        <p><strong>Bom:</strong> Alt descritivo e conciso</p>
+                    </div>
+
+                    <div class="check-box">
+                        <h3>🔗 Links Descritivos</h3>
+                        <p><strong>Verifica:</strong> Texto de link é descritivo</p>
+                        <p><strong>Problema:</strong> "Clique aqui" sem contexto</p>
+                        <p><strong>Bom:</strong> "Ver política de privacidade"</p>
+                    </div>
+
+                    <div class="check-box">
+                        <h3>📋 Labels em Formulários</h3>
+                        <p><strong>Verifica:</strong> Campos de formulário têm labels associados</p>
+                        <p><strong>Problema:</strong> Campo solto, leitor não sabe o que preencher</p>
+                        <p><strong>Bom:</strong> Campo com label: "Email"</p>
+                    </div>
+
+                    <div class="check-box">
+                        <h3>🎯 ARIA Attributes</h3>
+                        <p><strong>Verifica:</strong> ARIA roles, labels, descriptions usados corretamente</p>
+                        <p><strong>Para componentes customizados:</strong> role="button", aria-label, etc</p>
+                        <p><strong>Cuidado:</strong> ARIA incorreto é pior que nenhuma ARIA</p>
+                    </div>
+
+                    <div class="check-box">
+                        <h3>📣 Anúncios Dinâmicos</h3>
+                        <p><strong>Verifica:</strong> Conteúdo que muda é anunciado</p>
+                        <p><strong>Problema:</strong> Página carrega dados, leitor não sabe</p>
+                        <p><strong>Solução:</strong> aria-live="polite" ou aria-live="assertive"</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Exemplo: Estrutura Correta</h2>
+
+                <div class="code-example">
+                    <h3>❌ Sem Semântica (Ruim para Leitor)</h3>
+                    <pre>&lt;div class="header"&gt;
+  &lt;div class="nav"&gt;
+    &lt;div onclick="..." class="link"&gt;Home&lt;/div&gt;
+    &lt;div onclick="..." class="link"&gt;Sobre&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="content"&gt;
+  &lt;div class="title"&gt;Bem-vindo&lt;/div&gt;
+  &lt;div&gt;&lt;img src="logo.png"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    <p>Leitor dirá: "Bem-vindo... imagem" (perde toda a estrutura)</p>
+                </div>
+
+                <div class="code-example good-example">
+                    <h3>✅ Com Semântica (Bom para Leitor)</h3>
+                    <pre>&lt;header&gt;
+  &lt;nav&gt;
+    &lt;a href="/"&gt;Home&lt;/a&gt;
+    &lt;a href="/sobre"&gt;Sobre&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;h1&gt;Bem-vindo&lt;/h1&gt;
+  &lt;img src="logo.png" alt="Logo da empresa"&gt;
+&lt;/main&gt;</pre>
+                    <p>Leitor dirá: "Banner, navegação, links... Bem-vindo, heading 1... Logo da empresa, imagem"</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Entendendo o Relatório</h2>
+                
+                <div class="report-box">
+                    <h3>📊 Exemplo do Relatório do Plugin</h3>
+                    <div class="report-content">
+                        <p><strong>Problemas de semântica:</strong> 5</p>
+                        <ul>
+                            <li>Heading (h2) usado em descrição (linha 42)</li>
+                            <li>Botão customizado sem role="button" (linha 88)</li>
+                            <li>3 DIVs aninhados sem estrutura semântica</li>
+                        </ul>
+                        <p><strong>Imagens sem alt:</strong> 2</p>
+                        <p><strong>Links com texto genérico:</strong> 1 ("clique aqui")</p>
+                        <p><strong>Campos sem label:</strong> 1 (campo de email)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li>Leia o <a href="manual-leitor-tela.html">guia completo de testes com leitor</a></li>
+                    <li>Baixe <strong>NVDA (gratuito)</strong> e pratique em seu site</li>
+                    <li>Use a tecla de atalho do leitor para navegar por headings, links, etc</li>
+                    <li>Veja <a href="correcoes.html">exemplos de correções</a></li>
+                    <li>Rode o plugin novamente para validar</li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="glossario.html">Glossário</a> | <a href="faq.html">FAQ</a> | <a href="manual-leitor-tela.html">Guia Manual</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .stats-box {
+            background: #e0e7ff;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .stats-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .stats-box ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .readers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .reader-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .reader-card h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .reader-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .reader-card a:hover {
+            text-decoration: underline;
+        }
+
+        .checks-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .check-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .check-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .code-example {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        .code-example pre {
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+            overflow-x: auto;
+        }
+
+        .code-example.good-example {
+            background: #f0fdf4;
+            border-color: var(--secondary);
+        }
+
+        .report-box {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .report-content {
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .report-content p {
+            margin: 0.5rem 0;
+        }
+
+        .report-content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+    </style>
+</body>
+</html>

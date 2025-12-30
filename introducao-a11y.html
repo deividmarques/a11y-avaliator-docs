@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que é Acessibilidade Web? - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html" class="active">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>📖 O que é Acessibilidade Web?</h1>
+            <p class="subtitle">Guia introdutório para desenvolvedores frontend</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>Definição Simples</h2>
+                <div class="highlight-box">
+                    <p><strong>Acessibilidade web</strong> é garantir que qualquer pessoa consiga usar seu website ou aplicação, não importa como ela enxerga, navega ou interage com a tecnologia. É sobre inclusão desde o código.</p>
+                </div>
+                <p style="margin-top: 1.5rem; font-style: italic; color: #555;">Como desenvolvedor, você tem o poder de abrir (ou fechar) portas. Acessibilidade é sobre usar esse poder com responsabilidade.</p>
+            </section>
+
+            <section>
+                <h2>Por Que Acessibilidade Importa?</h2>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>👥 Direito Humano</h3>
+                        <p><strong>1 bilhão de pessoas</strong> no mundo com deficiência merecem acesso igual. Quando você desenvolvedor constrói com acessibilidade, você reconhece o direito de todos participarem.</p>
+                    </div>
+                    <div class="card">
+                        <h3>⚖️ Legal & Responsabilidade</h3>
+                        <p>Brasil: <strong>LBI</strong>, EUA: <strong>ADA</strong>, UE: <strong>WCAG</strong>. Mais importante: é sua responsabilidade profissional entregar produtos inclusivos.</p>
+                    </div>
+                    <div class="card">
+                        <h3>💼 Bom para o Negócio</h3>
+                        <p>Mais usuários, melhor SEO, menor risco legal. Mas honestamente? O principal é fazer a coisa certa.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🏗️ Melhor Código</h3>
+                        <p>Acessibilidade força você a escrever HTML semântico, CSS organizado, JavaScript limpo. Todo mundo ganha.</p>
+                    </div>
+                </div>
+
+                <div class="stats-box">
+                    <h3>📊 Para Colocar em Perspectiva</h3>
+                    <ul>
+                        <li><strong>1 em 7 pessoas</strong> no planeta tem alguma deficiência</li>
+                        <li><strong>2.2 bilhões</strong> vivem com deficiência visual (muitos usando seus sites)</li>
+                        <li><strong>430 milhões</strong> com perda auditiva que precisam de legendas</li>
+                        <li><strong>1.3 bilhão</strong> com deficiência motora que precisam de teclado</li>
+                        <li>Somando tudo? Você está construindo para muito mais gente do que imagina</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Tipos de Deficiências e Impactos</h2>
+
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h3>👁️ Deficiência Visual</h3>
+                        <div class="accordion-content">
+                            <p><strong>Inclui:</strong> Cegueira total, baixa visão, daltonismo</p>
+                            <p><strong>Ferramentas:</strong> Leitores de tela (NVDA, JAWS, VoiceOver)</p>
+                            <p><strong>Desafios:</strong> Imagens sem descrição, cores como única forma de informação, fontes pequenas, falta de contraste</p>
+                            <p><strong>Solução:</strong> Semântica HTML, alt text descritivo, bom contraste, zoom</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3>🎯 Deficiência Motora</h3>
+                        <div class="accordion-content">
+                            <p><strong>Inclui:</strong> Paralisia, tremor, artrite, amputação</p>
+                            <p><strong>Ferramentas:</strong> Teclado, switches, joysticks, reconhecimento de voz</p>
+                            <p><strong>Desafios:</strong> Elementos pequenos, duplo clique, drag-and-drop, requisitos de velocidade</p>
+                            <p><strong>Solução:</strong> Navegação por teclado, touch targets grandes, sem requisitos de tempo</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3>👂 Deficiência Auditiva</h3>
+                        <div class="accordion-content">
+                            <p><strong>Inclui:</strong> Surdez, perda auditiva parcial, zumbido</p>
+                            <p><strong>Ferramentas:</strong> Legendas, transcrições, vibração</p>
+                            <p><strong>Desafios:</strong> Vídeos e áudio sem legenda, alerta sonoro como única forma de comunicação</p>
+                            <p><strong>Solução:</strong> Legendas e transcrições em todos os vídeos/áudios, alertas visuais</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3>🧠 Deficiência Cognitiva</h3>
+                        <div class="accordion-content">
+                            <p><strong>Inclui:</strong> Dislexia, TDAH, autismo, Alzheimer, problemas de memória</p>
+                            <p><strong>Ferramentas:</strong> Leitura de voz, simplificação, estrutura clara</p>
+                            <p><strong>Desafios:</strong> Interfaces complexas, jargão, muita informação, cores confusas, animações</p>
+                            <p><strong>Solução:</strong> Linguagem simples, estrutura clara, foco, sem animações muito rápidas</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Benefícios para TODOS</h2>
+                <p>Acessibilidade não é só para pessoas com deficiência. Beneficia:</p>
+                <ul class="benefits-list">
+                    <li>📱 <strong>Usuários mobile:</strong> Teclado virtual, toque menor</li>
+                    <li>🔊 <strong>Usuários com ruído:</strong> Legendas em vídeos</li>
+                    <li>👴 <strong>Idosos:</strong> Texto maior, contraste melhor</li>
+                    <li>🚴 <strong>Pessoas ocupadas:</strong> Navegação rápida por teclado</li>
+                    <li>🌍 <strong>Falantes de outras línguas:</strong> Estrutura clara ajuda compreensão</li>
+                    <li>🔍 <strong>SEO:</strong> HTML semântico melhora ranking</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>WCAG - O Padrão de Acessibilidade</h2>
+                <p><strong>WCAG (Web Content Accessibility Guidelines)</strong> é o padrão internacional mantido pela W3C.</p>
+                
+                <div class="wcag-levels">
+                    <div class="wcag-level">
+                        <h3>🟢 Nível A</h3>
+                        <p>Básico. Critérios essenciais</p>
+                    </div>
+                    <div class="wcag-level">
+                        <h3>🟡 Nível AA</h3>
+                        <p><strong>Recomendado</strong>. Cobre a maioria dos usuários</p>
+                    </div>
+                    <div class="wcag-level">
+                        <h3>🔴 Nível AAA</h3>
+                        <p>Avançado. Melhor prática (às vezes difícil de alcançar)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li>Leia o <a href="glossario.html">Glossário de Termos</a> para entender a terminologia</li>
+                    <li>Explore o <a href="sobre-plugin.html">Sobre o Plugin</a> para saber como começar</li>
+                    <li>Veja os <a href="teste-wcag.html">Testes explicados</a> para cada aspecto</li>
+                    <li>Pratique com os <a href="manual-teclado.html">Guias de testes manuais</a></li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p>Quer saber mais? Veja os <a href="faq.html">FAQ</a> ou consulte <a href="recursos.html">recursos externos</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .accordion-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .accordion-item h3 {
+            background: var(--code-bg);
+            cursor: pointer;
+            padding: 1rem;
+            margin: 0;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .accordion-item h3:hover {
+            background: #e0e7ff;
+        }
+
+        .accordion-content {
+            padding: 1rem;
+            display: none;
+        }
+
+        .accordion-item.active .accordion-content {
+            display: block;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stats-box {
+            background: #f0f9ff;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 2rem 0;
+        }
+
+        .benefits-list {
+            margin-left: 2rem;
+            margin-top: 1rem;
+        }
+
+        .benefits-list li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .wcag-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .wcag-level {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .wcag-level h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e0e7ff, #f0f9ff);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+    </style>
+
+    <script>
+        document.querySelectorAll('.accordion-item h3').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

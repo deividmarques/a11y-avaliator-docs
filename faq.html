@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>❓ Perguntas Frequentes</h1>
+            <p class="subtitle">Respostas às dúvidas mais comuns sobre acessibilidade</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>Sobre o Plugin</h2>
+
+                <div class="faq-item">
+                    <h3>P: O plugin é gratuito?</h3>
+                    <p><strong>R:</strong> Sim! O A11y Avaliator é 100% gratuito e pode ser usado ilimitadamente.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Preciso ter conhecimento técnico para usar?</h3>
+                    <p><strong>R:</strong> Não! É feito para iniciantes. Você clica e vê os problemas. Mas conhecimento ajuda a entender as soluções.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Funciona em quais navegadores?</h3>
+                    <p><strong>R:</strong> Chrome, Edge, Brave (Chromium). Firefox em desenvolvimento. Safari com App Store.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: O plugin coleta meus dados?</h3>
+                    <p><strong>R:</strong> Não! Tudo é análise local. Seus dados nunca deixam seu navegador. Sem rastreamento.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Quanto tempo leva uma análise?</h3>
+                    <p><strong>R:</strong> WCAG + Contraste: 5-15 segundos. Com Teclado + Leitor: 30-60 segundos. Depende do tamanho da página.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Sobre Acessibilidade</h2>
+
+                <div class="faq-item">
+                    <h3>P: É obrigatório fazer sites acessíveis?</h3>
+                    <p><strong>R:</strong> Depende do país/indústria. Na EU, Brasil, EUA é obrigatório para setor público. Setor privado: melhor respeitar WCAG AA. Clientes cada vez mais exigem.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Qual é o nível recomendado de acessibilidade?</h3>
+                    <p><strong>R:</strong> <strong>WCAG AA</strong> é o padrão recomendado para a maioria. Equilibra acessibilidade com esforço de implementação. AAA é "nice to have".</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Acessibilidade é caro?</h3>
+                    <p><strong>R:</strong> Não necessariamente. 80% dos problemas são rápidos de corrigir. Custa mais ignorar e ter problemas legais depois.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Acessibilidade melhora SEO?</h3>
+                    <p><strong>R:</strong> Indiretamente. Alt text em imagens, headings corretos, etc. ajudam. Mas não é a razão principal para fazer.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Acessibilidade prejudica o design?</h3>
+                    <p><strong>R:</strong> Não! Bom design é inclusivo por default. Contraste melhor, espaçamento melhor, etc. = melhor para todos.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Sobre Testes</h2>
+
+                <div class="faq-item">
+                    <h3>P: Por que o plugin não encontra 100% dos problemas?</h3>
+                    <p><strong>R:</strong> Testes automáticos encontram ~50-70%. Experiência real requer teste manual com usuários de verdade.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Qual teste devo começar?</h3>
+                    <p><strong>R:</strong> WCAG + Contraste. São rápidos, cobrem maioria dos problemas. Depois adicione Teclado + Leitor.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Como testar sem instalar leitor de tela?</h3>
+                    <p><strong>R:</strong> Use plugin como este, ferramentas online, ou contrate testers com deficiência para feedback real.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Todos os relatórios de erro do plugin são verdade?</h3>
+                    <p><strong>R:</strong> 90% sim. Pode haver falsos positivos. Se dúvida, teste manualmente ou com outro plugin.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Posso confiar 100% no score do plugin?</h3>
+                    <p><strong>R:</strong> Não. É bom indicador, mas não substitui teste manual. Use como guia de progresso.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Sobre Correções</h2>
+
+                <div class="faq-item">
+                    <h3>P: Por onde começo a corrigir?</h3>
+                    <p><strong>R:</strong> Pelos problemas <strong>Critical</strong> da lista. Impactam mais o score e a experiência real.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Tenho que corrigir todos os problemas?</h3>
+                    <p><strong>R:</strong> Idealmente sim, mas priorize. Mire em WCAG AA (~80% score). AAA é "nice to have".</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Quanto tempo leva corrigir um site?</h3>
+                    <p><strong>R:</strong> Pequeno site (10 páginas): 10-20 horas. Grande site: semanas/meses. Depende do estado atual.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Devo corrigir tudo de uma vez?</h3>
+                    <p><strong>R:</strong> Não. Incremental é melhor. Uma seção por vez, teste, valide. Menos bugs assim.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Como garantir que correção está certa?</h3>
+                    <p><strong>R:</strong> Rode plugin novamente. Score deve melhorar. Depois teste com teclado + leitor manualmente.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Sobre Ferramentas</h2>
+
+                <div class="faq-item">
+                    <h3>P: Qual leitor de tela devo usar?</h3>
+                    <p><strong>R:</strong> NVDA se usa Windows (gratuito). VoiceOver se Mac (integrado). Ambos são bons para começar.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Que más práticas com leitores de tela?</h3>
+                    <p><strong>R:</strong> Usar DIV para tudo, sem ARIA, sem headings, links genéricos. Tudo quebra a navegação.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Posso usar A11y Avaliator + Axe juntos?</h3>
+                    <p><strong>R:</strong> Sim! Complementam. Axe é mais detalhe. Este plugin é mais user-friendly.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Como medir progresso ao longo do tempo?</h3>
+                    <p><strong>R:</strong> Rode análise mensal. Anote score no spreadsheet. Veja tendência subindo (ou não!).</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Sobre Negócio</h2>
+
+                <div class="faq-item">
+                    <h3>P: Existe ROI em acessibilidade?</h3>
+                    <p><strong>R:</strong> Sim! Usuários com deficiência = ~1 bilhão no mundo. Acessibilidade = mais usuários, melhor UX para todos.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Como convencer meu chefe?</h3>
+                    <p><strong>R:</strong> Mostre: Compliance legal, risco de processo, feedback de usuários, melhoria de SEO, image/reputação.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Qual é o custo de não fazer acessibilidade?</h3>
+                    <p><strong>R:</strong> Processos judiciais (podem custar milhões), usuários perdidos, reputação. Melhor prevenir.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P: Como integrar a11y no processo de desenvolvimento?</h3>
+                    <p><strong>R:</strong> Adicione teste de acessibilidade à checklist de deploy. Use plugin durante desenvolvimento. Educa times.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Não encontrou resposta?</h2>
+                <p>Consulte:</p>
+                <ul>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a> - se quer entender problemas específicos</li>
+                    <li><a href="correcoes.html">Guia de Correções</a> - se quer código para consertar</li>
+                    <li><a href="glossario.html">Glossário</a> - se quer definição de termo técnico</li>
+                    <li><a href="ferramentas.html">Ferramentas</a> - se quer recomendação de ferramenta</li>
+                </ul>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="index.html">Início</a> | <a href="correcoes.html">Correções</a> | <a href="ferramentas.html">Ferramentas</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .faq-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .faq-item h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        .faq-item strong {
+            color: var(--primary);
+        }
+    </style>
+</body>
+</html>

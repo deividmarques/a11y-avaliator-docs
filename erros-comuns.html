@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erros Mais Comuns - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html" class="active">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>⚠️ Os 10 Erros Mais Comuns</h1>
+            <p class="subtitle">Problemas que encontramos em 90% dos sites</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <div class="top-errors">
+                    <div class="error-card error-1">
+                        <h3>1️⃣ Imagens Sem Alt</h3>
+                        <p><strong>O Problema:</strong> Leitores de tela não conseguem descrever a imagem</p>
+                        <p><strong>Como Detectar:</strong> Plugin mostra "Image without alt text"</p>
+                        <p><strong>Impacto:</strong> 🔴 Crítico para usuários cegos</p>
+                        <p><strong>Frequência:</strong> Em ~85% dos sites</p>
+                        <a href="correcoes.html#imagens">Ver Correção →</a>
+                    </div>
+
+                    <div class="error-card error-2">
+                        <h3>2️⃣ Contraste Insuficiente</h3>
+                        <p><strong>O Problema:</strong> Texto cinzento em branco é ilegível para baixa visão</p>
+                        <p><strong>Como Detectar:</strong> Plugin relata razão de contraste < 4.5:1</p>
+                        <p><strong>Impacto:</strong> 🟠 Grave para pessoas com baixa visão</p>
+                        <p><strong>Frequência:</strong> Em ~70% dos sites</p>
+                        <a href="correcoes.html#contraste">Ver Correção →</a>
+                    </div>
+
+                    <div class="error-card error-3">
+                        <h3>3️⃣ Links Sem Descrição</h3>
+                        <p><strong>O Problema:</strong> Links "Clique aqui" ou "Leia mais" sem contexto</p>
+                        <p><strong>Como Detectar:</strong> Plugin lista links genéricos</p>
+                        <p><strong>Impacto:</strong> 🟠 Grave para leitores de tela</p>
+                        <p><strong>Frequência:</strong> Em ~60% dos sites</p>
+                        <a href="correcoes.html#links">Ver Correção →</a>
+                    </div>
+
+                    <div class="error-card error-4">
+                        <h3>4️⃣ Campos Sem Labels</h3>
+                        <p><strong>O Problema:</strong> Campo de input solto, sem label associado</p>
+                        <p><strong>Como Detectar:</strong> Plugin mostra "form input without label"</p>
+                        <p><strong>Impacto:</strong> 🟠 Grave para teclado + leitor</p>
+                        <p><strong>Frequência:</strong> Em ~50% dos sites</p>
+                        <a href="correcoes.html#formularios">Ver Correção →</a>
+                    </div>
+
+                    <div class="error-card error-5">
+                        <h3>5️⃣ Sem Indicador de Focus</h3>
+                        <p><strong>O Problema:</strong> Elemento selecionado não mostra visualmente</p>
+                        <p><strong>Como Detectar:</strong> Tab pelo site, elemento não destaca</p>
+                        <p><strong>Impacto:</strong> 🟠 Grave para navegação por teclado</p>
+                        <p><strong>Frequência:</strong> Em ~55% dos sites</p>
+                        <a href="correcoes.html#focus">Ver Correção →</a>
+                    </div>
+
+                    <div class="error-card error-6">
+                        <h3>6️⃣ Estrutura de Headings Confusa</h3>
+                        <p><strong>O Problema:</strong> H1 → H3 (pula H2), ou múltiplos H1s</p>
+                        <p><strong>Como Detectar:</strong> Plugin detecta orden incorreta</p>
+                        <p><strong>Impacto:</strong> 🟡 Moderado para leitura de tela</p>
+                        <p><strong>Frequência:</strong> Em ~40% dos sites</p>
+                        <a href="correcoes.html#headings">Ver Correção →</a>
+                    </div>
+
+                    <div class="error-card error-7">
+                        <h3>7️⃣ Botões Customizados Sem Semântica</h3>
+                        <p><strong>O Problema:</strong> DIV com onclick em vez de button</p>
+                        <p><strong>Como Detectar:</strong> "Clique aqui" genérico, não ativa com Enter</p>
+                        <p><strong>Impacto:</strong> 🔴 Crítico para teclado + leitor</p>
+                        <p><strong>Frequência:</strong> Em ~45% dos sites</p>
+                        <a href="correcoes.html#botoes">Ver Correção →</a>
+                    </div>
+
+                    <div class="error-card error-8">
+                        <h3>8️⃣ Formulários Sem Validação Clara</h3>
+                        <p><strong>O Problema:</strong> Erro aparece mas não é anunciado</p>
+                        <p><strong>Como Detectar:</strong> Campo inválido, nenhuma mensagem acessível</p>
+                        <p><strong>Impacto:</strong> 🟡 Moderado para preenchimento</p>
+                        <p><strong>Frequência:</strong> Em ~35% dos sites</p>
+                        <a href="correcoes.html#validacao">Ver Correção →</a>
+                    </div>
+
+                    <div class="error-card error-9">
+                        <h3>9️⃣ Iframes Sem Título</h3>
+                        <p><strong>O Problema:</strong> Iframe sem title/aria-label</p>
+                        <p><strong>Como Detectar:</strong> Leitor de tela não sabe o que é o iframe</p>
+                        <p><strong>Impacto:</strong> 🟡 Moderado para leitura</p>
+                        <p><strong>Frequência:</strong> Em ~25% dos sites</p>
+                        <a href="correcoes.html#iframes">Ver Correção →</a>
+                    </div>
+
+                    <div class="error-card error-10">
+                        <h3>🔟 Vídeos Sem Legendas</h3>
+                        <p><strong>O Problema:</strong> Vídeo só com áudio, sem subtítulos</p>
+                        <p><strong>Como Detectar:</strong> Plugin relata "video without captions"</p>
+                        <p><strong>Impacto:</strong> 🔴 Crítico para surdos</p>
+                        <p><strong>Frequência:</strong> Em ~80% dos sites com vídeo</p>
+                        <a href="correcoes.html#videos">Ver Correção →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Padrão de Problemas</h2>
+                
+                <div class="patterns">
+                    <div class="pattern">
+                        <h3>🎨 Problemas de Design</h3>
+                        <ul>
+                            <li>Contraste baixo (culpa do designer)</li>
+                            <li>Sem espaçamento suficiente entre elementos</li>
+                            <li>Tamanho de fonte muito pequeno</li>
+                            <li>Cores como única forma de informar</li>
+                        </ul>
+                    </div>
+
+                    <div class="pattern">
+                        <h3>💻 Problemas de Desenvolvimento</h3>
+                        <ul>
+                            <li>HTML semântico não usado</li>
+                            <li>Elementos interativos mal estruturados</li>
+                            <li>Falta de ARIA onde necessário</li>
+                            <li>JavaScript quebra acessibilidade</li>
+                        </ul>
+                    </div>
+
+                    <div class="pattern">
+                        <h3>📝 Problemas de Conteúdo</h3>
+                        <ul>
+                            <li>Alt text genérico ("imagem", "foto")</li>
+                            <li>Links sem contexto</li>
+                            <li>Texto jargonado demais</li>
+                            <li>Instruções pouco claras</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Quick Fix: Os 3 Problemas Mais Rápidos de Corrigir</h2>
+                
+                <div class="quick-fixes">
+                    <div class="quick-fix">
+                        <h3>1. Adicionar Alt Text em Imagens</h3>
+                        <p><strong>Tempo:</strong> 5-10 minutos por página</p>
+                        <p><strong>Impacto:</strong> 🔴 Crítico no score</p>
+                        <code>&lt;img src="photo.jpg" alt="Descrição clara"&gt;</code>
+                    </div>
+
+                    <div class="quick-fix">
+                        <h3>2. Escurecer Texto para Melhor Contraste</h3>
+                        <p><strong>Tempo:</strong> 2-5 minutos</p>
+                        <p><strong>Impacto:</strong> 🟠 Muda muitos elementos</p>
+                        <code>.text { color: #333; } /* melhor que #999 */</code>
+                    </div>
+
+                    <div class="quick-fix">
+                        <h3>3. Adicionar Focus Outline</h3>
+                        <p><strong>Tempo:</strong> 1-2 minutos</p>
+                        <p><strong>Impacto:</strong> 🟡 Importante para teclado</p>
+                        <code>button:focus { outline: 2px solid #0066cc; }</code>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li>Execute o plugin em seu site</li>
+                    <li>Identifique quais desses 10 erros aparecem</li>
+                    <li>Comece pelos 3 mais frequentes</li>
+                    <li>Consulte <a href="correcoes.html">guia de correções</a> para código exato</li>
+                    <li>Implemente uma correção por vez</li>
+                    <li>Teste com o plugin para validar</li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="correcoes.html">Correções Práticas</a> | <a href="como-usar.html">Como Usar</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .top-errors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .error-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            border-left: 4px solid;
+        }
+
+        .error-1, .error-3, .error-7, .error-10 { border-left-color: #7f1d1d; }
+        .error-2, .error-4, .error-5 { border-left-color: #ea580c; }
+        .error-6, .error-8, .error-9 { border-left-color: #d97706; }
+
+        .error-card h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .error-card p {
+            margin: 0.5rem 0;
+            font-size: 0.95em;
+        }
+
+        .error-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .error-card a:hover {
+            text-decoration: underline;
+        }
+
+        .patterns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .pattern {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .pattern h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .pattern ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .pattern li {
+            margin: 0.5rem 0;
+        }
+
+        .quick-fixes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .quick-fix {
+            background: #f0fdf4;
+            border: 1px solid var(--secondary);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .quick-fix h3 {
+            margin-top: 0;
+            color: var(--secondary);
+        }
+
+        .quick-fix p {
+            margin: 0.5rem 0;
+        }
+
+        .quick-fix code {
+            background: white;
+            padding: 0.5rem;
+            border-radius: 3px;
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.85em;
+            word-break: break-all;
+        }
+    </style>
+</body>
+</html>

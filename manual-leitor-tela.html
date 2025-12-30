@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Testes com Leitor de Tela - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html" class="active">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>🔊 Manual Completo: Testando com Leitor de Tela</h1>
+            <p class="subtitle">Guia passo-a-passo para teste manual com leitor de tela</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>Escolha seu Leitor</h2>
+                
+                <div class="reader-recommendation">
+                    <h3>Recomendado para Iniciantes: NVDA (Gratuito)</h3>
+                    <p><strong>Por que?</strong> Gratuito, fácil de usar, e padrão em desenvolvimento web</p>
+                    <ol>
+                        <li>Visite <a href="https://www.nvaccess.org/" target="_blank">www.nvaccess.org</a></li>
+                        <li>Baixe a versão estável</li>
+                        <li>Instale (pode usar portátil também)</li>
+                        <li>Abra o site que quer testar</li>
+                    </ol>
+                </div>
+
+                <div class="reader-options">
+                    <h3>Outras Opções</h3>
+                    <div class="option-card">
+                        <h4>🍎 VoiceOver (Mac/iOS)</h4>
+                        <p>Já vem instalado em Macs</p>
+                        <p><strong>Ativar:</strong> CMD + F5</p>
+                        <p><strong>Desvantagem:</strong> Diferente do NVDA/JAWS</p>
+                    </div>
+
+                    <div class="option-card">
+                        <h4>🔵 JAWS (Windows)</h4>
+                        <p>Pago, profissional, mais realista</p>
+                        <p><strong>Custo:</strong> ~$90/ano</p>
+                        <p><strong>Benefício:</strong> Teste mais realista</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Começando com NVDA</h2>
+
+                <h3>Atalhos Essenciais (NVDA)</h3>
+                <div class="shortcuts-grid">
+                    <div class="shortcut">
+                        <h4>NVDA + Seta Para Baixo</h4>
+                        <p>Lê a linha atual</p>
+                    </div>
+
+                    <div class="shortcut">
+                        <h4>NVDA + Seta Para Cima</h4>
+                        <p>Lê a linha anterior</p>
+                    </div>
+
+                    <div class="shortcut">
+                        <h4>NVDA + H</h4>
+                        <p>Navega por headings</p>
+                    </div>
+
+                    <div class="shortcut">
+                        <h4>NVDA + F</h4>
+                        <p>Navega por formulários</p>
+                    </div>
+
+                    <div class="shortcut">
+                        <h4>NVDA + K</h4>
+                        <p>Navega por links</p>
+                    </div>
+
+                    <div class="shortcut">
+                        <h4>NVDA + L</h4>
+                        <p>Navega por listas</p>
+                    </div>
+
+                    <div class="shortcut">
+                        <h4>NVDA + Insert + F7</h4>
+                        <p>Abre "Elements List"</p>
+                    </div>
+
+                    <div class="shortcut">
+                        <h4>NVDA + Espaço</h4>
+                        <p>Ativa modo focus/navegação</p>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Nota:</strong> "NVDA" geralmente significa Insert (tecla à direita de Backspace) em teclados norte-americanos, ou pode ser configurado diferente.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Teste 1: Navegação por Headings</h2>
+
+                <div class="test">
+                    <h3>Objetivo</h3>
+                    <p>Verificar se site tem <strong>estrutura clara de headings</strong> para navegação rápida</p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <h4>1. Abra NVDA</h4>
+                        <p>Inicie NVDA (ícone na barra de tarefas)</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>2. Abra o site em novo aba</h4>
+                        <p>NVDA começará a ler automaticamente</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>3. Pressione NVDA + H</h4>
+                        <p>Pula para próximo heading</p>
+                        <p>✅ <strong>Esperado:</strong> "Heading 1, Bem-vindo"</p>
+                        <p>❌ <strong>Problema:</strong> Sem anúncio ou pula seções</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>4. Continue navegando</h4>
+                        <p>Pressione NVDA + H repetidamente</p>
+                        <p>✅ <strong>Esperado:</strong> Navega por H1 → H2 → H3 logicamente</p>
+                        <p>❌ <strong>Problema:</strong> Ordem confusa, headings faltando</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>5. Abra Elements List</h4>
+                        <p>NVDA + Insert + F7 → Clique em "Headings"</p>
+                        <p>✅ <strong>Esperado:</strong> Ver lista clara de todas seções</p>
+                        <p>❌ <strong>Problema:</strong> Faltam seções principais</p>
+                    </div>
+                </div>
+
+                <div class="checklist">
+                    <h3>Checklist: Headings</h3>
+                    <label><input type="checkbox"> Página tem H1 no início</label>
+                    <label><input type="checkbox"> Headings estão em ordem (H1, H2, H3...)</label>
+                    <label><input type="checkbox"> Não pula níveis (ex: H1 → H3)</label>
+                    <label><input type="checkbox"> Cada seção tem heading descritivo</label>
+                    <label><input type="checkbox"> Elements List mostra estrutura clara</label>
+                </div>
+            </section>
+
+            <section>
+                <h2>Teste 2: Navegação por Links</h2>
+
+                <div class="test">
+                    <h3>Objetivo</h3>
+                    <p>Verificar se <strong>links têm texto descritivo</strong> que faz sentido isolado</p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <h4>1. Pressione NVDA + K</h4>
+                        <p>Pula para próximo link</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>2. Ouça o texto</h4>
+                        <p>✅ <strong>Bom:</strong> "Ver política de privacidade"</p>
+                        <p>❌ <strong>Ruim:</strong> "Clique aqui" ou "Link"</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>3. Teste cada link</h4>
+                        <p>Navegue por todos links com NVDA + K</p>
+                        <p>❌ <strong>Problema:</strong> Vários links "Clique aqui"</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>4. Abra Elements List para Links</h4>
+                        <p>NVDA + Insert + F7 → "Links"</p>
+                        <p>Veja se cada link tem label claro</p>
+                    </div>
+                </div>
+
+                <div class="checklist">
+                    <h3>Checklist: Links</h3>
+                    <label><input type="checkbox"> Links têm texto descritivo</label>
+                    <label><input type="checkbox"> Nenhum link genérico "Clique aqui"</label>
+                    <label><input type="checkbox"> Texto faz sentido fora de contexto</label>
+                    <label><input type="checkbox"> Links são distinguíveis do texto normal</label>
+                </div>
+            </section>
+
+            <section>
+                <h2>Teste 3: Navegação por Formulários</h2>
+
+                <div class="test">
+                    <h3>Objetivo</h3>
+                    <p>Verificar se <strong>campos têm labels claros</strong> e erros são anunciados</p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <h4>1. Pressione NVDA + F</h4>
+                        <p>Pula para próximo campo de formulário</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>2. Ouça o label</h4>
+                        <p>✅ <strong>Esperado:</strong> "Email, campo de edição"</p>
+                        <p>❌ <strong>Problema:</strong> Só "campo de edição" sem label</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>3. Preencha com Tab</h4>
+                        <p>Tab para próximo campo</p>
+                        <p>Digite alguns caracteres</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>4. Teste validação</h4>
+                        <p>Deixe campo vazio ou erro intencional</p>
+                        <p>✅ <strong>Esperado:</strong> "Campo obrigatório" é anunciado</p>
+                        <p>❌ <strong>Problema:</strong> Mensagem visível mas não lida</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>5. Envie o formulário</h4>
+                        <p>Pressione Tab até botão, Enter para enviar</p>
+                        <p>✅ <strong>Esperado:</strong> Sucesso é anunciado</p>
+                    </div>
+                </div>
+
+                <div class="checklist">
+                    <h3>Checklist: Formulários</h3>
+                    <label><input type="checkbox"> Cada campo tem label visível</label>
+                    <label><input type="checkbox"> Label é anunciado com campo</label>
+                    <label><input type="checkbox"> Campos obrigatórios são marcados</label>
+                    <label><input type="checkbox"> Mensagens de erro são anunciadas</label>
+                    <label><input type="checkbox"> Sucesso é confirmado após envio</label>
+                </div>
+            </section>
+
+            <section>
+                <h2>Teste 4: Estrutura Semântica</h2>
+
+                <div class="test">
+                    <h3>Objetivo</h3>
+                    <p>Verificar se site usa <strong>HTML semântico correto</strong> (não só DIVs)</p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <h4>1. Comece a ler de cima</h4>
+                        <p>NVDA + Seta para Baixo para ler linha por linha</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>2. Ouça as estruturas</h4>
+                        <p>✅ <strong>Esperado:</strong> "Navigation", "Main", "Footer" anunciados</p>
+                        <p>❌ <strong>Problema:</strong> Tudo é "grupo" genérico</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>3. Teste landmarks</h4>
+                        <p>Use NVDA + Insert + F7, clique em "Landmarks"</p>
+                        <p>✅ <strong>Esperado:</strong> Nav, Main, Complementary, Contentinfo</p>
+                        <p>❌ <strong>Problema:</strong> Sem landmarks</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>4. Teste listas</h4>
+                        <p>Se há listas, NVDA anuncia "lista com X itens"?</p>
+                        <p>❌ <strong>Problema:</strong> Listas como DIVs aninhados</p>
+                    </div>
+                </div>
+
+                <div class="checklist">
+                    <h3>Checklist: Semântica</h3>
+                    <label><input type="checkbox"> Header/nav anunciados</label>
+                    <label><input type="checkbox"> Main content é claramente marcado</label>
+                    <label><input type="checkbox"> Footer/rodapé é anunciado</label>
+                    <label><input type="checkbox"> Listas são anunciadas como listas</label>
+                    <label><input type="checkbox"> Botões são anunciados como botões</label>
+                </div>
+            </section>
+
+            <section>
+                <h2>Dicas Práticas</h2>
+                
+                <div class="tips">
+                    <div class="tip">
+                        <h4>💡 Pause o leitor quando confuso</h4>
+                        <p>Pressione Ctrl para pausar NVDA a qualquer momento</p>
+                    </div>
+
+                    <div class="tip">
+                        <h4>💡 Use velocidade lenta no início</h4>
+                        <p>Alterar velocidade no painel de controle do NVDA</p>
+                    </div>
+
+                    <div class="tip">
+                        <h4>💡 Pratique em sites conhecidos</h4>
+                        <p>Teste em Amazon, Google, etc. para aprender a estrutura</p>
+                    </div>
+
+                    <div class="tip">
+                        <h4>💡 Feche os olhos</h4>
+                        <p>Teste com olhos fechados para simular cegueira</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li>Baixe e instale NVDA</li>
+                    <li>Pratique em sites conhecidos (Google, Wikipedia)</li>
+                    <li>Execute os 4 testes acima em seu site</li>
+                    <li>Anote problemas com localização exata</li>
+                    <li>Consulte <a href="correcoes.html">guia de correções</a></li>
+                    <li>Implemente e teste novamente</li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="teste-leitor-tela.html">Volta ao Teste Automático</a> | <a href="correcoes.html">Correções</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .reader-recommendation {
+            background: #e0e7ff;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .reader-recommendation ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .reader-options {
+            margin: 1.5rem 0;
+        }
+
+        .option-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .option-card h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .shortcuts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .shortcut {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+        }
+
+        .shortcut h4 {
+            margin-top: 0;
+            font-size: 0.95em;
+            color: var(--primary);
+            font-family: monospace;
+            background: var(--code-bg);
+            padding: 0.5rem;
+            border-radius: 3px;
+        }
+
+        .shortcut p {
+            margin: 0.5rem 0;
+            font-size: 0.9em;
+        }
+
+        .note-box {
+            background: #fff7ed;
+            border-left: 4px solid var(--danger);
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+
+        .test {
+            background: #eff6ff;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+
+        .steps {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .step {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .step:last-child {
+            border-bottom: none;
+        }
+
+        .step h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .step p {
+            margin: 0.5rem 0;
+        }
+
+        .checklist {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .checklist h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .checklist label {
+            display: block;
+            margin: 0.5rem 0;
+            cursor: pointer;
+        }
+
+        .checklist input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+
+        .tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .tip {
+            background: #f0fdf4;
+            border: 1px solid var(--secondary);
+            border-radius: 6px;
+            padding: 1rem;
+        }
+
+        .tip h4 {
+            margin-top: 0;
+            color: var(--secondary);
+        }
+
+        .tip p {
+            margin: 0.5rem 0;
+            font-size: 0.9em;
+        }
+    </style>
+</body>
+</html>

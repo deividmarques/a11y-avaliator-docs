@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Plugin - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html" class="active">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>🔍 Sobre o A11y Avaliator</h1>
+            <p class="subtitle">Ferramenta completa de análise de acessibilidade web</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>O que é?</h2>
+                <p><strong>A11y Avaliator</strong> é um plugin de navegador gratuito que analisa acessibilidade de sites em tempo real.</p>
+                <p>Ele executa <strong>4 testes complementares</strong> e gera um score de 0-100 que resume a saúde geral de acessibilidade.</p>
+            </section>
+
+            <section>
+                <h2>Funcionalidades</h2>
+
+                <div class="features-grid">
+                    <div class="feature">
+                        <h3>✅ Análise WCAG</h3>
+                        <p>Detecta automaticamente violações de WCAG 2.2 usando axe-core</p>
+                        <p><strong>Cobre:</strong> ~50-70% dos problemas</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>⌨️ Teste de Teclado</h3>
+                        <p>Verifica navegação por teclado e indicadores de foco</p>
+                        <p><strong>Detecta:</strong> Keyboard traps, falta de focus visual</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>🔊 Teste de Leitor</h3>
+                        <p>Analisa semântica HTML para leitores de tela</p>
+                        <p><strong>Verifica:</strong> Labels, ARIA, estrutura semântica</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>🎨 Teste de Contraste</h3>
+                        <p>Mede contraste de cores em tempo real</p>
+                        <p><strong>Padrão:</strong> WCAG AA (4.5:1)</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>📊 Score Inteligente</h3>
+                        <p>Calcula nota 0-100 baseada em severidade dos problemas</p>
+                        <p><strong>Multiplicadores:</strong> WCAG A/AA/AAA ponderados</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>📋 Relatório Detalhado</h3>
+                        <p>Lista cada problema com localização e sugestões</p>
+                        <p><strong>Exportável:</strong> JSON para análise</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Tecnologia</h2>
+
+                <div class="tech-info">
+                    <div class="tech-item">
+                        <h3>🛠️ Stack Técnico</h3>
+                        <ul>
+                            <li><strong>Linguagem:</strong> TypeScript + React 19</li>
+                            <li><strong>Build:</strong> Vite para performance</li>
+                            <li><strong>Testing:</strong> Vitest com 91% coverage</li>
+                            <li><strong>Core:</strong> @a11y/core package (reusável)</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-item">
+                        <h3>📦 Dependências Principais</h3>
+                        <ul>
+                            <li><strong>axe-core:</strong> Análise WCAG automática</li>
+                            <li><strong>Chrome MV3:</strong> Manifest v3 compliant</li>
+                            <li><strong>Storage API:</strong> Armazena histórico local</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-item">
+                        <h3>🔒 Privacidade</h3>
+                        <ul>
+                            <li>✅ Nenhum dado enviado para servidor</li>
+                            <li>✅ Análise acontece localmente no navegador</li>
+                            <li>✅ Histórico salvo apenas no seu computador</li>
+                            <li>✅ Sem rastreamento ou analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Comparação: Automático vs Manual</h2>
+
+                <div class="comparison-table">
+                    <table>
+                        <tr>
+                            <th>Tipo de Teste</th>
+                            <th>Automático (Plugin)</th>
+                            <th>Manual (Teclado/Leitor)</th>
+                        </tr>
+                        <tr>
+                            <td>Velocidade</td>
+                            <td>Segundos</td>
+                            <td>15-30 min</td>
+                        </tr>
+                        <tr>
+                            <td>Cobertura</td>
+                            <td>~50-70%</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td>Problemas Encontrados</td>
+                            <td>Técnicos óbvios</td>
+                            <td>Experiência real</td>
+                        </tr>
+                        <tr>
+                            <td>Falsos Positivos</td>
+                            <td>Sim, alguns</td>
+                            <td>Não</td>
+                        </tr>
+                        <tr>
+                            <td>Curva de Aprendizado</td>
+                            <td>Nenhuma</td>
+                            <td>Moderada</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p><strong>Conclusão:</strong> Use o plugin para <strong>começar rapidamente</strong>, mas <strong>sempre combine com testes manuais</strong> para cobertura completa.</p>
+            </section>
+
+            <section>
+                <h2>Limitações</h2>
+
+                <div class="limitations">
+                    <div class="limit">
+                        <h3>❌ O que NÃO detecta</h3>
+                        <ul>
+                            <li>Problemas de navegação por teclado interativa</li>
+                            <li>Experiência real de usuários com deficiência</li>
+                            <li>Qualidade de descrições de imagem (só verifica presença)</li>
+                            <li>Fluxo de formulário confuso</li>
+                            <li>Conteúdo muito técnico ou inacessível</li>
+                        </ul>
+                    </div>
+
+                    <div class="limit">
+                        <h3>✅ O que FUNCIONA bem</h3>
+                        <ul>
+                            <li>Problemas técnicos óbvios (alt missing, low contrast)</li>
+                            <li>Estrutura HTML semântica</li>
+                            <li>Focusability dos elementos</li>
+                            <li>ARIA correctness</li>
+                            <li>Começar a jornada de acessibilidade</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Para Quem é?</h2>
+
+                <div class="audience">
+                    <div class="audience-card">
+                        <h3>👨‍💻 Desenvolvedores</h3>
+                        <p>Testar durante desenvolvimento</p>
+                        <p>Receber feedback imediato</p>
+                        <p>Aprender boas práticas</p>
+                    </div>
+
+                    <div class="audience-card">
+                        <h3>🎨 Designers</h3>
+                        <p>Entender restrições de acessibilidade</p>
+                        <p>Verificar contraste antes de entregar</p>
+                        <p>Aprender sobre WCAG</p>
+                    </div>
+
+                    <div class="audience-card">
+                        <h3>🧪 QA/Testers</h3>
+                        <p>Testar acessibilidade como parte de QA</p>
+                        <p>Relatórios estruturados</p>
+                        <p>Rastreamento de progresso</p>
+                    </div>
+
+                    <div class="audience-card">
+                        <h3>📊 Product Managers</h3>
+                        <p>Priorizar trabalho de acessibilidade</p>
+                        <p>Rastrear score ao longo do tempo</p>
+                        <p>Justificar investimento em a11y</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li><a href="como-usar.html">Aprenda como usar o plugin</a></li>
+                    <li><a href="teste-wcag.html">Entenda cada tipo de teste</a></li>
+                    <li><a href="como-usar.html">Instale no seu navegador</a></li>
+                    <li>Execute primeira análise em seu site</li>
+                    <li><a href="correcoes.html">Comece a corrigir problemas</a></li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="como-usar.html">Como Usar</a> | <a href="faq.html">FAQ</a> | <a href="glossario.html">Glossário</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .feature p {
+            margin: 0.5rem 0;
+            font-size: 0.95em;
+        }
+
+        .tech-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tech-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .tech-item h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .tech-item ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .tech-item li {
+            margin: 0.5rem 0;
+        }
+
+        .comparison-table {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--code-bg);
+            font-weight: bold;
+        }
+
+        .limitations {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .limit {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .limit h3 {
+            margin-top: 0;
+        }
+
+        .limit ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .audience {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .audience-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .audience-card h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .audience-card p {
+            margin: 0.5rem 0;
+            font-size: 0.95em;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Usar - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html" class="active">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>📖 Como Usar o A11y Avaliator</h1>
+            <p class="subtitle">Guia passo-a-passo para instalar e usar o plugin</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>Passo 1: Instalar o Plugin</h2>
+
+                <div class="browser-instructions">
+                    <div class="browser">
+                        <h3>🔵 Chrome/Edge/Brave</h3>
+                        <ol>
+                            <li>Visite <a href="https://chromewebstore.google.com" target="_blank">Chrome Web Store</a></li>
+                            <li>Procure por "A11y Avaliator"</li>
+                            <li>Clique em "Adicionar ao Chrome"</li>
+                            <li>Confirme permissões (activeTab, storage, scripting)</li>
+                            <li>Pronto! Ícone aparece na barra de ferramentas</li>
+                        </ol>
+                    </div>
+
+                    <div class="browser">
+                        <h3>🦊 Firefox</h3>
+                        <ol>
+                            <li>Visite <a href="https://addons.mozilla.org" target="_blank">Firefox Add-ons</a></li>
+                            <li>Procure por "A11y Avaliator"</li>
+                            <li>Clique em "Adicionar ao Firefox"</li>
+                            <li>Confirme permissões</li>
+                            <li>Ícone aparecerá na barra de ferramentas</li>
+                        </ol>
+                    </div>
+
+                    <div class="browser">
+                        <h3>🍎 Safari</h3>
+                        <ol>
+                            <li>Visite <a href="https://apps.apple.com" target="_blank">App Store</a></li>
+                            <li>Procure por "A11y Avaliator"</li>
+                            <li>Clique em "Obter"</li>
+                            <li>Abra Safari e verifique Extensões</li>
+                            <li>Habilite a extensão em Preferências</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Passo 2: Abrir o Plugin</h2>
+
+                <div class="usage-step">
+                    <h3>Primeiro uso</h3>
+                    <ol>
+                        <li>✅ Navegue até o site que quer analisar</li>
+                        <li>✅ Clique no ícone do A11y Avaliator na barra de ferramentas</li>
+                        <li>✅ Uma janela popup será aberta</li>
+                        <li>✅ Você verá o painel de controle com opções</li>
+                    </ol>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>💡 Dica:</strong> Fixe o ícone na barra para acesso mais rápido. Clique direito no ícone → "Fixar na barra"</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Passo 3: Escolher Testes</h2>
+
+                <div class="test-selection">
+                    <p>No painel, você verá <strong>4 checkboxes</strong> para cada tipo de teste:</p>
+                    
+                    <div class="checkbox-option">
+                        <h4>✅ Análise WCAG</h4>
+                        <p>Detecta violações de WCAG automaticamente (recomendado sempre ativar)</p>
+                        <label><input type="checkbox" checked> Ativar</label>
+                    </div>
+
+                    <div class="checkbox-option">
+                        <h4>⌨️ Teste de Teclado</h4>
+                        <p>Verifica navegação por teclado (mais lento, pode aumentar tempo de análise)</p>
+                        <label><input type="checkbox"> Ativar</label>
+                    </div>
+
+                    <div class="checkbox-option">
+                        <h4>🔊 Teste de Leitor</h4>
+                        <p>Analisa semântica para leitores de tela</p>
+                        <label><input type="checkbox"> Ativar</label>
+                    </div>
+
+                    <div class="checkbox-option">
+                        <h4>🎨 Teste de Contraste</h4>
+                        <p>Verifica contraste de cores (pode ser lento em páginas grandes)</p>
+                        <label><input type="checkbox"> Ativar</label>
+                    </div>
+
+                    <div class="recommendation-box">
+                        <p><strong>🎯 Recomendação para Iniciantes:</strong></p>
+                        <p>Ative apenas <strong>WCAG + Contraste</strong> no começo. São rápidos e cobrem a maioria dos problemas.</p>
+                        <p>Depois que corrigir esses, ative <strong>Teclado + Leitor</strong> para testes mais profundos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Passo 4: Executar Análise</h2>
+
+                <div class="execution-steps">
+                    <div class="step-box">
+                        <h4>1. Clique "Analisar" ou "Iniciar Análise"</h4>
+                        <p>O plugin começará a executar os testes selecionados</p>
+                        <p>Você verá uma barra de progresso</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h4>2. Aguarde conclusão</h4>
+                        <p>Tempo típico: 5-30 segundos dependendo do tamanho da página</p>
+                        <p>NÃO feche o popup ou mude de aba durante a análise</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h4>3. Veja o Resultado</h4>
+                        <p>✅ <strong>Score:</strong> 0-100 resumo da saúde geral</p>
+                        <p>📊 <strong>Breakdown:</strong> Quantos problemas por tipo</p>
+                        <p>📋 <strong>Lista de Problemas:</strong> Clique para expandir cada um</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Passo 5: Entender o Relatório</h2>
+
+                <div class="report-guide">
+                    <div class="report-section">
+                        <h4>📊 Score Geral (Grande número topo)</h4>
+                        <p>De 0-100, onde:</p>
+                        <ul>
+                            <li>🟢 90-100 = Excelente</li>
+                            <li>🔵 80-89 = Bom</li>
+                            <li>🟡 70-79 = Aceitável</li>
+                            <li>🟠 50-69 = Precisa Melhorar</li>
+                            <li>🔴 0-49 = Crítico</li>
+                        </ul>
+                    </div>
+
+                    <div class="report-section">
+                        <h4>📈 Breakdown de Problemas</h4>
+                        <p>Visualização de quantos problemas cada tipo encontrou:</p>
+                        <ul>
+                            <li><strong>Critical:</strong> Impacto máximo</li>
+                            <li><strong>Serious:</strong> Muito importante</li>
+                            <li><strong>Moderate:</strong> Importante</li>
+                            <li><strong>Minor:</strong> Polimento</li>
+                        </ul>
+                    </div>
+
+                    <div class="report-section">
+                        <h4>📝 Lista de Problemas</h4>
+                        <p>Cada problema mostra:</p>
+                        <ul>
+                            <li>Tipo (WCAG/Teclado/Leitor/Contraste)</li>
+                            <li>Severidade (Critical/Serious/etc)</li>
+                            <li>Descrição do problema</li>
+                            <li>Localização (linha/elemento)</li>
+                            <li>Sugestão de correção</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Passo 6: Corrigir Problemas</h2>
+
+                <div class="fix-workflow">
+                    <ol>
+                        <li><strong>Comece pelos Críticos</strong>
+                            <p>Clique para expandir problemas "Critical"</p>
+                            <p>Esses têm maior impacto no score</p>
+                        </li>
+
+                        <li><strong>Consulte o Guia de Correções</strong>
+                            <p>Use <a href="correcoes.html">guia de correções práticas</a> como referência</p>
+                            <p>Cada tipo de problema tem exemplos de código</p>
+                        </li>
+
+                        <li><strong>Implemente a Correção</strong>
+                            <p>Modifique seu código HTML/CSS/JS baseado na sugestão</p>
+                        </li>
+
+                        <li><strong>Teste Novamente</strong>
+                            <p>Volte ao popup e clique "Analisar" novamente</p>
+                            <p>O score deve melhorar se a correção funcionou</p>
+                        </li>
+
+                        <li><strong>Repita</strong>
+                            <p>Continue até atingir seu objetivo (ex: 80+)</p>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
+                <h2>Recursos Adicionais</h2>
+
+                <div class="features-available">
+                    <div class="feature">
+                        <h3>💾 Histórico</h3>
+                        <p>Plugin salva histórico das últimas análises</p>
+                        <p>Veja progresso ao longo do tempo</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>📥 Exportar Relatório</h3>
+                        <p>Salve resultado como JSON</p>
+                        <p>Compartilhe com equipe ou stakeholders</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>⚙️ Configurações</h3>
+                        <p>Customize níveis WCAG padrão</p>
+                        <p>Ajuste sensibilidade dos testes</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>📞 Suporte</h3>
+                        <p>Botão "?" abre documentação</p>
+                        <p>Link para reporte de bugs</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li>Instale o plugin no seu navegador</li>
+                    <li>Abra seu site</li>
+                    <li>Execute primeira análise (WCAG + Contraste)</li>
+                    <li>Leia o score e veja onde está agora</li>
+                    <li><a href="correcoes.html">Consulte guia de correções</a></li>
+                    <li>Implemente correções dos problemas críticos</li>
+                    <li>Teste novamente para validar progresso</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Dúvidas Frequentes</h2>
+                <p>Veja <a href="faq.html">página de FAQ</a> para respostas a perguntas comuns sobre como usar o plugin.</p>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="sobre-plugin.html">Sobre</a> | <a href="correcoes.html">Correções</a> | <a href="faq.html">FAQ</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .browser-instructions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .browser {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .browser h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .browser ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .browser li {
+            margin: 0.5rem 0;
+        }
+
+        .usage-step {
+            background: #e0e7ff;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .usage-step ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .info-box {
+            background: #eff6ff;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+
+        .test-selection {
+            margin: 1.5rem 0;
+        }
+
+        .checkbox-option {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .checkbox-option h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .checkbox-option label {
+            display: block;
+            margin-top: 0.5rem;
+            cursor: pointer;
+        }
+
+        .checkbox-option input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+
+        .recommendation-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+        }
+
+        .recommendation-box p {
+            margin: 0.5rem 0;
+        }
+
+        .execution-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .step-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+        }
+
+        .step-box h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .step-box p {
+            margin: 0.5rem 0;
+            font-size: 0.9em;
+        }
+
+        .report-guide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .report-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+        }
+
+        .report-section h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .report-section ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .fix-workflow {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .fix-workflow ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .fix-workflow li {
+            margin: 1rem 0;
+        }
+
+        .fix-workflow li strong {
+            color: var(--primary);
+        }
+
+        .fix-workflow p {
+            margin: 0.25rem 0;
+            font-size: 0.95em;
+        }
+
+        .features-available {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .feature p {
+            margin: 0.5rem 0;
+            font-size: 0.9em;
+        }
+    </style>
+</body>
+</html>

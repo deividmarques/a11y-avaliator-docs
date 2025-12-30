@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas Úteis - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html" class="active">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>🔧 Ferramentas Úteis para Acessibilidade</h1>
+            <p class="subtitle">Recursos para aprender, testar e melhorar acessibilidade</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>Leitores de Tela (Teste Manual)</h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>🔊 NVDA</h3>
+                        <p><strong>Custo:</strong> Gratuito</p>
+                        <p><strong>Plataforma:</strong> Windows, Linux</p>
+                        <p><strong>Recomendado?</strong> ✅ Sim (melhor para começar)</p>
+                        <p>Leitor de tela open-source. Excelente para desenvolvimento.</p>
+                        <a href="https://www.nvaccess.org/" target="_blank" rel="noopener">Baixar NVDA →</a>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>🍎 VoiceOver</h3>
+                        <p><strong>Custo:</strong> Gratuito (integrado)</p>
+                        <p><strong>Plataforma:</strong> Mac, iOS</p>
+                        <p><strong>Recomendado?</strong> ✅ Se usa Apple</p>
+                        <p>Leitor nativo do macOS. Ativa com CMD+F5</p>
+                        <a href="https://www.apple.com/voiceover/" target="_blank" rel="noopener">Saiba Mais →</a>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>🔵 JAWS</h3>
+                        <p><strong>Custo:</strong> Pago (~$90/ano)</p>
+                        <p><strong>Plataforma:</strong> Windows</p>
+                        <p><strong>Recomendado?</strong> ✅ Para testes profissionais</p>
+                        <p>Padrão da indústria. Mais realista para usuários cegos.</p>
+                        <a href="https://www.freedomscientific.com/" target="_blank" rel="noopener">Saiba Mais →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Verificadores de Contraste</h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>🎨 WebAIM Contrast</h3>
+                        <p>Simples verificador de contraste online</p>
+                        <p>Digite cores foreground/background, veja razão</p>
+                        <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener">Abrir Ferramenta →</a>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>🎯 Color Contrast Analyzer</h3>
+                        <p>Ferramenta desktop para medir contraste real da página</p>
+                        <p>Aponta cores problemáticas em tempo real</p>
+                        <a href="https://www.tpgi.com/color-contrast-checker/" target="_blank" rel="noopener">Baixar →</a>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>📦 Chroma</h3>
+                        <p>Plugin Chrome/Firefox para testar contraste visualmente</p>
+                        <p>Simula diferentes tipos de daltonismo</p>
+                        <a href="https://www.chromacvd.com/" target="_blank" rel="noopener">Instalar →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Plugins de Navegador</h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>🔍 Axe DevTools</h3>
+                        <p>Plugin poderoso para análise WCAG automática</p>
+                        <p>Funciona no Chrome, Firefox, Edge</p>
+                        <a href="https://www.deque.com/axe/devtools/" target="_blank" rel="noopener">Instalar →</a>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>⌨️ Lighthouse</h3>
+                        <p>Ferramenta Google integrada no Chrome DevTools</p>
+                        <p>Inclui auditoria de acessibilidade</p>
+                        <p><strong>Como:</strong> F12 → Lighthouse → Run Audit</p>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>👁️ WAVE</h3>
+                        <p>Verificador visual de acessibilidade</p>
+                        <p>Marca problemas e boas práticas na página</p>
+                        <a href="https://wave.webaim.org/extension/" target="_blank" rel="noopener">Instalar →</a>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>🎬 Siteimprove</h3>
+                        <p>Plugin completo para gestão de acessibilidade</p>
+                        <p>Relatórios profissionais</p>
+                        <a href="https://siteimprove.com/" target="_blank" rel="noopener">Saiba Mais →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Recursos de Aprendizado</h2>
+                
+                <div class="learning-tools">
+                    <div class="learning-item">
+                        <h3>📚 WebAIM</h3>
+                        <p>Organização referência em acessibilidade web</p>
+                        <p>Artigos, tutoriais e recursos gratuitos</p>
+                        <a href="https://webaim.org/" target="_blank" rel="noopener">Visitar →</a>
+                    </div>
+
+                    <div class="learning-item">
+                        <h3>📖 W3C WAI</h3>
+                        <p>Padrão oficial de acessibilidade web</p>
+                        <p>Guias, técnicas, exemplos</p>
+                        <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">Visitar →</a>
+                    </div>
+
+                    <div class="learning-item">
+                        <h3>🎓 Deque University</h3>
+                        <p>Cursos online sobre acessibilidade</p>
+                        <p>Gratuito e pago, certificações</p>
+                        <a href="https://dequeuniversity.com/" target="_blank" rel="noopener">Explorar →</a>
+                    </div>
+
+                    <div class="learning-item">
+                        <h3>🎯 A11ycasts</h3>
+                        <p>Série de vídeos curtos sobre acessibilidade</p>
+                        <p>Dicas práticas de Google Chrome</p>
+                        <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9Xc-RgEu7WfuPVlVa" target="_blank" rel="noopener">Ver Vídeos →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Simuladores de Deficiência</h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>👁️ Color Blindness Simulator</h3>
+                        <p>Visualize como pessoas daltônicas veem seu site</p>
+                        <p>Simula: Protanopia, Deuteranopia, Tritanopia</p>
+                        <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/" target="_blank" rel="noopener">Abrir →</a>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>🔎 Low Vision Simulator</h3>
+                        <p>Visualize site como pessoa com baixa visão</p>
+                        <p>Aumenta zoom para simular</p>
+                        <a href="https://webaim.org/articles/low-vision/" target="_blank" rel="noopener">Saiba Mais →</a>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>⌨️ Screen Reader Testing</h3>
+                        <p>Practice lendo site com NVDA</p>
+                        <p>NVDA + Website = aprenda como usuários ouvem</p>
+                        <a href="https://webaim.org/articles/screenreader_testing/" target="_blank" rel="noopener">Guia →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Validadores e Checkers</h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>✅ Markup Validation</h3>
+                        <p>Valida HTML para verificar semântica</p>
+                        <p>W3C validator oficial</p>
+                        <a href="https://validator.w3.org/" target="_blank" rel="noopener">Validar →</a>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>🔗 Link Checker</h3>
+                        <p>Verifica links quebrados e redirecionamentos</p>
+                        <p>Importante para não deixar usuários perdidos</p>
+                        <a href="https://www.w3.org/tools/broken-links/" target="_blank" rel="noopener">Checar →</a>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>📄 PDF Accessibility Checker</h3>
+                        <p>Específico para PDFs</p>
+                        <p>PAC 2024 - análise completa</p>
+                        <a href="https://www.access-for-all.ch/ch/pdf-accessibility-checker.html" target="_blank" rel="noopener">Baixar →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Recomendação por Função</h2>
+                
+                <div class="recommendation-cards">
+                    <div class="rec-card">
+                        <h3>👨‍💻 Desenvolvedor</h3>
+                        <ul>
+                            <li>Use: A11y Avaliator (este plugin!)</li>
+                            <li>Use: Lighthouse no DevTools</li>
+                            <li>Teste com: NVDA</li>
+                            <li>Leia: WebAIM articles</li>
+                        </ul>
+                    </div>
+
+                    <div class="rec-card">
+                        <h3>🎨 Designer</h3>
+                        <ul>
+                            <li>Verifiquecontraste: WebAIM Contrast</li>
+                            <li>Simule daltonismo: Chroma</li>
+                            <li>Use: Color Blindness Simulator</li>
+                            <li>Leia: WCAG Design Guidelines</li>
+                        </ul>
+                    </div>
+
+                    <div class="rec-card">
+                        <h3>🧪 QA/Tester</h3>
+                        <ul>
+                            <li>Use: A11y Avaliator</li>
+                            <li>Teste com: NVDA + Teclado</li>
+                            <li>Use: Axe DevTools</li>
+                            <li>Documente: WAVE findings</li>
+                        </ul>
+                    </div>
+
+                    <div class="rec-card">
+                        <h3>📊 Product Manager</h3>
+                        <ul>
+                            <li>Rastreie com: A11y Avaliator</li>
+                            <li>Leia: W3C WAI overview</li>
+                            <li>Acompanhe: Métricas WCAG</li>
+                            <li>Defenda: Business case para a11y</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li>Instale o plugin A11y Avaliator (você está aqui!)</li>
+                    <li>Instale um verificador de contraste</li>
+                    <li>Baixe NVDA se trabalha com Windows</li>
+                    <li>Explore WebAIM.org para aprender</li>
+                    <li>Ative o Lighthouse nos DevTools</li>
+                    <li>Experimente um simulador de daltonismo</li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="correcoes.html">Correções</a> | <a href="faq.html">FAQ</a> | <a href="index.html">Início</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tool-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .tool-card h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .tool-card p {
+            margin: 0.5rem 0;
+            font-size: 0.95em;
+        }
+
+        .tool-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .tool-card a:hover {
+            text-decoration: underline;
+        }
+
+        .learning-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .learning-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .learning-item h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .learning-item a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .recommendation-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .rec-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .rec-card h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .rec-card ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .rec-card li {
+            margin: 0.5rem 0;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste WCAG - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html" class="active">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>🎯 Análise WCAG</h1>
+            <p class="subtitle">Teste automático baseado em Web Content Accessibility Guidelines</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>O que é WCAG?</h2>
+                <p><strong>WCAG (Web Content Accessibility Guidelines)</strong> são as recomendações internacionais que guiam como fazer seu site realmente acessível. Criadas pela W3C em parceria com especialistas em acessibilidade.</p>
+                <p>Pense nela como um "guia de instruções" para não deixar ninguém para trás. A maioria das legislações mundiais se baseia nela.</p>
+            </section>
+
+            <section>
+                <h2>Os 3 Níveis</h2>
+                
+                <div class="levels-comparison">
+                    <div class="level-card level-a">
+                        <h3>🟢 Nível A</h3>
+                        <p><strong>O Básico</strong> - Sem isso, seu site exclui muita gente</p>
+                        <ul>
+                            <li>Imagens precisam descrever o que mostram</li>
+                            <li>Vídeos precisam de legendas</li>
+                            <li>Páginas têm títulos descritivos</li>
+                            <li>Informação não depende só de cores</li>
+                            <li>Links são claros e identificáveis</li>
+                        </ul>
+                        <p class="note">✅ Obrigatório. Nenhuma discussão.</p>
+                    </div>
+
+                    <div class="level-card level-aa">
+                        <h3>🟡 Nível AA</h3>
+                        <p><strong>O Alvo</strong> - Acessibilidade real para a maioria</p>
+                        <ul>
+                            <li>Texto legível mesmo com baixa visão (contraste 4.5:1)</li>
+                            <li>Tudo funciona sem mouse</li>
+                            <li>Sempre sabe onde o foco está</li>
+                            <li>Descrições de áudio em vídeos</li>
+                            <li>Conteúdo organizado logicamente</li>
+                        </ul>
+                        <p class="note">🎯 Seu objetivo deveria ser chegar aqui. É alcançável e vale muito a pena.</p>
+                    </div>
+
+                    <div class="level-card level-aaa">
+                        <h3>🔴 Nível AAA</h3>
+                        <p><strong>O Premium</strong> - Acessibilidade exemplar</p>
+                        <ul>
+                            <li>Contraste super alto (7:1+) para até enxergados com muita dificuldade</li>
+                            <li>Explicações detalhadas de conceitos complexos</li>
+                            <li>Nada que pisque rapidamente (causa problemas neurológicos)</li>
+                            <li>Linguagem de cada seção está marcada</li>
+                            <li>Tudo tem alternativa, não só imagens</li>
+                        </ul>
+                        <p class="note">Ideal se você trabalha com saúde, governo, educação. Difícil, mas possível.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Como o Plugin Testa WCAG</h2>
+                <p>Este plugin usa <strong>axe-core</strong>, uma ferramenta gratuita e confiável que verifica automaticamente se seu site segue os padrões WCAG.</p>
+                
+                <div class="info-box">
+                    <h3>💡 Lembrance Importante</h3>
+                    <p>Testes automáticos encontram cerca de <strong>50-70% dos problemas</strong> reais. O resto você descobri testando com pessoas de verdade usando teclado e leitores de tela. Mas começar por aqui é essencial.</p>
+                </div>
+
+                <h3>Exemplo de Violação Detectada</h3>
+                <div class="example-box">
+                    <h4>❌ Imagem sem alt text (WCAG 2.2 1.1.1 Conteúdo Não-texto)</h4>
+                    <code>&lt;img src="logo.png"&gt; &lt;!-- SEM alt --&gt;</code>
+                    <p><strong>Problema:</strong> Leitores de tela não sabem o que a imagem representa</p>
+                    <p><strong>Solução:</strong> <code>&lt;img src="logo.png" alt="Logo da empresa XYZ"&gt;</code></p>
+                    <p><strong>Nível:</strong> A (Obrigatório em todos os níveis)</p>
+                </div>
+
+                <h3>Exemplo Correto</h3>
+                <div class="success-box">
+                    <h4>✅ Imagem com alt text descritivo</h4>
+                    <code>&lt;img src="chart.png" alt="Gráfico de vendas 2024: aumento de 25%"&gt;</code>
+                    <p>Leitor de tela dirá: "Gráfico de vendas 2024: aumento de 25%"</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Categorias de Testes WCAG</h2>
+                <p>Os testes WCAG cobrem 4 princípios:</p>
+
+                <div class="principles-grid">
+                    <div class="principle">
+                        <h3>1️⃣ Perceptível</h3>
+                        <p>Usuários devem <strong>perceber</strong> o conteúdo</p>
+                        <ul>
+                            <li>Imagens com alt</li>
+                            <li>Vídeos com legendas</li>
+                            <li>Bom contraste</li>
+                            <li>Texto redimensionável</li>
+                        </ul>
+                    </div>
+
+                    <div class="principle">
+                        <h3>2️⃣ Operável</h3>
+                        <p>Usuários devem <strong>navegar</strong> funcionalidade</p>
+                        <ul>
+                            <li>Navegação por teclado</li>
+                            <li>Sem keyboard traps</li>
+                            <li>Links claros</li>
+                            <li>Botões acionáveis</li>
+                        </ul>
+                    </div>
+
+                    <div class="principle">
+                        <h3>3️⃣ Compreensível</h3>
+                        <p>Usuários devem <strong>entender</strong> conteúdo</p>
+                        <ul>
+                            <li>Idioma da página marcado</li>
+                            <li>Instruções claras</li>
+                            <li>Formatação consistente</li>
+                            <li>Sem jargão</li>
+                        </ul>
+                    </div>
+
+                    <div class="principle">
+                        <h3>4️⃣ Robusto</h3>
+                        <p>Conteúdo deve ser <strong>compatível</strong></p>
+                        <ul>
+                            <li>HTML válido</li>
+                            <li>Compatível com AT</li>
+                            <li>Sem erros críticos</li>
+                            <li>Semântica correta</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximas Etapas</h2>
+                <ol>
+                    <li>Use o <a href="como-usar.html">plugin para analisar seu site</a></li>
+                    <li>Veja as violações reportadas e seus níveis</li>
+                    <li>Consulte <a href="erros-comuns.html">erros comuns</a> para soluções rápidas</li>
+                    <li>Combine com <a href="manual-teclado.html">testes manuais</a> para cobertura completa</li>
+                    <li>Alcance pelo menos WCAG AA (recomendado)</li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="glossario.html">Glossário</a> | <a href="faq.html">FAQ</a> | <a href="recursos.html">Recursos</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .levels-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .level-card {
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 2px solid;
+            background: white;
+        }
+
+        .level-a {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+
+        .level-aa {
+            border-color: #f59e0b;
+            background: #fffbf0;
+        }
+
+        .level-aaa {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+
+        .level-card h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .level-card ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .level-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .note {
+            background: rgba(0,0,0,0.05);
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-top: 1rem;
+        }
+
+        .example-box, .success-box {
+            background: white;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid;
+        }
+
+        .example-box {
+            border-color: var(--danger);
+            background: #fef2f2;
+        }
+
+        .success-box {
+            border-color: var(--secondary);
+            background: #f0fdf4;
+        }
+
+        .example-box h4, .success-box h4 {
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: #e0e7ff;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .principle {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .principle h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .principle ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .principle li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</body>
+</html>

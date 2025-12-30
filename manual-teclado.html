@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Testes com Teclado - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html" class="active">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>⌨️ Manual Completo: Testando com Teclado</h1>
+            <p class="subtitle">Guia passo-a-passo para teste manual de navegação por teclado</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>Preparação</h2>
+                
+                <div class="prep-box">
+                    <h3>O que você precisa</h3>
+                    <ul>
+                        <li>✅ Navegador moderno (Chrome, Firefox, Safari, Edge)</li>
+                        <li>✅ Site que quer testar aberto</li>
+                        <li>✅ Teclado (sem mouse!)</li>
+                        <li>✅ Cerca de 15-30 minutos</li>
+                    </ul>
+                </div>
+
+                <h3>Teclas Importantes</h3>
+                <div class="keys-grid">
+                    <div class="key-card">
+                        <h4>Tab ↹</h4>
+                        <p><strong>Avança</strong> para o próximo elemento focável</p>
+                        <p>Use repetidamente para navegar</p>
+                    </div>
+
+                    <div class="key-card">
+                        <h4>Shift + Tab</h4>
+                        <p><strong>Retrocede</strong> para o elemento anterior</p>
+                        <p>Volta na sequência</p>
+                    </div>
+
+                    <div class="key-card">
+                        <h4>Enter ↩️</h4>
+                        <p><strong>Ativa</strong> links e botões</p>
+                        <p>Também envia formulários</p>
+                    </div>
+
+                    <div class="key-card">
+                        <h4>Espaço</h4>
+                        <p><strong>Marca</strong> checkboxes</p>
+                        <p>Ativa botões</p>
+                    </div>
+
+                    <div class="key-card">
+                        <h4>Escape</h4>
+                        <p><strong>Fecha</strong> modais/dropdowns</p>
+                        <p>Sai de modo especial</p>
+                    </div>
+
+                    <div class="key-card">
+                        <h4>Setas ↑ ↓ ← →</h4>
+                        <p><strong>Navega</strong> em menus dropdown</p>
+                        <p>Muda seleções em radio</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Teste 1: Navegação com Tab</h2>
+                
+                <div class="test-step">
+                    <h3>Objetivo</h3>
+                    <p>Verificar se <strong>todos elementos interativos podem ser acessados com Tab</strong></p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <h4>1. Comece no topo</h4>
+                        <p>Abra o site e vá ao topo da página (Ctrl/Cmd + Home)</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>2. Pressione Tab repetidamente</h4>
+                        <p>Observe quais elementos recebem focus (devem ter outline/border visível)</p>
+                        <p>✅ <strong>Espera:</strong> Elemento com outline/mudança visível</p>
+                        <p>❌ <strong>Problema:</strong> Nada muda, não sabe onde está</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>3. Verifique a ordem</h4>
+                        <p>A navegação deve ser lógica (esquerda→direita, topo→rodapé)</p>
+                        <p>❌ <strong>Problema:</strong> Pula de forma aleatória</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>4. Registre problemas</h4>
+                        <p><strong>Anotue elementos que:</strong></p>
+                        <ul>
+                            <li>Não recebem focus</li>
+                            <li>Não têm indicador visível</li>
+                            <li>Estão em ordem estranha</li>
+                        </ul>
+                    </div>
+
+                    <div class="step">
+                        <h4>5. Teste ao final</h4>
+                        <p>Continue Tab até chegar no final da página</p>
+                        <p>✅ <strong>Bom:</strong> Chega até o final sem ficar preso</p>
+                        <p>❌ <strong>Problema:</strong> Focus desaparece ou fica preso</p>
+                    </div>
+                </div>
+
+                <div class="checklist">
+                    <h3>Checklist: Navegação Tab</h3>
+                    <label><input type="checkbox"> Todos os botões recebem focus</label>
+                    <label><input type="checkbox"> Todos os links recebem focus</label>
+                    <label><input type="checkbox"> Campos de formulário recebem focus</label>
+                    <label><input type="checkbox"> Indicador visual é claro e óbvio</label>
+                    <label><input type="checkbox"> Ordem é lógica e previsível</label>
+                    <label><input type="checkbox"> Consegue chegar ao final sem ficar preso</label>
+                </div>
+            </section>
+
+            <section>
+                <h2>Teste 2: Ativar com Enter</h2>
+                
+                <div class="test-step">
+                    <h3>Objetivo</h3>
+                    <p>Verificar se <strong>todos botões e links funcionam com Enter</strong></p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <h4>1. Navegue até um link</h4>
+                        <p>Use Tab até chegar em um link</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>2. Pressione Enter</h4>
+                        <p>✅ <strong>Esperado:</strong> Link é ativado (navega ou abre popup)</p>
+                        <p>❌ <strong>Problema:</strong> Nada acontece</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>3. Teste botões</h4>
+                        <p>Especialmente botões customizados (DIVs com onclick)</p>
+                        <p>✅ <strong>Esperado:</strong> Botão ativa com Enter</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>4. Teste menus dropdown</h4>
+                        <p>Se tem dropdown, pressione Enter para abrir</p>
+                        <p>✅ <strong>Esperado:</strong> Menu abre/fecha com Enter</p>
+                    </div>
+                </div>
+
+                <div class="checklist">
+                    <h3>Checklist: Enter</h3>
+                    <label><input type="checkbox"> Links abrem com Enter</label>
+                    <label><input type="checkbox"> Botões ativam com Enter</label>
+                    <label><input type="checkbox"> Menus abrem com Enter</label>
+                    <label><input type="checkbox"> Formulários enviam com Enter</label>
+                </div>
+            </section>
+
+            <section>
+                <h2>Teste 3: Escape em Modais</h2>
+                
+                <div class="test-step">
+                    <h3>Objetivo</h3>
+                    <p>Verificar se <strong>Escape fecha modais e dropdowns</strong></p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <h4>1. Abra um modal/dropdown</h4>
+                        <p>Tab até botão que abre modal, pressione Enter</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>2. Pressione Escape</h4>
+                        <p>✅ <strong>Esperado:</strong> Modal/dropdown fecha</p>
+                        <p>❌ <strong>Problema:</strong> Nada acontece, fica preso</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>3. Testes adicionais</h4>
+                        <p>Modal com botão X: Tab até X, Enter funciona?</p>
+                        <p>Dropdown: Arrow keys para navegar itens?</p>
+                    </div>
+                </div>
+
+                <div class="checklist">
+                    <h3>Checklist: Escape e Modais</h3>
+                    <label><input type="checkbox"> Escape fecha modal</label>
+                    <label><input type="checkbox"> Focus volta para botão que abriu</label>
+                    <label><input type="checkbox"> Não consegue sair deixa preso</label>
+                    <label><input type="checkbox"> Modal tem botão de fechar visível</label>
+                </div>
+            </section>
+
+            <section>
+                <h2>Teste 4: Formulários</h2>
+                
+                <div class="test-step">
+                    <h3>Objetivo</h3>
+                    <p>Verificar se <strong>formulários são completamente preenchíveis com teclado</strong></p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <h4>1. Navegue até o formulário</h4>
+                        <p>Use Tab até primeiro campo</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>2. Sabe qual é o campo?</h4>
+                        <p>✅ <strong>Esperado:</strong> Label ou placeholder deixa claro</p>
+                        <p>❌ <strong>Problema:</strong> Sem saber o que preencher</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>3. Preencha com Tab entre campos</h4>
+                        <p>Use Tab para ir para próximo campo</p>
+                        <p>Espaço para checkboxes</p>
+                        <p>Setas para radio buttons</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>4. Mensagens de erro</h4>
+                        <p>Se errar, pode ver mensagem de erro?</p>
+                        <p>❌ <strong>Problema:</strong> Erro visível mas não anunciado</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>5. Envie o formulário</h4>
+                        <p>Tab até botão Enviar, pressione Enter</p>
+                        <p>✅ <strong>Esperado:</strong> Formulário envia</p>
+                    </div>
+                </div>
+
+                <div class="checklist">
+                    <h3>Checklist: Formulários</h3>
+                    <label><input type="checkbox"> Todos campos têm labels claros</label>
+                    <label><input type="checkbox"> Pode Tab entre campos sem prender</label>
+                    <label><input type="checkbox"> Checkboxes funcionam com Espaço</label>
+                    <label><input type="checkbox"> Radio buttons funcionam com Setas</label>
+                    <label><input type="checkbox"> Mensagens de erro são anunciadas</label>
+                    <label><input type="checkbox"> Pode enviar com Enter ou Tab</label>
+                </div>
+            </section>
+
+            <section>
+                <h2>Documentar Problemas</h2>
+                
+                <div class="documentation">
+                    <h3>Para cada problema encontrado, anote:</h3>
+                    <div class="doc-template">
+                        <p><strong>Exemplo:</strong></p>
+                        <ul>
+                            <li>📍 <strong>Localização:</strong> Botão "Enviar" no formulário de contato</li>
+                            <li>🔴 <strong>Problema:</strong> Botão não mostra focus visual</li>
+                            <li>💡 <strong>Solução:</strong> Adicionar outline ao :focus</li>
+                            <li>🔧 <strong>Código:</strong> button:focus { outline: 2px solid #0066cc; }</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li>Execute todos os 4 testes acima</li>
+                    <li>Documente problemas encontrados</li>
+                    <li>Consulte <a href="correcoes.html">guia de correções</a></li>
+                    <li>Implemente correções</li>
+                    <li>Teste novamente para validar</li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="teste-teclado.html">Volta ao Teste Automático</a> | <a href="correcoes.html">Correções</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .prep-box {
+            background: #e0e7ff;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .keys-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .key-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .key-card h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1em;
+            color: var(--primary);
+            font-weight: bold;
+            font-family: monospace;
+        }
+
+        .key-card p {
+            margin: 0.5rem 0;
+            font-size: 0.9em;
+        }
+
+        .test-step {
+            background: #eff6ff;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .steps {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+
+        .step {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .step:last-child {
+            border-bottom: none;
+        }
+
+        .step h4 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.05em;
+        }
+
+        .step p {
+            margin: 0.5rem 0;
+        }
+
+        .step ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .step li {
+            margin: 0.25rem 0;
+        }
+
+        .checklist {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .checklist h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .checklist label {
+            display: block;
+            margin: 0.75rem 0;
+            cursor: pointer;
+        }
+
+        .checklist input[type="checkbox"] {
+            margin-right: 0.5rem;
+            cursor: pointer;
+        }
+
+        .documentation {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .doc-template {
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        .doc-template ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .doc-template li {
+            margin: 0.5rem 0;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Score - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html" class="active">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>📊 Sistema de Score</h1>
+            <p class="subtitle">Como o A11y Avaliator calcula a nota de acessibilidade</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>O que é o Score?</h2>
+                <p>O <strong>score de acessibilidade</strong> é um número entre <strong>0 e 100</strong> que resume a saúde geral de acessibilidade do seu site.</p>
+                
+                <div class="score-scale">
+                    <h3>Escala de Pontuação</h3>
+                    <div class="score-bar">
+                        <div class="bar-section excellent" style="width: 20%">
+                            <span>90-100</span>
+                            <p>Excelente</p>
+                        </div>
+                        <div class="bar-section good" style="width: 20%">
+                            <span>80-89</span>
+                            <p>Bom</p>
+                        </div>
+                        <div class="bar-section acceptable" style="width: 20%">
+                            <span>70-79</span>
+                            <p>Aceitável</p>
+                        </div>
+                        <div class="bar-section fair" style="width: 20%">
+                            <span>50-69</span>
+                            <p>Precisa Melhorar</p>
+                        </div>
+                        <div class="bar-section poor" style="width: 20%">
+                            <span>0-49</span>
+                            <p>Crítico</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Como é Calculado?</h2>
+                <p>O score leva em conta <strong>tipos</strong> e <strong>quantidades</strong> de problemas encontrados.</p>
+
+                <h3>1️⃣ Coleta de Problemas</h3>
+                <p>O plugin executa 4 testes e coleta todos os problemas:</p>
+                <ul>
+                    <li>✅ <strong>WCAG:</strong> Violações automáticas detectadas pelo axe-core</li>
+                    <li>⌨️ <strong>Teclado:</strong> Problemas de navegação por teclado</li>
+                    <li>🔊 <strong>Leitor:</strong> Problemas de semântica para leitores de tela</li>
+                    <li>🎨 <strong>Contraste:</strong> Elementos com contraste inadequado</li>
+                </ul>
+
+                <h3>2️⃣ Categorização por Severidade</h3>
+                <p>Cada problema tem um <strong>nível de impacto</strong>:</p>
+                
+                <div class="severity-grid">
+                    <div class="severity-card critical">
+                        <h4>🔴 Crítico</h4>
+                        <p><strong>Impacto:</strong> Completa inacessibilidade</p>
+                        <p><strong>Exemplos:</strong></p>
+                        <ul>
+                            <li>Botões sem label</li>
+                            <li>Imagens críticas sem alt</li>
+                            <li>Keyboard trap</li>
+                        </ul>
+                        <p><strong>Peso:</strong> 10 pontos cada</p>
+                    </div>
+
+                    <div class="severity-card serious">
+                        <h4>🟠 Grave</h4>
+                        <p><strong>Impacto:</strong> Acesso significativamente prejudicado</p>
+                        <p><strong>Exemplos:</strong></p>
+                        <ul>
+                            <li>Links sem descrição</li>
+                            <li>Formulário sem labels</li>
+                            <li>Contraste baixo</li>
+                        </ul>
+                        <p><strong>Peso:</strong> 6 pontos cada</p>
+                    </div>
+
+                    <div class="severity-card moderate">
+                        <h4>🟡 Moderado</h4>
+                        <p><strong>Impacto:</strong> Dificuldade moderada</p>
+                        <p><strong>Exemplos:</strong></p>
+                        <ul>
+                            <li>Falta de ARIA</li>
+                            <li>Heading fora de ordem</li>
+                            <li>Ícone sem descrição</li>
+                        </ul>
+                        <p><strong>Peso:</strong> 3 pontos cada</p>
+                    </div>
+
+                    <div class="severity-card minor">
+                        <h4>🟢 Menor</h4>
+                        <p><strong>Impacto:</strong> Problema de polimento</p>
+                        <p><strong>Exemplos:</strong></p>
+                        <ul>
+                            <li>Focus indicator pouco visível</li>
+                            <li>Redundância de link</li>
+                            <li>Layout não responsivo</li>
+                        </ul>
+                        <p><strong>Peso:</strong> 1 ponto cada</p>
+                    </div>
+                </div>
+
+                <h3>3️⃣ Aplicação de Multiplicadores WCAG</h3>
+                <p>Problemas WCAG recebem <strong>multiplicadores de nível</strong> para incentivar conformidade com níveis mais altos:</p>
+                
+                <div class="multiplier-box">
+                    <table class="multiplier-table">
+                        <tr>
+                            <th>Nível WCAG</th>
+                            <th>Multiplicador</th>
+                            <th>Lógica</th>
+                        </tr>
+                        <tr>
+                            <td><strong>A</strong></td>
+                            <td>1.0x</td>
+                            <td>Base - violação A é um problema</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AA</strong></td>
+                            <td>1.5x</td>
+                            <td>Mais importante - recomendado</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AAA</strong></td>
+                            <td>2.0x</td>
+                            <td>Mais crítico - melhor prática</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>Exemplos:</p>
+                <ul>
+                    <li>Violação WCAG A Crítica: 10 × 1.0 = <strong>10 pontos</strong></li>
+                    <li>Violação WCAG AA Grave: 6 × 1.5 = <strong>9 pontos</strong></li>
+                    <li>Violação WCAG AAA Grave: 6 × 2.0 = <strong>12 pontos</strong></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Fórmula Final</h2>
+
+                <div class="formula-box">
+                    <p><strong>Score = 100 - (Pontos Perdidos / Pontos Máximos × 100)</strong></p>
+                </div>
+
+                <h3>Exemplo Prático</h3>
+                <div class="example-calc">
+                    <div class="calc-line">
+                        <span><strong>Problemas encontrados:</strong></span>
+                        <span>
+                            <ul>
+                                <li>2 problemas WCAG AAA Críticos: 10 × 2 × 2 = 40 pontos</li>
+                                <li>3 problemas WCAG AA Graves: 6 × 1.5 × 3 = 27 pontos</li>
+                                <li>5 problemas Teclado Moderados: 3 × 5 = 15 pontos</li>
+                                <li>8 elementos com contraste baixo: 6 × 8 = 48 pontos</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="calc-line">
+                        <span><strong>Total perdido:</strong></span>
+                        <span><strong>40 + 27 + 15 + 48 = 130 pontos</strong></span>
+                    </div>
+                    <div class="calc-line">
+                        <span><strong>Pontos máximos possíveis:</strong></span>
+                        <span><strong>~200-300 (varia por página)</strong></span>
+                    </div>
+                    <div class="calc-line result">
+                        <span><strong>Score final:</strong></span>
+                        <span><strong>100 - (130 / 250 × 100) = 48%</strong> 🔴 Crítico</span>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Entendendo Seu Score</h2>
+
+                <div class="interpretation">
+                    <div class="int-item excellent">
+                        <h3>🌟 90-100: Excelente</h3>
+                        <p><strong>Significado:</strong> Site muito acessível</p>
+                        <p><strong>O que fazer:</strong> Mantenha a vigilância com testes contínuos</p>
+                        <p><strong>Usuários felizes:</strong> Pessoas com deficiência conseguem usar bem</p>
+                    </div>
+
+                    <div class="int-item good">
+                        <h3>⭐ 80-89: Bom</h3>
+                        <p><strong>Significado:</strong> Site acessível, poucos problemas</p>
+                        <p><strong>O que fazer:</strong> Corrija problemas moderados identificados</p>
+                        <p><strong>Alvo padrão:</strong> Bom compromisso entre esforço e acessibilidade</p>
+                    </div>
+
+                    <div class="int-item acceptable">
+                        <h3>✅ 70-79: Aceitável</h3>
+                        <p><strong>Significado:</strong> Site usável, mas com dificuldades</p>
+                        <p><strong>O que fazer:</strong> Priorize problemas graves</p>
+                        <p><strong>Recomendação:</strong> Melhore antes de publicar</p>
+                    </div>
+
+                    <div class="int-item fair">
+                        <h3>⚠️ 50-69: Precisa Melhorar</h3>
+                        <p><strong>Significado:</strong> Muitos problemas, vários usuarios prejudicados</p>
+                        <p><strong>O que fazer:</strong> Corrija problemas críticos imediatamente</p>
+                        <p><strong>Recomendação:</strong> Estabeleça plano de ação</p>
+                    </div>
+
+                    <div class="int-item poor">
+                        <h3>🔴 0-49: Crítico</h3>
+                        <p><strong>Significado:</strong> Site praticamente inacessível</p>
+                        <p><strong>O que fazer:</strong> <strong>Não publique</strong> até melhorar</p>
+                        <p><strong>Recomendação:</strong> Redesenho urgente necessário</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Melhorando Seu Score</h2>
+                
+                <div class="improvement-steps">
+                    <h3>Passo 1: Identifique Problemas Críticos</h3>
+                    <p>Use o relatório detalhado do plugin para ver <strong>cada problema e sua severidade</strong></p>
+
+                    <h3>Passo 2: Comece pelos Críticos</h3>
+                    <p>Corrija primeiro os problemas marcados como <strong>Crítico</strong> (maior impacto no score)</p>
+
+                    <h3>Passo 3: Use o Guia de Correções</h3>
+                    <p>Consulte <a href="correcoes.html">exemplos de código correto</a> para cada tipo de problema</p>
+
+                    <h3>Passo 4: Valide com o Plugin</h3>
+                    <p>Rode o teste novamente para ver o novo score</p>
+
+                    <h3>Passo 5: Repita</h3>
+                    <p>Continue corrigindo até atingir sua meta (recomendado: 80+)</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Limitações do Score</h2>
+                
+                <div class="warning-box">
+                    <h3>⚠️ Important</h3>
+                    <p>O score é uma <strong>métrica útil mas não perfeita</strong>:</p>
+                    <ul>
+                        <li>❌ Não cobre 100% dos problemas (testes manuais ainda são necessários)</li>
+                        <li>❌ Não reflete experiência real de usuários com deficiência</li>
+                        <li>❌ Dois sites com score 80 podem ter experiências muito diferentes</li>
+                        <li>✅ Útil para: Rastreamento de progresso, priorização de correções, motivação</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Próximos Passos</h2>
+                <ol>
+                    <li>Execute uma avaliação completa com o plugin</li>
+                    <li>Veja seu score e o breakdown de problemas</li>
+                    <li>Consulte <a href="correcoes.html">guia de correções</a> para seu tipo de problema</li>
+                    <li>Corrija os críticos primeiro</li>
+                    <li>Rode novamente para ver progresso</li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="page-footer">
+            <p><a href="glossario.html">Glossário</a> | <a href="faq.html">FAQ</a> | <a href="correcoes.html">Guia de Correções</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .score-scale {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .score-bar {
+            display: flex;
+            height: 80px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 1rem;
+            gap: 0;
+        }
+
+        .bar-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .bar-section.excellent { background: #059669; }
+        .bar-section.good { background: #3b82f6; }
+        .bar-section.acceptable { background: #f59e0b; }
+        .bar-section.fair { background: #ef6461; }
+        .bar-section.poor { background: #7f1d1d; }
+
+        .bar-section span {
+            font-size: 0.9em;
+        }
+
+        .bar-section p {
+            margin: 0.25rem 0 0 0;
+            font-size: 0.8em;
+        }
+
+        .severity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .severity-card {
+            border: 1px solid var(--border);
+            border-left: 4px solid;
+            border-radius: 6px;
+            padding: 1.5rem;
+            background: white;
+        }
+
+        .severity-card.critical { border-left-color: #7f1d1d; background: #fef2f2; }
+        .severity-card.serious { border-left-color: #ea580c; background: #fff7ed; }
+        .severity-card.moderate { border-left-color: #d97706; background: #fffbf0; }
+        .severity-card.minor { border-left-color: #059669; background: #f0fdf4; }
+
+        .severity-card h4 {
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .multiplier-box {
+            background: var(--code-bg);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        .multiplier-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        .multiplier-table th,
+        .multiplier-table td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        .multiplier-table th {
+            background: var(--code-bg);
+            font-weight: bold;
+        }
+
+        .formula-box {
+            background: #e0e7ff;
+            padding: 2rem;
+            border-radius: 6px;
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .example-calc {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .calc-line {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .calc-line:last-child {
+            border-bottom: none;
+        }
+
+        .calc-line.result {
+            background: white;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .interpretation {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .int-item {
+            border: 1px solid var(--border);
+            border-left: 4px solid;
+            border-radius: 6px;
+            padding: 1.5rem;
+            background: white;
+        }
+
+        .int-item.excellent { border-left-color: #059669; background: #f0fdf4; }
+        .int-item.good { border-left-color: #3b82f6; background: #eff6ff; }
+        .int-item.acceptable { border-left-color: #f59e0b; background: #fffbf0; }
+        .int-item.fair { border-left-color: #ef6461; background: #fff1f2; }
+        .int-item.poor { border-left-color: #7f1d1d; background: #fef2f2; }
+
+        .int-item h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        .improvement-steps {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .improvement-steps h3 {
+            color: var(--primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .improvement-steps h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .warning-box {
+            background: #fff7ed;
+            border-left: 4px solid var(--danger);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box h3 {
+            margin-top: 0;
+            color: var(--danger);
+        }
+
+        .warning-box ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+    </style>
+</body>
+</html>

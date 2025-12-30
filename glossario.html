@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossário de Termos - A11y Avaliator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="nav-header">📚 Documentação</div>
+        <ul>
+            <li><a href="index.html">🏠 Início</a></li>
+            <li class="nav-group">
+                <strong>📖 Introdução</strong>
+                <ul>
+                    <li><a href="introducao-a11y.html">O que é Acessibilidade</a></li>
+                    <li><a href="glossario.html" class="active">Glossário de Termos</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔍 Sobre</strong>
+                <ul>
+                    <li><a href="sobre-plugin.html">Sobre o Plugin</a></li>
+                    <li><a href="como-usar.html">Como Usar</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🧪 Testes</strong>
+                <ul>
+                    <li><a href="teste-wcag.html">Análise WCAG</a></li>
+                    <li><a href="teste-teclado.html">Teste de Teclado</a></li>
+                    <li><a href="teste-leitor-tela.html">Leitor de Tela</a></li>
+                    <li><a href="teste-contraste.html">Teste de Contraste</a></li>
+                    <li><a href="sistema-score.html">Sistema de Score</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>📖 Guias</strong>
+                <ul>
+                    <li><a href="manual-teclado.html">Testes com Teclado</a></li>
+                    <li><a href="manual-leitor-tela.html">Testes com Leitor</a></li>
+                    <li><a href="erros-comuns.html">Erros Mais Comuns</a></li>
+                    <li><a href="correcoes.html">Correções Práticas</a></li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <strong>🔗 Recursos</strong>
+                <ul>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="casos-uso.html">Casos de Uso</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>📚 Glossário de Termos</h1>
+            <p class="subtitle">Terminologia essencial para acessibilidade web</p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Procurar termo..." >
+            </div>
+        </header>
+
+        <div class="content">
+            <div id="glossaryContainer" class="glossary-list">
+                <!-- Preenchido por JavaScript -->
+            </div>
+        </div>
+
+        <footer class="page-footer">
+            <p>Dúvidas? Veja o <a href="faq.html">FAQ</a> ou leia a <a href="introducao-a11y.html">introdução</a></p>
+        </footer>
+    </main>
+
+    <style>
+        .search-box {
+            margin: 2rem 0;
+        }
+
+        .search-box input {
+            width: 100%;
+            max-width: 500px;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+        }
+
+        .glossary-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .glossary-term {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .glossary-term:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .glossary-term h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .glossary-term .definition {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .glossary-term .example {
+            background: var(--code-bg);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 0.5rem 0;
+            font-size: 0.9em;
+        }
+
+        .glossary-term .related {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 0.5rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <script>
+        const glossary = [
+            {
+                term: "A11y",
+                definition: "Abreviação numérica para 'acessibilidade' (11 letras entre 'a' e 'y')",
+                example: "O projeto A11y Avaliator ajuda a testar acessibilidade.",
+                related: "WAI, WCAG"
+            },
+            {
+                term: "ARIA",
+                definition: "Accessible Rich Internet Applications. Conjunto de atributos que melhoram a acessibilidade de elementos HTML",
+                example: '<div role="button" aria-label="Fechar modal">✕</div>',
+                related: "Role, aria-label"
+            },
+            {
+                term: "Alt text",
+                definition: "Texto alternativo em imagens. Lido por leitores de tela para descrever a imagem",
+                example: '<img src="logo.png" alt="Logo da empresa XYZ">',
+                related: "Acessibilidade visual, screen reader"
+            },
+            {
+                term: "AT",
+                definition: "Assistive Technology. Tecnologia usada por pessoas com deficiência para acessar o web",
+                example: "NVDA, JAWS, VoiceOver, switches, joysticks",
+                related: "Screen reader, deficiência"
+            },
+            {
+                term: "Contraste",
+                definition: "Diferença de luminância entre texto e fundo. Medido em razão (ex: 4.5:1)",
+                example: "Contraste 4.5:1 é mínimo para texto pequeno em WCAG AA",
+                related: "Contraste ratio, WCAG AA"
+            },
+            {
+                term: "Focus",
+                definition: "Estado de um elemento quando está pronto para receber interação (teclado)",
+                example: "Ao pressionar Tab, cada botão recebe focus sequencialmente",
+                related: "Focus indicator, Focus trap"
+            },
+            {
+                term: "Focus indicator",
+                definition: "Visual que mostra qual elemento tem focus (outline, border, mudança de cor)",
+                example: "Botão com outline azul quando tem focus",
+                related: "Focus, keyboard navigation"
+            },
+            {
+                term: "Focus trap",
+                definition: "Quando o focus fica preso em uma área (ex: modal) e não consegue sair",
+                example: "Modal aberto sem fechar, impossível voltar para página",
+                related: "Focus, modal, keyboard trap"
+            },
+            {
+                term: "Keyboard navigation",
+                definition: "Capacidade de usar o website apenas com teclado (Tab, Enter, etc)",
+                example: "Navegar por links e botões usando Tab e Enter",
+                related: "Focus, keyboard trap, deficiência motora"
+            },
+            {
+                term: "Keyboard trap",
+                definition: "Situação onde o foco do teclado fica preso em um elemento",
+                example: "Não conseguir sair de um iframe com teclado",
+                related: "Focus trap, keyboard navigation"
+            },
+            {
+                term: "Landmark",
+                definition: "Áreas principais da página (header, nav, main, aside, footer) que ajudam navegação",
+                example: "<main>, <nav>, <header>, <aside>, <footer>",
+                related: "Semantic HTML, screen reader"
+            },
+            {
+                term: "Role",
+                definition: "Atributo ARIA que define o papel/tipo de um elemento",
+                example: '<div role="button">Clique aqui</div>',
+                related: "ARIA, semantic HTML"
+            },
+            {
+                term: "Screen reader",
+                definition: "Software que lê conteúdo da tela em voz sintetizada. Usado por pessoas com deficiência visual",
+                example: "NVDA (Windows), JAWS (Windows), VoiceOver (Mac/iOS)",
+                related: "Deficiência visual, AT, alt text"
+            },
+            {
+                term: "Semantic HTML",
+                definition: "HTML que usa elementos corretos para significado (h1, button, nav) não apenas visual (div, span)",
+                example: "Usar <button> em vez de <div onclick>",
+                related: "Landmark, role, accessibility"
+            },
+            {
+                term: "Tab order",
+                definition: "Sequência em que elementos recebem focus ao pressionar Tab",
+                example: "Deve ser lógico: esquerda→direita, topo→fundo",
+                related: "Focus, keyboard navigation, tabindex"
+            },
+            {
+                term: "Tabindex",
+                definition: "Atributo HTML que controla a ordem de focus. -1 remove do fluxo, 0 é natural, >0 é prioritário",
+                example: '<button tabindex="0">Botão normal</button>',
+                related: "Tab order, keyboard navigation"
+            },
+            {
+                term: "WCAG",
+                definition: "Web Content Accessibility Guidelines. Padrão internacional de acessibilidade mantido pela W3C",
+                example: "WCAG 2.2 nível AA é o recomendado",
+                related: "A, AA, AAA, W3C"
+            },
+            {
+                term: "WAI",
+                definition: "Web Accessibility Initiative. Iniciativa da W3C que desenvolve a WCAG e outros padrões",
+                example: "WAI publica WCAG, ARIA, e outros padrões",
+                related: "WCAG, W3C, ARIA"
+            },
+            {
+                term: "W3C",
+                definition: "World Wide Web Consortium. Organização que estabelece padrões web incluindo acessibilidade",
+                example: "W3C mantém WCAG, HTML, CSS specs",
+                related: "WCAG, WAI"
+            }
+        ];
+
+        function renderGlossary(terms) {
+            const container = document.getElementById('glossaryContainer');
+            container.innerHTML = '';
+
+            if (terms.length === 0) {
+                container.innerHTML = '<p style="text-align: center; padding: 2rem;">Nenhum termo encontrado.</p>';
+                return;
+            }
+
+            terms.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'glossary-term';
+                div.innerHTML = `
+                    <h3>${item.term}</h3>
+                    <div class="definition">${item.definition}</div>
+                    <div class="example"><strong>Exemplo:</strong> ${item.example}</div>
+                    ${item.related ? `<div class="related"><strong>Relacionado:</strong> ${item.related}</div>` : ''}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function searchGlossary(query) {
+            const filtered = glossary.filter(item =>
+                item.term.toLowerCase().includes(query.toLowerCase()) ||
+                item.definition.toLowerCase().includes(query.toLowerCase())
+            );
+            renderGlossary(filtered);
+        }
+
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            searchGlossary(e.target.value);
+        });
+
+        // Render inicial
+        renderGlossary(glossary);
+    </script>
+</body>
+</html>
