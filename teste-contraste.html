@@ -3,7 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de Contraste - A11y Avaliator</title>
+        <!-- Primary Meta Tags -->
+    <title>Teste de Contraste de Cores WCAG - A11y Avaliator</title>
+    <meta name="title" content="Teste de Contraste de Cores WCAG - A11y Avaliator">
+    <meta name="description" content="Análise de contraste entre textos e fundos conforme WCAG. Ratios 4.5:1 (AA) e 7:1 (AAA) para garantir legibilidade.">
+    <meta name="keywords" content="contraste cores, teste contraste, WCAG contraste, legibilidade, baixa visão, ratio contraste">
+    <meta name="author" content="Deivid Marques">
+    <meta name="language" content="Portuguese">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://deividmarques.github.io/a11y-avaliator-web-docs/teste-contraste.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://deividmarques.github.io/a11y-avaliator-web-docs/teste-contraste.html">
+    <meta property="og:title" content="Teste de Contraste de Cores WCAG - A11y Avaliator">
+    <meta property="og:description" content="Análise de contraste entre textos e fundos conforme WCAG. Ratios 4.5:1 (AA) e 7:1 (AAA) para garantir legibilidade.">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="A11y Avaliator">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://deividmarques.github.io/a11y-avaliator-web-docs/teste-contraste.html">
+    <meta property="twitter:title" content="Teste de Contraste de Cores WCAG - A11y Avaliator">
+    <meta property="twitter:description" content="Análise de contraste entre textos e fundos conforme WCAG. Ratios 4.5:1 (AA) e 7:1 (AAA) para garantir legibilidade.">
+    
+    <!-- AI Crawlers / LLM Optimization -->
+    <meta name="ai:content_type" content="documentation">
+    <meta name="ai:topic" content="color contrast testing, WCAG contrast ratios, visual accessibility, readability">
+    <meta name="ai:audience" content="developers, QA engineers, designers, accessibility specialists">
+    <meta name="ai:purpose" content="educational, technical reference">
+    <meta name="citation_title" content="Teste de Contraste de Cores WCAG - A11y Avaliator">
+    <meta name="citation_author" content="Deivid Marques">
+    <meta name="citation_language" content="pt">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -258,187 +292,6 @@
         </footer>
     </main>
 
-    <style>
-        .audience-box {
-            background: #e0e7ff;
-            border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            border-radius: 6px;
-            margin: 1.5rem 0;
-        }
-
-        .math-box {
-            background: var(--code-bg);
-            padding: 1.5rem;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            margin: 1.5rem 0;
-        }
-
-        .math-box code {
-            background: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-        }
-
-        .ratio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .ratio-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .ratio-card h4 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        .checks-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .check {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1.5rem;
-        }
-
-        .check h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        .contrast-demo {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .contrast-sample {
-            padding: 1.5rem;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-        }
-
-        .contrast-sample p {
-            margin: 0 0 0.5rem 0;
-            font-size: 1.1em;
-        }
-
-        .contrast-sample.poor {
-            background: white;
-            color: #cccccc;
-        }
-
-        .contrast-sample.bad {
-            background: white;
-            color: #aaaaaa;
-        }
-
-        .contrast-sample.acceptable {
-            background: white;
-            color: #666666;
-        }
-
-        .contrast-sample.good {
-            background: white;
-            color: #333333;
-        }
-
-        .contrast-sample.excellent {
-            background: white;
-            color: #000000;
-        }
-
-        .ratio-label {
-            font-size: 0.9em;
-            margin-top: 0.5rem;
-            font-weight: 500;
-        }
-
-        .icon-demo {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .icon-bad, .icon-good {
-            background: white;
-            padding: 2rem;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .icon-bad {
-            color: #aaaaaa;
-        }
-
-        .icon-good {
-            color: #000000;
-        }
-
-        .icon-bad span, .icon-good span {
-            font-size: 3em;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .problem, .solution {
-            background: white;
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-left: 4px solid;
-        }
-
-        .problem {
-            border-color: var(--danger);
-            background: #fef2f2;
-        }
-
-        .solution {
-            border-color: var(--secondary);
-            background: #f0fdf4;
-        }
-
-        .report {
-            background: var(--code-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .report-sample {
-            background: white;
-            padding: 1rem;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
-        .report-sample p {
-            margin: 0.5rem 0;
-        }
-
-        .report-sample ul {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-    </style>
+    
 </body>
 </html>

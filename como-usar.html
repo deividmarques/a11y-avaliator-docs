@@ -3,7 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como Usar - A11y Avaliator</title>
+        <!-- Primary Meta Tags -->
+    <title>Como Usar o A11y Avaliator - Guia Completo</title>
+    <meta name="title" content="Como Usar o A11y Avaliator - Guia Completo">
+    <meta name="description" content="Passo a passo completo: instalação, configuração de testes, seleção de níveis WCAG, interpretação de relatórios e exportação.">
+    <meta name="keywords" content="como usar, guia uso, instalação, tutorial, passo a passo, configuração testes">
+    <meta name="author" content="Deivid Marques">
+    <meta name="language" content="Portuguese">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://deividmarques.github.io/a11y-avaliator-web-docs/como-usar.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://deividmarques.github.io/a11y-avaliator-web-docs/como-usar.html">
+    <meta property="og:title" content="Como Usar o A11y Avaliator - Guia Completo">
+    <meta property="og:description" content="Passo a passo completo: instalação, configuração de testes, seleção de níveis WCAG, interpretação de relatórios e exportação.">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="A11y Avaliator">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://deividmarques.github.io/a11y-avaliator-web-docs/como-usar.html">
+    <meta property="twitter:title" content="Como Usar o A11y Avaliator - Guia Completo">
+    <meta property="twitter:description" content="Passo a passo completo: instalação, configuração de testes, seleção de níveis WCAG, interpretação de relatórios e exportação.">
+    
+    <!-- AI Crawlers / LLM Optimization -->
+    <meta name="ai:content_type" content="documentation">
+    <meta name="ai:topic" content="user guide, installation instructions, usage tutorial, configuration guide">
+    <meta name="ai:audience" content="developers, QA engineers, designers, accessibility specialists">
+    <meta name="ai:purpose" content="educational, technical reference">
+    <meta name="citation_title" content="Como Usar o A11y Avaliator - Guia Completo">
+    <meta name="citation_author" content="Deivid Marques">
+    <meta name="citation_language" content="pt">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -308,193 +342,6 @@
         </footer>
     </main>
 
-    <style>
-        .browser-instructions {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .browser {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1.5rem;
-        }
-
-        .browser h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        .browser ol {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .browser li {
-            margin: 0.5rem 0;
-        }
-
-        .usage-step {
-            background: #e0e7ff;
-            border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            border-radius: 6px;
-            margin: 1.5rem 0;
-        }
-
-        .usage-step ol {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .info-box {
-            background: #eff6ff;
-            border-left: 4px solid var(--primary);
-            padding: 1rem;
-            border-radius: 6px;
-            margin: 1rem 0;
-        }
-
-        .test-selection {
-            margin: 1.5rem 0;
-        }
-
-        .checkbox-option {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .checkbox-option h4 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        .checkbox-option label {
-            display: block;
-            margin-top: 0.5rem;
-            cursor: pointer;
-        }
-
-        .checkbox-option input[type="checkbox"] {
-            margin-right: 0.5rem;
-        }
-
-        .recommendation-box {
-            background: #f0fdf4;
-            border-left: 4px solid var(--secondary);
-            padding: 1.5rem;
-            border-radius: 6px;
-            margin-top: 1.5rem;
-        }
-
-        .recommendation-box p {
-            margin: 0.5rem 0;
-        }
-
-        .execution-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .step-box {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1rem;
-        }
-
-        .step-box h4 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        .step-box p {
-            margin: 0.5rem 0;
-            font-size: 0.9em;
-        }
-
-        .report-guide {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .report-section {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1rem;
-        }
-
-        .report-section h4 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        .report-section ul {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .fix-workflow {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .fix-workflow ol {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .fix-workflow li {
-            margin: 1rem 0;
-        }
-
-        .fix-workflow li strong {
-            color: var(--primary);
-        }
-
-        .fix-workflow p {
-            margin: 0.25rem 0;
-            font-size: 0.95em;
-        }
-
-        .features-available {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .feature {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1rem;
-        }
-
-        .feature h3 {
-            margin-top: 0;
-            color: var(--primary);
-            font-size: 1rem;
-        }
-
-        .feature p {
-            margin: 0.5rem 0;
-            font-size: 0.9em;
-        }
-    </style>
+    
 </body>
 </html>

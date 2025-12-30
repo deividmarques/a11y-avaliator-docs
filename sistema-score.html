@@ -3,7 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Score - A11y Avaliator</title>
+        <!-- Primary Meta Tags -->
+    <title>Sistema de Pontuação de Acessibilidade - A11y Avaliator</title>
+    <meta name="title" content="Sistema de Pontuação de Acessibilidade - A11y Avaliator">
+    <meta name="description" content="Entenda como é calculado o score de acessibilidade (0-100) com pesos por severidade e multiplicadores WCAG.">
+    <meta name="keywords" content="score acessibilidade, pontuação a11y, métrica acessibilidade, severidade, peso WCAG">
+    <meta name="author" content="Deivid Marques">
+    <meta name="language" content="Portuguese">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://deividmarques.github.io/a11y-avaliator-web-docs/sistema-score.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://deividmarques.github.io/a11y-avaliator-web-docs/sistema-score.html">
+    <meta property="og:title" content="Sistema de Pontuação de Acessibilidade - A11y Avaliator">
+    <meta property="og:description" content="Entenda como é calculado o score de acessibilidade (0-100) com pesos por severidade e multiplicadores WCAG.">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="A11y Avaliator">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://deividmarques.github.io/a11y-avaliator-web-docs/sistema-score.html">
+    <meta property="twitter:title" content="Sistema de Pontuação de Acessibilidade - A11y Avaliator">
+    <meta property="twitter:description" content="Entenda como é calculado o score de acessibilidade (0-100) com pesos por severidade e multiplicadores WCAG.">
+    
+    <!-- AI Crawlers / LLM Optimization -->
+    <meta name="ai:content_type" content="documentation">
+    <meta name="ai:topic" content="accessibility scoring, metrics calculation, severity weighting, WCAG compliance measurement">
+    <meta name="ai:audience" content="developers, QA engineers, designers, accessibility specialists">
+    <meta name="ai:purpose" content="educational, technical reference">
+    <meta name="citation_title" content="Sistema de Pontuação de Acessibilidade - A11y Avaliator">
+    <meta name="citation_author" content="Deivid Marques">
+    <meta name="citation_language" content="pt">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -324,199 +358,6 @@
         </footer>
     </main>
 
-    <style>
-        .score-scale {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            margin: 2rem 0;
-        }
-
-        .score-bar {
-            display: flex;
-            height: 80px;
-            border-radius: 6px;
-            overflow: hidden;
-            margin-top: 1rem;
-            gap: 0;
-        }
-
-        .bar-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        .bar-section.excellent { background: #059669; }
-        .bar-section.good { background: #3b82f6; }
-        .bar-section.acceptable { background: #f59e0b; }
-        .bar-section.fair { background: #ef6461; }
-        .bar-section.poor { background: #7f1d1d; }
-
-        .bar-section span {
-            font-size: 0.9em;
-        }
-
-        .bar-section p {
-            margin: 0.25rem 0 0 0;
-            font-size: 0.8em;
-        }
-
-        .severity-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .severity-card {
-            border: 1px solid var(--border);
-            border-left: 4px solid;
-            border-radius: 6px;
-            padding: 1.5rem;
-            background: white;
-        }
-
-        .severity-card.critical { border-left-color: #7f1d1d; background: #fef2f2; }
-        .severity-card.serious { border-left-color: #ea580c; background: #fff7ed; }
-        .severity-card.moderate { border-left-color: #d97706; background: #fffbf0; }
-        .severity-card.minor { border-left-color: #059669; background: #f0fdf4; }
-
-        .severity-card h4 {
-            margin-top: 0;
-            font-size: 1.1rem;
-        }
-
-        .multiplier-box {
-            background: var(--code-bg);
-            padding: 1.5rem;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            margin: 1.5rem 0;
-            overflow-x: auto;
-        }
-
-        .multiplier-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-        }
-
-        .multiplier-table th,
-        .multiplier-table td {
-            padding: 1rem;
-            text-align: left;
-            border: 1px solid var(--border);
-        }
-
-        .multiplier-table th {
-            background: var(--code-bg);
-            font-weight: bold;
-        }
-
-        .formula-box {
-            background: #e0e7ff;
-            padding: 2rem;
-            border-radius: 6px;
-            text-align: center;
-            margin: 2rem 0;
-            font-size: 1.1em;
-            font-weight: 500;
-        }
-
-        .example-calc {
-            background: var(--code-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .calc-line {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            padding: 1rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .calc-line:last-child {
-            border-bottom: none;
-        }
-
-        .calc-line.result {
-            background: white;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        .interpretation {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .int-item {
-            border: 1px solid var(--border);
-            border-left: 4px solid;
-            border-radius: 6px;
-            padding: 1.5rem;
-            background: white;
-        }
-
-        .int-item.excellent { border-left-color: #059669; background: #f0fdf4; }
-        .int-item.good { border-left-color: #3b82f6; background: #eff6ff; }
-        .int-item.acceptable { border-left-color: #f59e0b; background: #fffbf0; }
-        .int-item.fair { border-left-color: #ef6461; background: #fff1f2; }
-        .int-item.poor { border-left-color: #7f1d1d; background: #fef2f2; }
-
-        .int-item h3 {
-            margin-top: 0;
-            font-size: 1.2rem;
-        }
-
-        .improvement-steps {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .improvement-steps h3 {
-            color: var(--primary);
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .improvement-steps h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .warning-box {
-            background: #fff7ed;
-            border-left: 4px solid var(--danger);
-            padding: 1.5rem;
-            border-radius: 6px;
-            margin: 1.5rem 0;
-        }
-
-        .warning-box h3 {
-            margin-top: 0;
-            color: var(--danger);
-        }
-
-        .warning-box ul {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-    </style>
+    
 </body>
 </html>

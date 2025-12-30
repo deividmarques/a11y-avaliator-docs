@@ -3,7 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A11y Avaliator - Documentação</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>A11y Avaliator - Extensão Chrome para Avaliação de Acessibilidade WCAG</title>
+    <meta name="title" content="A11y Avaliator - Extensão Chrome para Avaliação de Acessibilidade WCAG">
+    <meta name="description" content="Ferramenta completa para análise de acessibilidade web. Testes WCAG automáticos, validação de teclado, leitor de tela e contraste de cores. Documentação completa em português.">
+    <meta name="keywords" content="acessibilidade web, WCAG, a11y, extensão chrome, teste acessibilidade, leitor de tela, contraste cores, navegação teclado, axe-core, desenvolvimento inclusivo">
+    <meta name="author" content="Deivid Marques">
+    <meta name="language" content="Portuguese">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://deividmarques.github.io/a11y-avaliator-web-docs/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deividmarques.github.io/a11y-avaliator-web-docs/">
+    <meta property="og:title" content="A11y Avaliator - Extensão Chrome para Avaliação de Acessibilidade WCAG">
+    <meta property="og:description" content="Ferramenta completa para análise de acessibilidade web. Testes WCAG automáticos, validação de teclado, leitor de tela e contraste de cores.">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="A11y Avaliator">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://deividmarques.github.io/a11y-avaliator-web-docs/">
+    <meta property="twitter:title" content="A11y Avaliator - Extensão Chrome para Avaliação de Acessibilidade WCAG">
+    <meta property="twitter:description" content="Ferramenta completa para análise de acessibilidade web. Testes WCAG automáticos, validação de teclado, leitor de tela e contraste de cores.">
+    
+    <!-- AI Crawlers / LLM Optimization -->
+    <meta name="ai:content_type" content="documentation">
+    <meta name="ai:topic" content="web accessibility, WCAG, inclusive design, assistive technology">
+    <meta name="ai:audience" content="developers, QA engineers, designers, accessibility specialists">
+    <meta name="ai:purpose" content="educational, technical reference, tool documentation">
+    <meta name="citation_title" content="A11y Avaliator Documentation">
+    <meta name="citation_author" content="Deivid Marques">
+    <meta name="citation_publication_date" content="2025">
+    <meta name="citation_language" content="pt">
+    
+    <!-- Structured Data for AI -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "A11y Avaliator",
+      "applicationCategory": "BrowserExtension",
+      "operatingSystem": "Chrome",
+      "description": "Extensão Chrome para avaliação completa de acessibilidade web conforme diretrizes WCAG. Inclui testes automáticos, validação de teclado, análise de leitor de tela e verificação de contraste.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Deivid Marques"
+      },
+      "inLanguage": "pt-BR",
+      "keywords": "acessibilidade, WCAG, a11y, teste automático, extensão chrome"
+    }
+    </script>
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,25 +80,57 @@
 
     <nav>
         <div class="container">
-            <a href="#instalacao">Instalação</a>
-            <a href="#uso">Como Usar</a>
-            <a href="#recursos">Recursos</a>
-            <a href="#api">API Core</a>
-            <a href="#contribuir">Contribuir</a>
+            <a href="index.html">Início</a>
+            <a href="introducao-a11y.html">Introdução</a>
+            <a href="como-usar.html">Como Usar</a>
+            <a href="teste-wcag.html">Testes</a>
+            <a href="glossario.html">Glossário</a>
+            <a href="faq.html">FAQ</a>
         </div>
     </nav>
 
     <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>🌐 Acessibilidade Web ao Alcance de Todos</h2>
+                <p class="lead">Transforme seu desenvolvimento com análises automáticas de acessibilidade. O A11y Avaliator é uma extensão Chrome que ajuda você a criar experiências web inclusivas e conformes com as diretrizes WCAG.</p>
+                <div class="cta-buttons">
+                    <a href="como-usar.html" class="btn btn-primary">Começar Agora</a>
+                    <a href="introducao-a11y.html" class="btn btn-secondary">O que é Acessibilidade?</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="porque-acessibilidade" class="highlight-section">
+            <h2>💡 Por que Acessibilidade é Essencial?</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <span class="stat-number">1 bilhão+</span>
+                    <p>pessoas no mundo vivem com alguma deficiência</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15-20%</span>
+                    <p>da população global precisa de tecnologias assistivas</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <p>de nós podemos ter limitações temporárias ou situacionais</p>
+                </div>
+            </div>
+            <p class="text-center">Acessibilidade não é apenas conformidade legal - é sobre criar um mundo digital onde todos podem participar. Como desenvolvedor, você tem o poder de fazer a diferença.</p>
+            <p class="text-center"><a href="introducao-a11y.html">Saiba mais sobre acessibilidade →</a></p>
+        </section>
+
         <section id="instalacao">
-            <h2>📦 Instalação</h2>
+            <h2>📦 Instalação Rápida</h2>
             <div class="card">
                 <h3>Chrome Web Store</h3>
-                <p>Instale diretamente da Chrome Web Store:</p>
+                <p>Instale a extensão diretamente na Chrome Web Store e comece a avaliar seus sites em minutos:</p>
                 <a href="#" class="btn">Adicionar ao Chrome</a>
             </div>
             
             <div class="card">
-                <h3>Instalação Manual</h3>
+                <h3>Instalação Manual (Desenvolvedor)</h3>
                 <ol>
                     <li>Baixe a última versão em <a href="https://github.com/deividmarques/a11y-avaliator-web/releases">Releases</a></li>
                     <li>Extraia o arquivo ZIP</li>
@@ -46,65 +142,68 @@
             </div>
         </section>
 
-        <section id="uso">
-            <h2>🚀 Como Usar</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Abra a página a ser analisada</h3>
-                    <p>Navegue até qualquer site que deseja avaliar</p>
+        <section id="recursos">
+            <h2>✨ Recursos Completos</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>🎯 Análise WCAG Automática</h3>
+                    <p>Validação completa usando axe-core para níveis A, AA e AAA. Detecta automaticamente centenas de problemas de acessibilidade.</p>
+                    <a href="teste-wcag.html">Ver detalhes →</a>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Clique no ícone da extensão</h3>
-                    <p>O popup será aberto com as opções de configuração</p>
+                <div class="feature">
+                    <h3>⌨️ Teste de Navegação por Teclado</h3>
+                    <p>Identifica problemas de foco, tabindex incorreto e keyboard traps que impedem navegação apenas com teclado.</p>
+                    <a href="teste-teclado.html">Ver detalhes →</a>
                 </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Configure os testes</h3>
-                    <p>Escolha o nível WCAG (A, AA, AAA) e testes adicionais</p>
+                <div class="feature">
+                    <h3>🔊 Teste de Leitor de Tela</h3>
+                    <p>Verifica nomes acessíveis, ARIA labels, landmarks semânticos e textos alternativos em imagens.</p>
+                    <a href="teste-leitor-tela.html">Ver detalhes →</a>
                 </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Clique em "Analisar Página"</h3>
-                    <p>Os resultados serão exibidos com score e violações detalhadas</p>
+                <div class="feature">
+                    <h3>🎨 Análise de Contraste de Cores</h3>
+                    <p>Avalia contraste entre textos e fundos, garantindo legibilidade para pessoas com baixa visão.</p>
+                    <a href="teste-contraste.html">Ver detalhes →</a>
+                </div>
+                <div class="feature">
+                    <h3>📊 Sistema de Pontuação Inteligente</h3>
+                    <p>Score de 0 a 100 calculado com pesos baseados em severidade e nível WCAG, facilitando o acompanhamento de melhorias.</p>
+                    <a href="sistema-score.html">Entender o Score →</a>
+                </div>
+                <div class="feature">
+                    <h3>📄 Relatórios Detalhados</h3>
+                    <p>Exporte resultados em JSON ou PDF com violações, impacto, elementos afetados e sugestões de correção.</p>
+                    <a href="como-usar.html#exportacao">Ver exportação →</a>
                 </div>
             </div>
         </section>
 
-        <section id="recursos">
-            <h2>✨ Recursos</h2>
-            <div class="features">
-                <div class="feature">
-                    <h3>🎯 Análise WCAG Completa</h3>
-                    <p>Validação automática usando axe-core para níveis A, AA e AAA</p>
-                </div>
-                <div class="feature">
-                    <h3>⌨️ Teste de Teclado</h3>
-                    <p>Detecta problemas de foco, tabindex incorreto e keyboard traps</p>
-                </div>
-                <div class="feature">
-                    <h3>🔊 Teste de Leitor de Tela</h3>
-                    <p>Verifica nomes acessíveis, ARIA, landmarks e alt text</p>
-                </div>
-                <div class="feature">
-                    <h3>🎨 Teste de Contraste</h3>
-                    <p>Analisa contraste de cores em textos e elementos interativos</p>
-                </div>
-                <div class="feature">
-                    <h3>📊 Sistema de Pontuação</h3>
-                    <p>Score 0-100 com pesos por severidade e nível WCAG</p>
-                </div>
-                <div class="feature">
-                    <h3>📄 Exportação</h3>
-                    <p>Exporte relatórios em JSON ou PDF detalhado</p>
-                </div>
+        <section id="guias-praticos" class="highlight-section">
+            <h2>📚 Guias Práticos</h2>
+            <p>Aprenda a realizar testes manuais e entender problemas de acessibilidade com nossos guias passo a passo:</p>
+            <div class="guide-grid">
+                <a href="manual-teclado.html" class="guide-card">
+                    <h3>⌨️ Manual de Teste de Teclado</h3>
+                    <p>Aprenda a testar navegação, foco visível, ordem de tabulação e atalhos de teclado</p>
+                </a>
+                <a href="manual-leitor-tela.html" class="guide-card">
+                    <h3>🔊 Manual de Teste de Leitor de Tela</h3>
+                    <p>Configure e use leitores de tela para testar estrutura, navegação e anúncios</p>
+                </a>
+                <a href="erros-comuns.html" class="guide-card">
+                    <h3>⚠️ Erros Mais Comuns</h3>
+                    <p>Top 10 problemas de acessibilidade e como identificá-los no seu código</p>
+                </a>
+                <a href="correcoes.html" class="guide-card">
+                    <h3>🔧 Como Corrigir</h3>
+                    <p>Exemplos práticos de código para resolver os problemas mais frequentes</p>
+                </a>
             </div>
         </section>
 
         <section id="api">
-            <h2>🔧 API Core (@a11y/core)</h2>
-            <p>O núcleo da lógica de validação foi extraído para um pacote reutilizável:</p>
+            <h2>🔧 Para Desenvolvedores: API Core (@a11y/core)</h2>
+            <p>O núcleo da lógica de validação foi extraído para um pacote reutilizável, permitindo integração em diversos contextos:</p>
             
             <div class="code-block">
                 <pre><code>import { calculateAccessibilityScore } from '@a11y/core';
@@ -112,21 +211,90 @@ import { createAxeAnalyzer } from '@a11y/core';
 
 const analyzer = createAxeAnalyzer();
 const tags = analyzer.getWcagTags('AA');
+const result = await analyzer.analyze(document);
 const score = calculateAccessibilityScore(result);</code></pre>
             </div>
 
-            <h3>Uso em outros projetos</h3>
+            <h3>Casos de Uso</h3>
+            <div class="use-cases">
+                <div class="use-case">
+                    <h4>🌐 Extensão Chrome</h4>
+                    <p>Plugin atual com interface visual</p>
+                </div>
+                <div class="use-case">
+                    <h4>🤖 Integração com LLM</h4>
+                    <p>Validador com sugestões geradas por IA</p>
+                </div>
+                <div class="use-case">
+                    <h4>💻 Plugin VS Code</h4>
+                    <p>Análise em tempo de desenvolvimento</p>
+                </div>
+                <div class="use-case">
+                    <h4>⚙️ CLI Tools</h4>
+                    <p>Automação de testes em pipelines CI/CD</p>
+                </div>
+            </div>
+            <p><a href="casos-uso.html">Ver todos os casos de uso →</a></p>
+        </section>
+
+        <section id="ferramentas-complementares">
+            <h2>🛠️ Ferramentas Complementares</h2>
+            <p>O A11y Avaliator é mais poderoso quando usado junto com outras ferramentas:</p>
             <ul>
-                <li><strong>Extensão Chrome</strong> - Plugin atual</li>
-                <li><strong>Validador LLM</strong> - Integração com IA para sugestões</li>
-                <li><strong>Plugin VS Code</strong> - Análise em tempo de desenvolvimento</li>
-                <li><strong>CLI Tools</strong> - Automação de testes</li>
+                <li><strong>Leitores de Tela:</strong> NVDA, JAWS, VoiceOver, TalkBack</li>
+                <li><strong>Análise de Contraste:</strong> Contrast Checker, Color Oracle</li>
+                <li><strong>Extensões Chrome:</strong> WAVE, axe DevTools, Lighthouse</li>
+                <li><strong>Validadores:</strong> W3C Validator, HTML5 Outliner</li>
             </ul>
+            <p><a href="ferramentas.html">Ver lista completa de ferramentas →</a></p>
+        </section>
+
+        <section id="comece-agora" class="cta-section">
+            <h2>🚀 Pronto para Começar?</h2>
+            <p class="lead">Faça sua primeira análise em menos de 5 minutos!</p>
+            <div class="cta-steps">
+                <div class="step">
+                    <span class="step-icon">1️⃣</span>
+                    <p><a href="#instalacao">Instale a extensão</a></p>
+                </div>
+                <div class="step">
+                    <span class="step-icon">2️⃣</span>
+                    <p><a href="como-usar.html">Siga o guia de uso</a></p>
+                </div>
+                <div class="step">
+                    <span class="step-icon">3️⃣</span>
+                    <p><a href="correcoes.html">Corrija os problemas</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="recursos-aprendizado">
+            <h2>📖 Recursos de Aprendizado</h2>
+            <div class="learning-grid">
+                <a href="introducao-a11y.html" class="learning-card">
+                    <h3>Introdução à Acessibilidade</h3>
+                    <p>Conceitos básicos, tipos de deficiência e por que acessibilidade importa</p>
+                </a>
+                <a href="glossario.html" class="learning-card">
+                    <h3>Glossário Completo</h3>
+                    <p>19 termos essenciais de acessibilidade web explicados de forma simples</p>
+                </a>
+                <a href="faq.html" class="learning-card">
+                    <h3>Perguntas Frequentes</h3>
+                    <p>30+ respostas sobre o plugin, testes e correções de acessibilidade</p>
+                </a>
+                <a href="sobre-plugin.html" class="learning-card">
+                    <h3>Sobre o Plugin</h3>
+                    <p>Tecnologias, arquitetura, limitações e política de privacidade</p>
+                </a>
+            </div>
         </section>
 
         <section id="contribuir">
-            <h2>🤝 Contribuir</h2>
+            <h2>🤝 Contribua e Faça Parte</h2>
             <div class="card">
+                <p>Este é um projeto open source e sua contribuição é muito bem-vinda! Seja reportando bugs, sugerindo melhorias ou contribuindo com código.</p>
+                
                 <h3>Repositórios</h3>
                 <ul>
                     <li><a href="https://github.com/deividmarques/a11y-avaliator-web">a11y-avaliator-web</a> - Extensão Chrome</li>
