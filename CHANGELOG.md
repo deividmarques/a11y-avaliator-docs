@@ -33,6 +33,82 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 
 
+
+
+
+
+## [0.1.98] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- 
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.98
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.93] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- 
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.93
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.92] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- 
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.92
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.91] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- 
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.91
+- Data: 2025-12-30
+
+---
+
+
 ## [0.1.89] - 2025-12-29
 
 ### 🚀 Novidades
