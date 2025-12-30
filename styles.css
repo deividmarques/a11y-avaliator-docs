@@ -1,8 +1,8 @@
 :root {
     /* Design System - A11y Avaliator */
     /* Cores principais */
-    --primary: #0D47A1;
-    --primary-dark: #01579B;
+    --primary: #001f3f;
+    --primary-dark: #001529;
     --secondary: #2E7D32;
     --secondary-light: #A5D6A7;
     
@@ -14,7 +14,7 @@
     
     /* Texto */
     --text-primary: #222222;
-    --text-secondary: #444444;
+    --text-secondary: #222222;
     --text-muted: #666666;
     --text-on-primary: #ffffff;
     
@@ -135,11 +135,14 @@ header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     color: var(--text-on-primary);
+    font-weight: 700;
 }
 
 .subtitle {
     font-size: 1.2rem;
-    opacity: 0.9;
+    opacity: 1;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.98);
 }
 
 nav {
@@ -178,8 +181,10 @@ section {
 h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: var(--primary);
+    color: #000000;
+    font-weight: 700;
 }
+
 
 h3 {
     font-size: 1.5rem;
@@ -326,16 +331,18 @@ a:focus {
 
 .hero-content h2 {
     font-size: 2.5rem;
-    color: var(--text);
+    color: #001f3f;
     margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .lead {
     font-size: 1.25rem;
     line-height: 1.8;
-    color: #4b5563;
+    color: #333333;
     max-width: 800px;
     margin: 0 auto 2rem;
+    font-weight: 600;
 }
 
 .cta-buttons {
@@ -387,8 +394,9 @@ a:focus {
 }
 
 .highlight-section h2 {
-    color: var(--warning-text);
+    color: #8B3A00;
     margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
 /* Stats Grid */
@@ -417,8 +425,9 @@ a:focus {
 }
 
 .stat-card p {
-    color: #6b7280;
+    color: #222222;
     font-size: 1rem;
+    font-weight: 500;
 }
 
 .text-center {
@@ -482,8 +491,9 @@ a:focus {
 }
 
 .use-case p {
-    color: #6b7280;
+    color: #0D47A1;
     font-size: 0.95rem;
+    font-weight: 600;
 }
 
 /* CTA Section */
@@ -531,7 +541,7 @@ a:focus {
 .cta-steps .step a {
     color: var(--text-on-primary);
     text-decoration: underline;
-    font-weight: 600;
+    font-weight: 700;
     padding: 0.25rem 0.5rem;
     background: rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -565,9 +575,10 @@ a:focus {
 }
 
 .learning-card h3 {
-    color: var(--secondary);
+    color: #1a5c1a;
     margin-bottom: 0.75rem;
     font-size: 1.1rem;
+    font-weight: 700;
 }
 
 .learning-card p {
@@ -668,6 +679,15 @@ footer p {
     font-size: 0.95rem;
 }
 
+.search-input {
+    width: 50%;
+    margin: 1.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
 /* Main content with sidebar */
 .main-content {
     margin-left: 280px;
@@ -683,13 +703,15 @@ footer p {
 
 .page-header h1 {
     font-size: 2.5rem;
-    color: var(--primary);
+    color: var(--text-on-primary);
     margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
 .page-header .subtitle {
     font-size: 1.2rem;
-    color: var(--text-secondary);
+    color: var(text-on-primary);
+    font-weight: 500;
 }
 
 .content {
@@ -710,7 +732,10 @@ footer p {
 .sidebar a:focus {
     outline: var(--focus-outline-width) solid var(--focus-outline-color);
     outline-offset: -2px;
-    background: rgba(13, 71, 161, 0.1);
+    background: #E3F2FD;
+    border-left-color: var(--primary);
+    color: var(--primary);
+    font-weight: 600;
 }
 
 /* Mobile sidebar */
@@ -820,7 +845,7 @@ nav a:focus-within,
 nav a:focus {
     outline: var(--focus-outline-width) solid var(--focus-outline-color);
     outline-offset: var(--focus-outline-offset);
-    background: rgba(13, 71, 161, 0.1);
+    background: #E3F2FD;
     box-shadow: var(--focus-shadow);
 }
 

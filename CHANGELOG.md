@@ -37,6 +37,89 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 
 
+
+
+
+
+## [0.1.104] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+- Otimizado carregamento do axe-core com CSP bypass seguro
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.104
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.103] - 2025-12-30
+
+### 🚀 Novidades
+- Implementado multiplicador de dificuldade WCAG (A, AA, AAA)
+
+### ✨ Melhorias
+- Configuração ESLint mais rigorosa com erros para `any`
+- Melhorado sistema de cálculo de score de acessibilidade
+- Simplificado script de conteúdo
+- Otimizado carregamento do axe-core com CSP bypass seguro
+- Tipagem mais rigorosa: `any` agora é erro em vez de aviso
+- Otimização de carregamento de recursos CSP-safe
+- Documentação técnica completa do sistema de scoring
+
+### 🐛 Correções
+- Correções em validação de formulário
+
+### 📦 Build
+- Build automático versão 0.1.103
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.102] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.102
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.101] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- 
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.101
+- Data: 2025-12-30
+
+---
+
+
 ## [0.1.98] - 2025-12-30
 
 ### 🚀 Novidades

@@ -38,7 +38,7 @@
     <meta name="citation_author" content="Deivid Marques">
     <meta name="citation_language" content="pt">
 
-    <link rel="stylesheet" href="styles.css?v=1767065972938">
+    <link rel="stylesheet" href="styles.css?v=1767073602328">
 </head>
 <body>
     <nav class="sidebar">
@@ -91,7 +91,7 @@
 
     <main class="main-content">
         <header class="page-header">
-            <h1>✅ Correções Práticas</h1>
+            <h1>Correções Práticas</h1>
             <p class="subtitle">Exemplos de código para corrigir os problemas mais comuns</p>
         </header>
 
@@ -100,14 +100,14 @@
                 <h2 id="imagens">1. Adicionar Alt Text em Imagens</h2>
                 
                 <div class="fix-example">
-                    <h3>❌ Errado</h3>
+                    <h3>Errado</h3>
                     <pre>&lt;img src="logo.png"&gt;
 &lt;img src="chart.jpg" alt=""&gt;</pre>
                     <p><strong>Problema:</strong> Sem descrição ou alt vazio</p>
                 </div>
 
                 <div class="fix-example good">
-                    <h3>✅ Correto</h3>
+                    <h3>Correto</h3>
                     <pre>&lt;img src="logo.png" alt="Logo da Empresa XYZ"&gt;
 &lt;img src="chart.jpg" alt="Gráfico de vendas 2024: aumento de 25% em janeiro"&gt;</pre>
                     <p><strong>Bom:</strong> Alt descritivo e relevante</p>
@@ -122,13 +122,13 @@
                 <h2 id="contraste">2. Melhorar Contraste de Cores</h2>
                 
                 <div class="fix-example">
-                    <h3>❌ Errado (1.2:1 - muito fraco)</h3>
+                    <h3>Errado (1.2:1 - muito fraco)</h3>
                     <pre>.text { color: #cccccc; }</pre>
                     <p>Texto cinza claro é ilegível</p>
                 </div>
 
                 <div class="fix-example good">
-                    <h3>✅ Correto (4.5:1+ - WCAG AA)</h3>
+                    <h3>Correto (4.5:1+ - WCAG AA)</h3>
                     <pre>.text { color: #333333; }</pre>
                     <p>Texto escuro tem contraste adequado</p>
                 </div>
@@ -142,14 +142,14 @@
                 <h2 id="links">3. Links Descritivos</h2>
                 
                 <div class="fix-example">
-                    <h3>❌ Errado</h3>
+                    <h3>Errado</h3>
                     <pre>&lt;a href="/privacy"&gt;Clique aqui&lt;/a&gt;
 &lt;a href="/docs"&gt;Leia mais&lt;/a&gt;</pre>
                     <p><strong>Problema:</strong> Texto genérico sem contexto</p>
                 </div>
 
                 <div class="fix-example good">
-                    <h3>✅ Correto</h3>
+                    <h3>Correto</h3>
                     <pre>&lt;a href="/privacy"&gt;Leia nossa política de privacidade&lt;/a&gt;
 &lt;a href="/docs"&gt;Documentação técnica completa&lt;/a&gt;</pre>
                     <p><strong>Bom:</strong> Texto descreve destino</p>
@@ -164,14 +164,14 @@
                 <h2 id="formularios">4. Labels em Formulários</h2>
                 
                 <div class="fix-example">
-                    <h3>❌ Errado</h3>
+                    <h3>Errado</h3>
                     <pre>&lt;input type="email" placeholder="Seu email"&gt;
 &lt;input type="password"&gt;</pre>
                     <p><strong>Problema:</strong> Sem label, leitor não sabe o que preencher</p>
                 </div>
 
                 <div class="fix-example good">
-                    <h3>✅ Correto</h3>
+                    <h3>Correto</h3>
                     <pre>&lt;label for="email"&gt;Email:&lt;/label&gt;
 &lt;input type="email" id="email" name="email"&gt;
 
@@ -189,13 +189,13 @@
                 <h2 id="focus">5. Indicador de Focus Visível</h2>
                 
                 <div class="fix-example">
-                    <h3>❌ Errado</h3>
+                    <h3>Errado</h3>
                     <pre>button:focus { outline: none; }</pre>
                     <p><strong>Problema:</strong> Remove indicador padrão, deixa vazio</p>
                 </div>
 
                 <div class="fix-example good">
-                    <h3>✅ Correto</h3>
+                    <h3>Correto</h3>
                     <pre>button:focus {
   outline: 3px solid #0066cc;
   outline-offset: 2px;
@@ -218,7 +218,7 @@ button:focus {
                 <h2 id="headings">6. Estrutura de Headings</h2>
                 
                 <div class="fix-example">
-                    <h3>❌ Errado</h3>
+                    <h3>Errado</h3>
                     <pre>&lt;h1&gt;Bem-vindo&lt;/h1&gt;
 &lt;h3&gt;Seção Principal&lt;/h3&gt; &lt;!-- Pula H2 --&gt;
 &lt;h3&gt;Outra Seção&lt;/h3&gt;
@@ -227,7 +227,7 @@ button:focus {
                 </div>
 
                 <div class="fix-example good">
-                    <h3>✅ Correto</h3>
+                    <h3>Correto</h3>
                     <pre>&lt;h1&gt;Bem-vindo&lt;/h1&gt;
 
 &lt;h2&gt;Seção Principal&lt;/h2&gt;
@@ -250,14 +250,14 @@ button:focus {
                 <h2 id="botoes">7. Botões Semanticamente Corretos</h2>
                 
                 <div class="fix-example">
-                    <h3>❌ Errado</h3>
+                    <h3>Errado</h3>
                     <pre>&lt;div onclick="submit()"&gt;Enviar&lt;/div&gt;
 &lt;span onclick="openMenu()"&gt;Menu&lt;/span&gt;</pre>
                     <p><strong>Problema:</strong> Não é semântico, não funciona com teclado</p>
                 </div>
 
                 <div class="fix-example good">
-                    <h3>✅ Correto</h3>
+                    <h3>Correto</h3>
                     <pre>&lt;button onclick="submit()"&gt;Enviar&lt;/button&gt;
 &lt;button onclick="openMenu()" aria-expanded="false"&gt;Menu&lt;/button&gt;
 
@@ -275,14 +275,14 @@ button:focus {
                 <h2 id="validacao">8. Validação de Formulários Acessível</h2>
                 
                 <div class="fix-example">
-                    <h3>❌ Errado</h3>
+                    <h3>Errado</h3>
                     <pre>&lt;input type="email"&gt;
 &lt;span class="error" style="display:none;"&gt;Email inválido&lt;/span&gt;</pre>
                     <p><strong>Problema:</strong> Erro não é anunciado, só visível</p>
                 </div>
 
                 <div class="fix-example good">
-                    <h3>✅ Correto</h3>
+                    <h3>Correto</h3>
                     <pre>&lt;label for="email"&gt;Email:&lt;/label&gt;
 &lt;input type="email" id="email" aria-describedby="email-error"&gt;
 &lt;span id="email-error" role="alert" style="color:red;"&gt;Email inválido&lt;/span&gt;</pre>
@@ -298,14 +298,14 @@ button:focus {
                 <h2 id="iframes">9. Iframes com Título</h2>
                 
                 <div class="fix-example">
-                    <h3>❌ Errado</h3>
+                    <h3>Errado</h3>
                     <pre>&lt;iframe src="video.html"&gt;&lt;/iframe&gt;
 &lt;iframe src="map.html" title=""&gt;&lt;/iframe&gt;</pre>
                     <p><strong>Problema:</strong> Sem descrição, leitor não sabe o que é</p>
                 </div>
 
                 <div class="fix-example good">
-                    <h3>✅ Correto</h3>
+                    <h3>Correto</h3>
                     <pre>&lt;iframe src="video.html" title="Vídeo: Como Usar o Plugin"&gt;&lt;/iframe&gt;
 &lt;iframe src="map.html" title="Mapa de localização da empresa"&gt;&lt;/iframe&gt;</pre>
                     <p><strong>Bom:</strong> Title descreve conteúdo do iframe</p>
@@ -320,13 +320,13 @@ button:focus {
                 <h2 id="videos">10. Vídeos com Legendas</h2>
                 
                 <div class="fix-example">
-                    <h3>❌ Errado</h3>
+                    <h3>Errado</h3>
                     <pre>&lt;video src="tutorial.mp4"&gt;&lt;/video&gt;</pre>
                     <p><strong>Problema:</strong> Usuários surdos não podem seguir</p>
                 </div>
 
                 <div class="fix-example good">
-                    <h3>✅ Correto</h3>
+                    <h3>Correto</h3>
                     <pre>&lt;video controls&gt;
   &lt;source src="tutorial.mp4" type="video/mp4"&gt;
   &lt;track kind="captions" src="tutorial.vtt" srclang="pt" label="Português"&gt;

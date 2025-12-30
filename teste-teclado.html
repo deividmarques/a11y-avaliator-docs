@@ -38,7 +38,7 @@
     <meta name="citation_author" content="Deivid Marques">
     <meta name="citation_language" content="pt">
 
-    <link rel="stylesheet" href="styles.css?v=1767065972938">
+    <link rel="stylesheet" href="styles.css?v=1767073602328">
 </head>
 <body>
     <nav class="sidebar">
@@ -116,28 +116,28 @@
                 
                 <div class="checks-grid">
                     <div class="check-item">
-                        <h3>✅ Indicador de Foco</h3>
+                        <h3>Indicador de Foco</h3>
                         <p><strong>Procura por:</strong> Elementos sem indicador visual de focus (outline, border, mudança de cor)</p>
                         <p><strong>Problema:</strong> Usuários de teclado não sabem onde estão</p>
                         <p><strong>Solução:</strong> Sempre adicionar outline ou style customizado visível</p>
                     </div>
 
                     <div class="check-item">
-                        <h3>⚠️ Tabindex Positivo</h3>
+                        <h3>️ Tabindex Positivo</h3>
                         <p><strong>Procura por:</strong> Atributos tabindex com valores > 0</p>
                         <p><strong>Problema:</strong> Pode quebrar a ordem natural de navegação</p>
                         <p><strong>Solução:</strong> Use tabindex="-1" ou "0", nunca positivo</p>
                     </div>
 
                     <div class="check-item">
-                        <h3>🔒 Keyboard Traps</h3>
+                        <h3>Keyboard Traps</h3>
                         <p><strong>Procura por:</strong> Modais/dropdowns sem botão de fechar visível</p>
                         <p><strong>Problema:</strong> Focus fica preso, impossível avançar</p>
                         <p><strong>Solução:</strong> Sempre fornecer forma de sair (ESC, fechar botão)</p>
                     </div>
 
                     <div class="check-item">
-                        <h3>🎯 Elementos Focáveis</h3>
+                        <h3>Elementos Focáveis</h3>
                         <p><strong>Procura por:</strong> Contagem de elementos interativos</p>
                         <p><strong>Relatório mostra:</strong> Quantos elementos podem receber focus</p>
                         <p><strong>Interpretação:</strong> Muito poucos? Pode haver interatividade quebrada</p>
@@ -149,26 +149,26 @@
                 <h2>Exemplo: Problemas Comuns</h2>
 
                 <div class="problem-box">
-                    <h3>❌ Botão Customizado sem Focus</h3>
+                    <h3>Botão Customizado sem Focus</h3>
                     <code>&lt;div onclick="submitForm()"&gt;Enviar&lt;/div&gt;</code>
                     <p><strong>Problema:</strong> Div não é focável, teclado não consegue ativar</p>
                 </div>
 
                 <div class="solution-box">
-                    <h3>✅ Solução: Usar Button ou Adicionar Acessibilidade</h3>
+                    <h3>Solução: Usar Button ou Adicionar Acessibilidade</h3>
                     <code>&lt;button onclick="submitForm()"&gt;Enviar&lt;/button&gt;</code>
                     <p>Ou se deve ser div:</p>
                     <code>&lt;div role="button" tabindex="0" onclick="submitForm()" onkeydown="if(event.key==='Enter') submitForm()"&gt;Enviar&lt;/div&gt;</code>
                 </div>
 
                 <div class="problem-box">
-                    <h3>❌ Problema: Tab sem Sair (Keyboard Trap)</h3>
+                    <h3>Problema: Tab sem Sair (Keyboard Trap)</h3>
                     <code>Modal aberto → Tab dentro do modal → Fica preso → Não consegue sair</code>
                     <p><strong>Problema:</strong> Sem forma de fechar com teclado (ESC ou botão)</p>
                 </div>
 
                 <div class="solution-box">
-                    <h3>✅ Solução: Fornecer Forma de Fechar</h3>
+                    <h3>Solução: Fornecer Forma de Fechar</h3>
                     <code>Modal com botão X [✕] ou Botão "Cancelar" + Suporte para ESC</code>
                     <code>onkeydown="if(event.key==='Escape') closeModal()"</code>
                 </div>
@@ -178,7 +178,7 @@
                 <h2>Entendendo o Relatório</h2>
                 
                 <div class="report-example">
-                    <h3>📊 Exemplo de Relatório do Plugin</h3>
+                    <h3>Exemplo de Relatório do Plugin</h3>
                     <div class="report-content">
                         <p><strong>Elementos focáveis encontrados:</strong> 12</p>
                         <p><strong>Elementos sem indicador de foco:</strong> 3</p>
