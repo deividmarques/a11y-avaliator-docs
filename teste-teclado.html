@@ -38,10 +38,16 @@
     <meta name="citation_author" content="Deivid Marques">
     <meta name="citation_language" content="pt">
 
-    <link rel="stylesheet" href="styles.css?v=1767073602328">
+    <link rel="stylesheet" href="styles.css?v=1767077970330">
 </head>
 <body>
-    <nav class="sidebar">
+    <div class="skip-links">
+        <a href="#main-content">Pular para o conteúdo</a>
+        <a href="#navigation">Pular para o menu</a>
+        <a href="#footer">Pular para o rodapé</a>
+    </div>
+    
+    <nav id="navigation" class="sidebar">
         <div class="nav-header">📚 Documentação</div>
         <ul>
             <li><a href="index.html">🏠 Início</a></li>
@@ -89,7 +95,7 @@
         </ul>
     </nav>
 
-    <main class="main-content">
+    <main id="main-content" class="main-content">
         <header class="page-header">
             <h1>⌨️ Teste de Navegação por Teclado</h1>
             <p class="subtitle">Verifica se sua página é completamente navegável apenas com teclado</p>
@@ -211,7 +217,7 @@
             </section>
         </div>
 
-        <footer class="page-footer">
+        <footer id="footer" class="page-footer">
             <p><a href="glossario.html">Glossário</a> | <a href="faq.html">FAQ</a> | <a href="manual-teclado.html">Guia Manual</a></p>
         </footer>
     </main>

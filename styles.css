@@ -58,6 +58,10 @@
     --button-primary-hover: #01579B;
     --button-secondary-bg: #ffffff;
     --button-secondary-border: #0D47A1;
+    
+    /* Skip Links */
+    --skip-link-bg: #000000;
+    --skip-link-text: #ffffff;
     --button-secondary-hover-bg: #0D47A1;
     --button-secondary-hover-text: #ffffff;
     
@@ -72,6 +76,70 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* ========================================
+   SKIP LINKS - WCAG 2.4.1 BYPASS BLOCKS (LEVEL A)
+   ======================================== */
+
+.skip-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.skip-links a {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-links a:focus,
+.skip-links a:focus-visible,
+.skip-links a:active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip: auto;
+    clip-path: none;
+    height: auto;
+    width: auto;
+    margin: 0;
+    overflow: visible;
+    padding: 12px 20px;
+    background: var(--skip-link-bg);
+    color: var(--skip-link-text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    border: none;
+    border-radius: 0 0 4px 0;
+    white-space: nowrap;
+    outline: 3px solid var(--skip-link-text);
+    outline-offset: -3px;
+    z-index: 10000;
+}
+
+.skip-links a:nth-child(2):focus,
+.skip-links a:nth-child(2):focus-visible,
+.skip-links a:nth-child(2):active {
+    left: 200px;
+}
+
+.skip-links a:nth-child(3):focus,
+.skip-links a:nth-child(3):focus-visible,
+.skip-links a:nth-child(3):active {
+    left: 400px;
 }
 
 /* ========================================

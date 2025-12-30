@@ -41,6 +41,86 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 
 
+
+
+
+
+## [0.1.109] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+- Otimizado carregamento do axe-core com CSP bypass seguro
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.109
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.108] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+- Otimizado carregamento do axe-core com CSP bypass seguro
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.108
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.107] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+- Otimizado carregamento do axe-core com CSP bypass seguro
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.107
+- Data: 2025-12-30
+
+---
+
+
+## [0.1.106] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+- Otimizado carregamento do axe-core com CSP bypass seguro
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.106
+- Data: 2025-12-30
+
+---
+
+
 ## [0.1.104] - 2025-12-30
 
 ### 🚀 Novidades

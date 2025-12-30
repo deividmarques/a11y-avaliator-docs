@@ -38,10 +38,16 @@
     <meta name="citation_author" content="Deivid Marques">
     <meta name="citation_language" content="pt">
 
-    <link rel="stylesheet" href="styles.css?v=1767073602328">
+    <link rel="stylesheet" href="styles.css?v=1767077970330">
 </head>
 <body>
-    <nav class="sidebar">
+    <div class="skip-links">
+        <a href="#main-content">Pular para o conteúdo</a>
+        <a href="#navigation">Pular para o menu</a>
+        <a href="#footer">Pular para o rodapé</a>
+    </div>
+    
+    <nav id="navigation" class="sidebar">
         <div class="nav-header">📚 Documentação</div>
         <ul>
             <li><a href="index.html">🏠 Início</a></li>
@@ -89,7 +95,7 @@
         </ul>
     </nav>
 
-    <main class="main-content">
+    <main id="main-content" class="main-content">
         <header class="page-header">
             <h1>Correções Práticas</h1>
             <p class="subtitle">Exemplos de código para corrigir os problemas mais comuns</p>
@@ -341,6 +347,125 @@ button:focus {
             </section>
 
             <section>
+                <h2 id="skip-links">11. Implementar Menu de Atalho Rápido (Skip Links)</h2>
+                
+                <div class="warning-box" style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-bottom: 20px;">
+                    <p><strong>⚠️ Teste Experimental:</strong> Este teste está em fase experimental no plugin e não impacta o score até o momento. É considerado uma funcionalidade extra que melhora significativamente a experiência do usuário.</p>
+                </div>
+
+                <p><strong>WCAG 2.4.1 - Bypass Blocks (Nível A)</strong></p>
+                <p>Skip links (links de atalho) permitem que usuários de teclado e leitores de tela pulem blocos repetitivos de conteúdo (como menus de navegação) e cheguem direto ao conteúdo principal. Isso economiza tempo e melhora drasticamente a experiência de navegação.</p>
+
+                <div class="fix-example">
+                    <h3>❌ Sem Skip Links</h3>
+                    <pre>&lt;body&gt;
+  &lt;nav&gt;
+    &lt;!-- 50+ links de menu --&gt;
+  &lt;/nav&gt;
+  &lt;main&gt;
+    &lt;h1&gt;Conteúdo Principal&lt;/h1&gt;
+  &lt;/main&gt;
+&lt;/body&gt;</pre>
+                    <p><strong>Problema:</strong> Usuário de teclado precisa apertar TAB 50+ vezes para chegar ao conteúdo</p>
+                </div>
+
+                <div class="fix-example good">
+                    <h3>✅ Com Skip Links</h3>
+                    <pre>&lt;body&gt;
+  &lt;!-- Links de atalho no topo da página --&gt;
+  &lt;div class="skip-links"&gt;
+    &lt;a href="#main-content"&gt;Pular para o conteúdo&lt;/a&gt;
+    &lt;a href="#navigation"&gt;Pular para o menu&lt;/a&gt;
+    &lt;a href="#footer"&gt;Pular para o rodapé&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;nav id="navigation"&gt;
+    &lt;!-- 50+ links de menu --&gt;
+  &lt;/nav&gt;
+
+  &lt;main id="main-content"&gt;
+    &lt;h1&gt;Conteúdo Principal&lt;/h1&gt;
+  &lt;/main&gt;
+
+  &lt;footer id="footer"&gt;
+    &lt;!-- rodapé --&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</pre>
+                    <p><strong>Bom:</strong> Usuário aperta TAB uma vez e vai direto ao conteúdo principal</p>
+                </div>
+
+                <h3>CSS para Esconder Visualmente (mas manter acessível)</h3>
+                <p>Os skip links devem ficar visualmente escondidos até receberem foco via teclado:</p>
+                
+                <div class="fix-example good">
+                    <pre>.skip-links {
+  position: relative;
+}
+
+.skip-links a {
+  /* Esconde visualmente mas mantém acessível */
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  
+  /* Alternativa moderna (recomendada) */
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-links a:focus {
+  /* Torna visível quando recebe foco */
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+  
+  /* Estilo visual do link */
+  display: inline-block;
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 9999;
+}</pre>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 Dicas Importantes:</strong></p>
+                    <ul>
+                        <li><strong>Posicionamento:</strong> Coloque os skip links como primeiro elemento do &lt;body&gt;</li>
+                        <li><strong>Âncoras comuns:</strong> #main-content, #navigation, #footer, #search</li>
+                        <li><strong>Textos claros:</strong> Use "Pular para o conteúdo" em vez de apenas "Pular"</li>
+                        <li><strong>IDs obrigatórios:</strong> Certifique-se que os alvos (targets) existem com IDs correspondentes</li>
+                        <li><strong>Teste com teclado:</strong> Aperte TAB logo ao carregar a página - o primeiro link deve aparecer</li>
+                        <li><strong>Alternativa:</strong> Se usar tag &lt;main&gt; corretamente, alguns leitores já pulam automaticamente, mas skip links ainda são recomendados</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box" style="background: #e3f2fd; border-left: 4px solid #2196f3;">
+                    <p><strong>🔬 Como o Plugin Detecta:</strong></p>
+                    <p>O teste experimental do plugin verifica:</p>
+                    <ul>
+                        <li>✓ Presença de links âncora no início da página</li>
+                        <li>✓ Padrões de href (#main-content, #navigation, etc.)</li>
+                        <li>✓ Textos descritivos em português, inglês, espanhol e francês</li>
+                        <li>✓ Técnicas de esconder visualmente (clip, clip-path, position)</li>
+                        <li>✓ Se os alvos (targets) existem no DOM</li>
+                        <li>✓ Presença de tag &lt;main&gt; como alternativa</li>
+                    </ul>
+                    <p>O plugin fornece um percentual de confiança da detecção e recomendações específicas.</p>
+                </div>
+            </section>
+
+            <section>
                 <h2>Próximos Passos</h2>
                 <ol>
                     <li>Abra seu site e execute plugin</li>
@@ -353,7 +478,7 @@ button:focus {
             </section>
         </div>
 
-        <footer class="page-footer">
+        <footer id="footer" class="page-footer">
             <p><a href="erros-comuns.html">Erros Comuns</a> | <a href="ferramentas.html">Ferramentas</a></p>
         </footer>
     </main>
