@@ -53,6 +53,25 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 
 
+
+## [0.1.118] - 2025-12-30
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+
+### 🐛 Correções
+- Correções em testes de navegação por teclado
+
+### 📦 Build
+- Build automático versão 0.1.118
+- Data: 2025-12-30
+
+---
+
+
 ## [0.1.117] - 2025-12-30
 
 ### 🚀 Novidades
