@@ -54,6 +54,158 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 
 
+
+
+
+
+
+
+
+
+## [0.1.126] - 2025-12-31
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- 
+
+### 🐛 Correções
+- Correções em validação de formulário
+
+### 📦 Build
+- Build automático versão 0.1.126
+- Data: 2025-12-31
+
+---
+
+
+## [0.1.125] - 2025-12-31
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- 
+
+### 🐛 Correções
+- Correções em validação de formulário
+
+### 📦 Build
+- Build automático versão 0.1.125
+- Data: 2025-12-31
+
+---
+
+
+## [0.1.124] - 2025-12-31
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- 
+
+### 🐛 Correções
+- Correções em validação de formulário
+
+### 📦 Build
+- Build automático versão 0.1.124
+- Data: 2025-12-31
+
+---
+
+
+## [0.1.123] - 2025-12-31
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- 
+
+### 🐛 Correções
+- Correções em validação de formulário
+
+### 📦 Build
+- Build automático versão 0.1.123
+- Data: 2025-12-31
+
+---
+
+
+## [0.1.122] - 2025-12-31
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- 
+
+### 🐛 Correções
+- Correções em validação de formulário
+
+### 📦 Build
+- Build automático versão 0.1.122
+- Data: 2025-12-31
+
+---
+
+
+## [0.1.121] - 2025-12-31
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.121
+- Data: 2025-12-31
+
+---
+
+
+## [0.1.120] - 2025-12-31
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.120
+- Data: 2025-12-31
+
+---
+
+
+## [0.1.119] - 2025-12-31
+
+### 🚀 Novidades
+- 
+
+### ✨ Melhorias
+- Melhorado sistema de cálculo de score de acessibilidade
+
+### 🐛 Correções
+- 
+
+### 📦 Build
+- Build automático versão 0.1.119
+- Data: 2025-12-31
+
+---
+
+
 ## [0.1.118] - 2025-12-30
 
 ### 🚀 Novidades
