@@ -26,8 +26,17 @@ Allow: /
 User-agent: Perplexity-AI
 Allow: /
 
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
 # Sitemap
-Sitemap: https://deividmarques.github.io/a11y-avaliator-web-docs/sitemap.xml
+Sitemap: https://deividmarques.github.io/a11y-avaliator-docs/sitemap.xml
 
 # Informações adicionais
 # Este site é uma documentação pública sobre acessibilidade web

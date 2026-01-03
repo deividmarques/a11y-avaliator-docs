@@ -92,7 +92,7 @@
 #### Canonical URLs
 Cada página tem sua URL canônica:
 ```html
-<link rel="canonical" href="https://deividmarques.github.io/a11y-avaliator-web-docs/[pagina].html">
+<link rel="canonical" href="https://deividmarques.github.io/a11y-avaliator-web/[pagina].html">
 ```
 
 ### 📊 Páginas Otimizadas (17 páginas)
@@ -178,9 +178,9 @@ docs/ (build)
 
 ### 🎯 URLs Importantes Após Deploy
 
-- **Homepage**: https://deividmarques.github.io/a11y-avaliator-web-docs/
-- **Sitemap**: https://deividmarques.github.io/a11y-avaliator-web-docs/sitemap.xml
-- **Robots**: https://deividmarques.github.io/a11y-avaliator-web-docs/robots.txt
+- **Homepage**: https://deividmarques.github.io/a11y-avaliator-docs/
+- **Sitemap**: https://deividmarques.github.io/a11y-avaliator-docs/sitemap.xml
+- **Robots**: https://deividmarques.github.io/a11y-avaliator-docs/robots.txt
 
 ### ✅ Checklist de Validação
 
